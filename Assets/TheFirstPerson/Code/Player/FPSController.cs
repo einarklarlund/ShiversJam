@@ -251,7 +251,7 @@ namespace TheFirstPerson
 
         //Input Name Defaults (assuming default unity axes are set up)
         string jumpBtn = "Jump";
-        string crouchBtn = "Fire1";
+        string crouchBtn = "Crouch";
         string runBtn = "Fire3";
         string unlockMouseBtn = "Cancel";
         string xInName = "Horizontal";
