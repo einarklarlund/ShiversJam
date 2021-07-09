@@ -1,6 +1,4 @@
-#if USE_NEW_INPUT // <-- Added to allow compilation when using default input manager.
-
-// GENERATED AUTOMATICALLY FROM 'Assets/Plugins/Pixel Crushers/Dialogue System/Demo/Data/DemoInputControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Plugins/Pixel Crushers/Dialogue System/Demo/Scenes/New Input System/DemoInputControls.inputactions'
 
 using System;
 using System.Collections;
@@ -311,4 +309,3 @@ public class @DemoInputControls : IInputActionCollection, IDisposable
         void OnFire1(InputAction.CallbackContext context);
     }
 }
-#endif
