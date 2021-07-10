@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
+using static CoroutineUtils;
 
 [RequireComponent(typeof(NpcController), typeof(NavMeshAgent))]
 public class NpcMovementController : MonoBehaviour
@@ -111,8 +112,9 @@ public class NpcMovementController : MonoBehaviour
 
     public void StopMoving()
     {
-        if(useStepAnimation && _walkCycleCoroutine != default)
-            StopCoroutine(_walkCycleCoroutine);
+        // if(useStepAnimation && _walkCycleCoroutine != default)
+        //     StopCoroutine(_walkCycleCoroutine);
+        StopAllCoroutines();
 
         _agent.isStopped = true;
     }
@@ -121,7 +123,7 @@ public class NpcMovementController : MonoBehaviour
     {
         _agent.isStopped = false;
 
-        _walkCycleCoroutine = StartCoroutine(MoveAndWait());
+        StartCoroutine(DelaySeconds(Move, waitDuration));
     }
 
     void MoveToPosition(Vector3 position, float displacement = 0)

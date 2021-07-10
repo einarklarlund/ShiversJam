@@ -61,7 +61,7 @@ public abstract class NpcController : Interactor
     
     protected virtual void OnInteracted(Interactor interactor)
     {
-        Debug.Log($"NPC {name} recevied interaction from {interactor.name}. npcDialogueController.speaking is {npcDialogueController.speaking}.");
+        Debug.Log($"NPC {name} recevied interaction from {interactor.name}.");
         if(npcDialogueController && interactor is PlayerController
             && !npcDialogueController.speaking)
         {

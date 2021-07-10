@@ -44,14 +44,14 @@ public class Interactable : MonoBehaviour
             return;
         }
 
-        Debug.Log("selected");
+        // Debug.Log("selected");
         _selected = true;
         hub.Post(Message.Selected);
     }
 
     public void Unselect()
     {
-        Debug.Log("unselected");
+        // Debug.Log("unselected");
         _selected = false;
         hub.Post(Message.Unselected);
     }
