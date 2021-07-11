@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1263729182906631430}
   - component: {fileID: 1263729182906631428}
   - component: {fileID: 3212953379393111838}
+  - component: {fileID: 4622885401356595547}
+  - component: {fileID: 1424481407332293622}
+  - component: {fileID: 9104673115720277423}
   - component: {fileID: 79144846}
-  - component: {fileID: 1654977995722446524}
-  - component: {fileID: 3544785966839596530}
   m_Layer: 0
   m_Name: Npc Base
   m_TagString: Untagged
@@ -99,24 +100,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.26, y: 2.18, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &79144846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263729182906631431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30f4b5f58996ae4c9f52310e2af89f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSelectionDistance: 4
-  selectable: 1
-  invincible: 0
-  maxHealth: 20
-  health: 20
---- !u!114 &1654977995722446524
+--- !u!114 &4622885401356595547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +145,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: 
+  conversation: New Conversation 1
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 0}
   startConversationEntryID: -1
@@ -184,7 +168,84 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 815a02162b97b9644aab652d401413f9, type: 2}
---- !u!114 &3544785966839596530
+--- !u!114 &1424481407332293622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263729182906631431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5473918a168c44fa0294bd4d1399f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversationEvents:
+    onConversationStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationLine:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationLineEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationLineCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationResponseMenu:
+      m_PersistentCalls:
+        m_Calls: []
+    onConversationResponseMenuTimeout:
+      m_PersistentCalls:
+        m_Calls: []
+    onLinkedConversationStart:
+      m_PersistentCalls:
+        m_Calls: []
+  barkEvents:
+    onBarkStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onBarkEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    onBarkLine:
+      m_PersistentCalls:
+        m_Calls: []
+  sequenceEvents:
+    onSequenceStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onSequenceEnd:
+      m_PersistentCalls:
+        m_Calls: []
+  questEvents:
+    onQuestStateChange:
+      m_PersistentCalls:
+        m_Calls: []
+    onQuestTrackingEnabled:
+      m_PersistentCalls:
+        m_Calls: []
+    onQuestTrackingDisabled:
+      m_PersistentCalls:
+        m_Calls: []
+    onUpdateQuestTracker:
+      m_PersistentCalls:
+        m_Calls: []
+  pauseEvents:
+    onDialogueSystemPause:
+      m_PersistentCalls:
+        m_Calls: []
+    onDialogueSystemUnpause:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &9104673115720277423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,6 +270,23 @@ MonoBehaviour:
     onUse:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &79144846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263729182906631431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30f4b5f58996ae4c9f52310e2af89f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSelectionDistance: 4
+  selectable: 1
+  invincible: 0
+  maxHealth: 20
+  health: 20
 --- !u!1 &1263729182988748842
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1263729182988748840}
   - component: {fileID: 79144844}
+  - component: {fileID: 1296295340203174947}
   - component: {fileID: 79144843}
   - component: {fileID: 79144845}
   - component: {fileID: 536288655839694233}
@@ -265,6 +344,24 @@ MonoBehaviour:
   audioClips: []
   damageable: {fileID: 79144846}
   onDamageAlertDistance: 15
+--- !u!114 &1296295340203174947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263729182988748842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d57ac56e41176e4e884e9589727d2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystemTrigger: {fileID: 4622885401356595547}
+  dialogueSystemEvents: {fileID: 1424481407332293622}
+  _textScrollSpeed: 20
+  _textScrollAudio: {fileID: 0}
+  _useAnimator: 1
+  _textScrollSprite: {fileID: 0}
 --- !u!114 &79144843
 MonoBehaviour:
   m_ObjectHideFlags: 0

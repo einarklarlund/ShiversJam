@@ -42,17 +42,16 @@
      <Compile Include="Assets\Scripts\Npc\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Npc\NpcGroup.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\UI\Dialogue\NpcDialogueScreenCompletedAction.cs" />
      <Compile Include="Assets\Scripts\Npc\Hitbox.cs" />
      <Compile Include="Assets\Scripts\Item\ItemManager.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\NpcSubtitleText.cs" />
      <Compile Include="Assets\Scripts\UI\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\EffectsController.cs" />
      <Compile Include="Assets\Scripts\UI\HUD\ItemChangePopUp.cs" />
      <Compile Include="Assets\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\Scripts\Npc\Movements.cs" />
-     <Compile Include="Assets\Scripts\Npc\SimpleNpc.cs" />
      <Compile Include="Assets\Scripts\SpriteEffect.cs" />
      <Compile Include="Assets\Scripts\Npc\MeleeEnemy.cs" />
      <Compile Include="Assets\Scripts\Item\LittleMan.cs" />
@@ -65,10 +64,8 @@
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\Utils\CouroutineUtils.cs" />
      <Compile Include="Assets\Scripts\UI\HUD\DamagePopUp.cs" />
-     <Compile Include="Assets\Scripts\Npc\SpeakingNpc.cs" />
      <Compile Include="Assets\Scripts\Npc\Npc.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\UI\Dialogue\DialogueButton.cs" />
      <Compile Include="Assets\Scripts\UI\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerRaycaster.cs" />
@@ -77,18 +74,16 @@
      <Compile Include="Assets\Scripts\Damageable.cs" />
      <Compile Include="Assets\Scripts\Npc\NpcMovementController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
-     <Compile Include="Assets\Scripts\UI\Dialogue\NpcDialogueScreen.cs" />
      <Compile Include="Assets\Scripts\Interactor.cs" />
-     <Compile Include="Assets\Scripts\UI\Dialogue\DialoguePopUp.cs" />
      <Compile Include="Assets\Scripts\Npc\NpcController.cs" />
      <Compile Include="Assets\Scripts\Item\BurgahGun.cs" />
      <Compile Include="Assets\Scripts\GameMessageManager.cs" />
-     <Compile Include="Assets\Scripts\UI\Dialogue\IDialogueScreen.cs" />
      <Compile Include="Assets\Scripts\Extensions.cs" />
      <Compile Include="Assets\Scripts\NpcSpawner.cs" />
      <Compile Include="Assets\Scripts\GameEventManager.cs" />
      <Compile Include="Assets\Scripts\Zenject\GameInstaller.cs" />
      <Compile Include="Assets\Scripts\Item\Item.cs" />
+     <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
      <None Include="Assets\Shaders\vertexlit-Retro3D.shader" />
      <None Include="Assets\Shaders\CRT.shader" />
      <None Include="Assets\Shaders\Ordered Dither Surface.shader" />
@@ -691,8 +686,8 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="com.fluid.dialogue.Editor">
-        <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/com.fluid.dialogue.Editor.dll</HintPath>
+    <Reference Include="Unity.VSCode.Editor">
+        <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="NaughtyAttributes.Test">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/NaughtyAttributes.Test.dll</HintPath>
@@ -714,9 +709,6 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="com.fluid.dialogue">
-        <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/com.fluid.dialogue.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
@@ -757,9 +749,6 @@
     <Reference Include="NaughtyAttributes.Editor">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/NaughtyAttributes.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="com.fluid.simple-singleton">
-        <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/com.fluid.simple-singleton.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
@@ -772,17 +761,11 @@
     <Reference Include="NaughtyAttributes.Core">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/NaughtyAttributes.Core.dll</HintPath>
     </Reference>
-    <Reference Include="com.fluid.database">
-        <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/com.fluid.database.dll</HintPath>
-    </Reference>
     <Reference Include="com.hauntedpsx.render-pipelines.psx.Editor">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/com.hauntedpsx.render-pipelines.psx.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
         <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637615374118968207
-    m_Hash: 2075071571
+      ticks: 637616178264224466
+    m_Hash: 1665484349
   m_LockFileStatus:
     m_FilePath: C:/Users/Einar/Documents/Projects/ShiversJam/ShiversJam/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637615374118988209
-    m_Hash: 1888867414
+      ticks: 637616178283294451
+    m_Hash: 582955280
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -168,85 +168,6 @@ m_PackageAssets:
       repository:
         type: 
         url: 
-        revision: 
-        path: 
-    - packageId: com.fluid.dialogue@1.0.0
-      testable: 0
-      isDirectDependency: 1
-      version: 1.0.0
-      source: 1
-      resolvedPath: C:\Users\Einar\Documents\Projects\ShiversJam\ShiversJam\Library\PackageCache\com.fluid.dialogue@1.0.0
-      assetPath: Packages/com.fluid.dialogue
-      name: com.fluid.dialogue
-      displayName: Fluid Dialogue
-      author:
-        name: Ash Blue
-        email: ash@clevercrowgames.com
-        url: http://blueashes.com
-      category: 
-      type: 
-      description: A Unity dialogue system that features an easy to use drag and
-        drop graph. ScriptableObject driven with the ability to write custom actions
-        and conditions to create complex dialogue workflows.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0
-        - 1.1.0
-        - 1.1.1
-        - 1.2.0
-        - 2.0.0
-        - 2.1.0
-        - 2.2.0
-        - 2.3.0
-        - 2.4.0
-        - 2.4.1
-        - 2.5.0
-        compatible:
-        - 1.0.0
-        - 1.1.0
-        - 1.1.1
-        - 1.2.0
-        - 2.0.0
-        - 2.1.0
-        - 2.2.0
-        - 2.3.0
-        - 2.4.0
-        - 2.4.1
-        - 2.5.0
-        verified: 
-      dependencies:
-      - name: com.fluid.database
-        version: 1.0.2
-      resolvedDependencies:
-      - name: com.fluid.database
-        version: 1.0.2
-      - name: com.fluid.simple-singleton
-        version: 1.0.0
-      keywords:
-      - unity
-      - dialogue
-      - dialogue system
-      registry:
-        id: scoped:NPM
-        name: NPM
-        url: https://registry.npmjs.org
-        scopes:
-        - com.fluid
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637019318691110000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: git+https://github.com/ashblue/fluid-dialogue.git
         revision: 
         path: 
     - packageId: com.guerrillacontra.unitymessagehub@1.1.102
@@ -3691,123 +3612,6 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.newtonsoft-json.git
         revision: d2fd6ed876261bbd82f59199ad711e7667bf633a
-        path: 
-    - packageId: com.fluid.database@1.0.2
-      testable: 0
-      isDirectDependency: 0
-      version: 1.0.2
-      source: 1
-      resolvedPath: C:\Users\Einar\Documents\Projects\ShiversJam\ShiversJam\Library\PackageCache\com.fluid.database@1.0.2
-      assetPath: Packages/com.fluid.database
-      name: com.fluid.database
-      displayName: Fluid Database
-      author:
-        name: Ash Blue
-        email: ash@blueashes.com
-        url: https://twitter.com/ashbluewd
-      category: 
-      type: 
-      description: "A simple key value pair database for int, float, string, and
-        bool. Easily extendable to custom\_database types via generics."
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0
-        - 1.0.1
-        - 1.0.2
-        - 2.0.0
-        - 2.1.0
-        compatible:
-        - 1.0.0
-        - 1.0.1
-        - 1.0.2
-        - 2.0.0
-        - 2.1.0
-        verified: 
-      dependencies:
-      - name: com.fluid.simple-singleton
-        version: 1.0.0
-      resolvedDependencies:
-      - name: com.fluid.simple-singleton
-        version: 1.0.0
-      keywords:
-      - unity package manager
-      - unity3d
-      - database
-      - upm
-      registry:
-        id: scoped:NPM
-        name: NPM
-        url: https://registry.npmjs.org
-        scopes:
-        - com.fluid
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637019309241410000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: git+https://github.com/ashblue/fluid-database.git
-        revision: 
-        path: 
-    - packageId: com.fluid.simple-singleton@1.0.0
-      testable: 0
-      isDirectDependency: 0
-      version: 1.0.0
-      source: 1
-      resolvedPath: C:\Users\Einar\Documents\Projects\ShiversJam\ShiversJam\Library\PackageCache\com.fluid.simple-singleton@1.0.0
-      assetPath: Packages/com.fluid.simple-singleton
-      name: com.fluid.simple-singleton
-      displayName: Simple Singleton
-      author:
-        name: Ash Blue
-        email: ash@blueashes.com
-        url: https://twitter.com/ashbluewd
-      category: 
-      type: 
-      description: An automaticaly generating singleton class that uses generics
-        and inheritnace to automate its creation.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 1.0.0
-        compatible:
-        - 1.0.0
-        verified: 
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - unity3d
-      - singleton
-      - unity package manager
-      registry:
-        id: scoped:NPM
-        name: NPM
-        url: https://registry.npmjs.org
-        scopes:
-        - com.fluid
-        isDefault: 0
-        capabilities: 0
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 636974574834330000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: git+https://github.com/ashblue/unity-simple-singleton.git
-        revision: 
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []

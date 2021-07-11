@@ -1161,7 +1161,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Speak 2
-  m_Speed: 1
+  m_Speed: 200
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3147942175472406818}
@@ -1174,7 +1174,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4a5961e9f85e2424cade5da6001aa948, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5f03aea8c067a3e46adc6ab1afa4b110, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1447,7 +1447,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5f03aea8c067a3e46adc6ab1afa4b110, type: 2}
+  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -14,31 +14,6 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
-    "com.fluid.database": {
-      "version": "1.0.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.fluid.simple-singleton": "1.0.0"
-      },
-      "url": "https://registry.npmjs.org"
-    },
-    "com.fluid.dialogue": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.fluid.database": "1.0.2"
-      },
-      "url": "https://registry.npmjs.org"
-    },
-    "com.fluid.simple-singleton": {
-      "version": "1.0.0",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://registry.npmjs.org"
-    },
     "com.guerrillacontra.unitymessagehub": {
       "version": "1.1.102",
       "depth": 0,

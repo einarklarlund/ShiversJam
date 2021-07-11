@@ -676,11 +676,7 @@ namespace TheFirstPerson
             {
                 if (customInputSystem == null ? Input.GetButtonDown(unlockMouseBtn) : customInputSystem.UnlockMouseButton())
                 {
-                    mouseLocked = false;
-                }
-                else if (Input.GetMouseButtonDown(0))
-                {
-                    mouseLocked = true;
+                    mouseLocked = !mouseLocked;
                 }
             }
 

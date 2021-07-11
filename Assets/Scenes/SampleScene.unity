@@ -194,11 +194,36 @@ PrefabInstance:
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 79144840}
+    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: conversation
+      value: New Conversation 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: conversationActor
+      value: 
+      objectReference: {fileID: 1722631942}
+    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: conversationConversant
+      value: 
+      objectReference: {fileID: 79144840}
+    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: conversationActor
+      value: 
+      objectReference: {fileID: 1722631942}
+    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: conversationConversant
+      value: 
+      objectReference: {fileID: 79144840}
     - target: {fileID: 4857143884549550948, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2631f53809fe8e14886650e2f5161aeb, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 9104673115720277423, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: overrideName
+      value: Burgahman
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
 --- !u!4 &79144840 stripped
 Transform:
@@ -11958,8 +11983,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1199508141943674625, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: debug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199508141943674625, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: layerMask.m_Bits
       value: 449
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Renderer, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3163529040963418632, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: damageable
@@ -12012,6 +12073,10 @@ PrefabInstance:
     - target: {fileID: 4958948729165069663, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958948729165069663, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5534747762345099314, guid: ba8b891e248363448b54dfdd61919e90, type: 3}

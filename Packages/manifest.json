@@ -2,7 +2,6 @@
   "dependencies": {
     "com.coffee.ui-effect": "4.0.0-preview.9",
     "com.dbrizov.naughtyattributes": "2.1.0",
-    "com.fluid.dialogue": "1.0.0",
     "com.guerrillacontra.unitymessagehub": "1.1.102",
     "com.hauntedpsx.render-pipelines.psx": "https://github.com/pastasfuture/com.hauntedpsx.render-pipelines.psx.git",
     "com.unity.collab-proxy": "1.5.7",

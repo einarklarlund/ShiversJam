@@ -62,11 +62,6 @@ public abstract class NpcController : Interactor
     protected virtual void OnInteracted(Interactor interactor)
     {
         Debug.Log($"NPC {name} recevied interaction from {interactor.name}.");
-        if(npcDialogueController && interactor is PlayerController
-            && !npcDialogueController.speaking)
-        {
-            npcDialogueController.BeginDialogue();
-        }
     }
 
     public void PlayRandomAudioClip(float pitchMod = 0.2f)

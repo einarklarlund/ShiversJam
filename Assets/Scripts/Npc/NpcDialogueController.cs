@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using CleverCrow.Fluid.Dialogues;
-using CleverCrow.Fluid.Databases;
-using CleverCrow.Fluid.Dialogues.Graphs;
 using Zenject;
 using IntrovertStudios.Messaging;
+using PixelCrushers.DialogueSystem;
 
 [RequireComponent(typeof(NpcController))]
 public class NpcDialogueController : MonoBehaviour
 {
-    public DialogueGraph dialogueGraph;
-    public DialogueController dialogueController;
+    // dialogueSystemTrigger should be set in the inspector, but
+    // NpcDialogueController will try to find it in the NPC's gameObject
+    // hierarchy if it's not set in the inspector.
+    public DialogueSystemTrigger dialogueSystemTrigger;
+    // dialogueSystemEvents should also be set in the inspector, but
+    // NpcDialogueController will try to find it in the NPC's gameObject
+    // hierarchy if it's not set in the inspector.
+    public DialogueSystemEvents dialogueSystemEvents;
+
     public enum Message
     {
         DialogueStarted,
@@ -32,7 +37,7 @@ public class NpcDialogueController : MonoBehaviour
     AudioClip _textScrollAudio = null;
 
     [SerializeField]
-    bool _useAnimator = false;
+    bool _useAnimator = true;
     bool _useSprite => !_useAnimator;
 
     [SerializeField]
@@ -44,8 +49,8 @@ public class NpcDialogueController : MonoBehaviour
     Animator _animator;
     NpcController _npcController;
     EffectsController _effectsController;
-    NpcDialogueScreen _currentDialogueScreen;
     Sprite _initialSprite;
+    NpcSubtitleText _npcSubtitleText;
 
     void Awake()
     {
@@ -57,28 +62,30 @@ public class NpcDialogueController : MonoBehaviour
         _npcController = GetComponent<NpcController>();
         _effectsController = GetComponent<EffectsController>();
         _animator = GetComponent<Animator>();
-        
-        // create new database to store players choices
-        var database = new DatabaseInstance();
-        dialogueController = new DialogueController(database);
 
-        // listen to dialogueController start and end events 
-        dialogueController.Events.Speak.AddListener((actor, text) => OnDialogueStarted(actor, text));
-        dialogueController.Events.Choice.AddListener((actor, text, choices) => OnDialogueStarted(actor, text, choices));
-        dialogueController.Events.End.AddListener(OnDialogueEnded);
+        _npcSubtitleText = FindObjectOfType<NpcSubtitleText>();
 
-        // listen to text scroll events 
-        hub.Connect(Message.TextScrolled, OnTextScrolled);
-        hub.Connect(Message.TextScrollEnded, OnTextScrollEnded);
+        if(!dialogueSystemTrigger)
+            dialogueSystemTrigger = this.FindComponent<DialogueSystemTrigger>();
+        if(!dialogueSystemTrigger)
+            Debug.LogWarning($"[NpcDialogueController] NPC {name} has a NpcDialogueController, but doesn't have a DialogueSystemTrigger in its hierarchy");
+
+        if(!dialogueSystemEvents)
+            dialogueSystemEvents = this.FindComponent<DialogueSystemEvents>();
+        if(!dialogueSystemEvents)
+            Debug.LogWarning($"[NpcDialogueController] NPC {name} has a NpcDialogueController, but doesn't have a DialogueSystemEvents in its hierarchy");
+
+        // listen to conversation events
+        dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStarted);
+        dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnded);
 
         if(_useSprite)
         {
             _initialSprite = _effectsController.GetCurrentSprite();
         }
-
     }
 
-    public void BeginDialogue()
+    public void OnConversationStarted(Transform actor)
     {
         if(!canTalk)
             return;
@@ -89,34 +96,21 @@ public class NpcDialogueController : MonoBehaviour
         if(_useAnimator)
         {
             _animator.speed = 1;
-            _animator.SetBool("Walking", false);
+            _animator.SetBool("Moving", false);
             _animator.SetBool("Speaking", true);
         }
 
-        dialogueController.Play(dialogueGraph);
+        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);
+        
+        _npcSubtitleText = FindObjectOfType<NpcSubtitleText>(true);
+        Debug.Log($"_npcSubtitleText is null? {_npcSubtitleText == null}");
+        Debug.Log($"onCharacter is null? {_npcSubtitleText.onCharacter == null}. onEnd is null? {_npcSubtitleText.onEnd == null}");
+        // listen to text scroll events
+        _npcSubtitleText.onCharacter.AddListener(OnTextScrolled);
+        _npcSubtitleText.onEnd.AddListener(OnTextScrollEnded);
     }
 
-    public void NextDialogue()
-    {
-        Debug.Log("continuing to next dialogue");
-        dialogueController.Next();
-    }
-
-    public void SelectDialogueChoice(int choice)
-    {
-        dialogueController.SelectChoice(choice);
-    }
-
-    void OnDialogueStarted(IActor actor, string text, 
-        List<CleverCrow.Fluid.Dialogues.Choices.IChoice> choices = null)
-    {
-        _currentDialogueScreen = new NpcDialogueScreen(this, actor, text, _textScrollSpeed, choices);
-
-        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened, _currentDialogueScreen);
-        hub.Post(Message.DialogueStarted, _currentDialogueScreen);
-    }
-
-    void OnDialogueEnded()
+    void OnConversationEnded(Transform actor)
     {
         if(_useAnimator){
             _animator.SetBool("Speaking", false);}
@@ -124,14 +118,16 @@ public class NpcDialogueController : MonoBehaviour
             _effectsController.ChangeSpriteTo(_initialSprite);
         
         speaking = false;
-        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted, _currentDialogueScreen);
+        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted);
         Debug.Log("Dialogue screen completed");
+        
+        // stop listening to text scroll events
+        _npcSubtitleText.onCharacter.RemoveAllListeners();
+        _npcSubtitleText.onEnd.RemoveAllListeners();
     }
 
     void OnTextScrolled()
     {
-        _effectsController.PlayAudioClip(_textScrollAudio, overlapSounds: true);
-
         if(_useAnimator)
         {
             _animator.SetTrigger("TextScrolled");
