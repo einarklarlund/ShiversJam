@@ -12,6 +12,8 @@ through FindObjectOfType(NpcSubtitleText).typeWriterEffect
 [RequireComponent(typeof(UnityUITypewriterEffect))]
 public class NpcSubtitleText : MonoBehaviour
 {
+    public AudioClip defaultTextScrollAudioClip;
+
     public UnityUITypewriterEffect typewriterEffect =>
         GetComponent<UnityUITypewriterEffect>();
 }

@@ -100,7 +100,7 @@ public class NpcDialogueController : MonoBehaviour
             _animator.SetBool("Moving", false);
             _animator.SetBool("Speaking", true);
 
-            // listen to text scroll events
+            // find the npcSubtitleText so that we can find its typewriter effect
             var npcSubtitleText = FindObjectOfType<NpcSubtitleText>(true);
             if(!npcSubtitleText)
             {
@@ -109,8 +109,14 @@ public class NpcDialogueController : MonoBehaviour
             }
 
             _typewriterEffect = npcSubtitleText.typewriterEffect;
+            // listen to text scroll events
             _typewriterEffect.onCharacter.AddListener(OnTextScrolled);
             _typewriterEffect.onEnd.AddListener(OnTextScrollEnded);
+            // add typewriter audio clip
+            if(_textScrollAudio)
+                _typewriterEffect.audioClip = _textScrollAudio;
+            else
+                _typewriterEffect.audioClip = npcSubtitleText.defaultTextScrollAudioClip;
         }
 
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);

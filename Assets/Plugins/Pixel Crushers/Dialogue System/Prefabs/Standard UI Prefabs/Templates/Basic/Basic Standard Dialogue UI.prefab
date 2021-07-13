@@ -1234,8 +1234,8 @@ GameObject:
   - component: {fileID: 11445008}
   - component: {fileID: 11473704}
   - component: {fileID: 11430224}
-  - component: {fileID: 11410188}
   - component: {fileID: 8903707646433197862}
+  - component: {fileID: 11410188}
   m_Layer: 5
   m_Name: Subtitle Text
   m_TagString: Untagged
@@ -1339,6 +1339,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &8903707646433197862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0280852d5410f9543bc3e5c216f018bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTextScrollAudioClip: {fileID: 8300000, guid: 5645cd2660fa2d44d85ba4efc10c4b64, type: 3}
 --- !u!114 &11410188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightToLeft: 0
   charactersPerSecond: 15
-  audioClip: {fileID: 8300000, guid: 5512b4c148479b5459ba4c5f7471cf9a, type: 3}
+  audioClip: {fileID: 0}
   alternateAudioClips: []
   audioSource: {fileID: 0}
   interruptAudioClip: 1
@@ -1381,18 +1394,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8903707646433197862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0280852d5410f9543bc3e5c216f018bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &136800
 GameObject:
   m_ObjectHideFlags: 0

@@ -12608,6 +12608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burgahman 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: trigger
       value: 32
