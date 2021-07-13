@@ -40,6 +40,7 @@ public class NpcMovementController : MonoBehaviour
     Vector3 _initialPosition;
     MovementType _currentMovementType;
     float _displacementMagnitude;
+    NpcDialogueController _npcDialogueController;
 
     [Inject]
     public void Construct(PlayerController player)
@@ -58,6 +59,8 @@ public class NpcMovementController : MonoBehaviour
         npcController.hub.Connect(NpcController.Message.Unselected, OnUnselected);
         // listen for the TargetAcquired message
         npcController.hub.Connect<Transform>(NpcController.Message.TargetAcquired, OnTargetAcquired);
+
+        _npcDialogueController = npcController.npcDialogueController;
         
         _initialPosition = transform.position;
 
@@ -118,7 +121,10 @@ public class NpcMovementController : MonoBehaviour
     {
         // if(useStepAnimation && _walkCycleCoroutine != default)
         //     StopCoroutine(_walkCycleCoroutine);
+        // stop movement coroutines (MoveAndWait coroutine specifically)
         StopAllCoroutines();
+
+        _animator.SetBool("Moving", false);
 
         _agent.isStopped = true;
     }
@@ -196,13 +202,16 @@ public class NpcMovementController : MonoBehaviour
     
     void OnSelected()
     {
-        _animator.SetBool("Moving", false);
-
         StopMoving();
     }
 
     void OnUnselected()
     {
+        // when the onConversationStart event is called, the player's selector gets disabled,
+        // causing the onDeselect event to be called. if that happens, we don't want to resume moving
+        if(_npcDialogueController && _npcDialogueController.speaking)
+            return;
+
         ResumeMoving();
     }
 }

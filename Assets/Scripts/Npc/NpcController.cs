@@ -120,6 +120,12 @@ public abstract class NpcController : Interactor
 
     protected virtual void OnUnselected()
     {
+        // when the onConversationStart event is called, the player's selector gets disabled, causing 
+        // the onDeselect event to be called. if that happens, we don't want to stop facing the player
+        if(npcDialogueController && npcDialogueController.speaking)
+            return;
+
+        // stop facing the player (stop the TurnTowardsPlayer coroutine)
         if(facePlayerOnSelect)
         {
             StopAllCoroutines();
