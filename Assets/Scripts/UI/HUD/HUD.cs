@@ -5,7 +5,6 @@ public class HUD : MonoBehaviour
 {
 
     /*      these variables need to be set in the inspector       */
-    public DialoguePopUp npcDialoguePopUp;
     public DamagePopUp damagePopUp;
     public ItemChangePopUp itemChangePopUp;
 
@@ -15,12 +14,12 @@ public class HUD : MonoBehaviour
     void Start()
     {
         // show NPC dialogue screen when UIManager sends NpcSpeakScreenOpened message
-        _UIManager.hub.Connect<NpcDialogueScreen>(UIManager.Message.NpcDialogueScreenOpened,
-            dialogueScreen => npcDialoguePopUp.Show(dialogueScreen));
+        // _UIManager.hub.Connect<NpcDialogueScreen>(UIManager.Message.NpcDialogueScreenOpened,
+        //     dialogueScreen => npcDialoguePopUp.Show(dialogueScreen));
 
-        // hide NPC Dialogue PopUp when UIManager sends NpcDialogueScreenCompleted message
-        _UIManager.hub.Connect(UIManager.Message.NpcDialogueScreenCompleted,
-            () => npcDialoguePopUp.Hide());
+        // // hide NPC Dialogue PopUp when UIManager sends NpcDialogueScreenCompleted message
+        // _UIManager.hub.Connect(UIManager.Message.NpcDialogueScreenCompleted,
+        //     () => npcDialoguePopUp.Hide());
             
         /*
         // show damage popup when UIManager sends PlayerDamaged message

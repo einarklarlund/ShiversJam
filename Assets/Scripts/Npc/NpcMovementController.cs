@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
+using static CoroutineUtils;
 
 [RequireComponent(typeof(NpcController), typeof(NavMeshAgent))]
 public class NpcMovementController : MonoBehaviour
@@ -26,7 +27,7 @@ public class NpcMovementController : MonoBehaviour
     [Tooltip("When using a wander movement type, the NPC will wait for this amount of time between movements")]
     public float waitDuration = 3f;
     public float distancePerStep = 0.5f;
-    public float rotationSpeed = 7;
+    public float rotationSpeed = 5;
 
     [HideInInspector]
     public bool canMove = false;
@@ -39,6 +40,7 @@ public class NpcMovementController : MonoBehaviour
     Vector3 _initialPosition;
     MovementType _currentMovementType;
     float _displacementMagnitude;
+    NpcDialogueController _npcDialogueController;
 
     [Inject]
     public void Construct(PlayerController player)
@@ -51,8 +53,14 @@ public class NpcMovementController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
 
+        var npcController = GetComponent<NpcController>();
+        // listen to selected/unselected messages
+        npcController.hub.Connect(NpcController.Message.Selected, OnSelected);
+        npcController.hub.Connect(NpcController.Message.Unselected, OnUnselected);
         // listen for the TargetAcquired message
-        GetComponent<NpcController>().hub.Connect<Transform>(NpcController.Message.TargetAcquired, OnTargetAcquired);
+        npcController.hub.Connect<Transform>(NpcController.Message.TargetAcquired, OnTargetAcquired);
+
+        _npcDialogueController = npcController.npcDialogueController;
         
         _initialPosition = transform.position;
 
@@ -111,8 +119,12 @@ public class NpcMovementController : MonoBehaviour
 
     public void StopMoving()
     {
-        if(useStepAnimation && _walkCycleCoroutine != default)
-            StopCoroutine(_walkCycleCoroutine);
+        // if(useStepAnimation && _walkCycleCoroutine != default)
+        //     StopCoroutine(_walkCycleCoroutine);
+        // stop movement coroutines (MoveAndWait coroutine specifically)
+        StopAllCoroutines();
+
+        _animator.SetBool("Moving", false);
 
         _agent.isStopped = true;
     }
@@ -121,7 +133,11 @@ public class NpcMovementController : MonoBehaviour
     {
         _agent.isStopped = false;
 
-        _walkCycleCoroutine = StartCoroutine(MoveAndWait());
+        // DialogueManager calls the onDeselect event on every usable whenever the
+        // scene is closed. this activeSelf check prevents coroutines from being called
+        // on gameobjects while that's happening.
+        if(gameObject.activeSelf)
+            StartCoroutine(DelaySeconds(Move, waitDuration));
     }
 
     void MoveToPosition(Vector3 position, float displacement = 0)
@@ -157,7 +173,7 @@ public class NpcMovementController : MonoBehaviour
                 lastStepPosition = transform.position;
             }
 
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, _agent.desiredVelocity, 0.05f, 0);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, _agent.desiredVelocity, rotationSpeed / 100, 0);
             transform.rotation = Quaternion.LookRotation(newDirection);
             
             yield return null;
@@ -182,5 +198,20 @@ public class NpcMovementController : MonoBehaviour
     void OnTargetAcquired(Transform target)
     {
         this.target = target;
+    }
+    
+    void OnSelected()
+    {
+        StopMoving();
+    }
+
+    void OnUnselected()
+    {
+        // when the onConversationStart event is called, the player's selector gets disabled,
+        // causing the onDeselect event to be called. if that happens, we don't want to resume moving
+        if(_npcDialogueController && _npcDialogueController.speaking)
+            return;
+
+        ResumeMoving();
     }
 }

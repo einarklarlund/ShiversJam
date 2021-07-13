@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using CleverCrow.Fluid.Dialogues;
-using CleverCrow.Fluid.Databases;
-using CleverCrow.Fluid.Dialogues.Graphs;
 using Zenject;
 using IntrovertStudios.Messaging;
+using PixelCrushers.DialogueSystem;
 
 [RequireComponent(typeof(NpcController))]
 public class NpcDialogueController : MonoBehaviour
 {
-    public DialogueGraph dialogueGraph;
-    public DialogueController dialogueController;
+    // The following variables *should* be set in the inspector for
+    // performance reasons, but GameObject.FindComponent will still
+    // find them if they aren't set (and still exist in the NPC's
+    // hierarchy).
+    // Every NPC with the DialogueController needs a dialogueSystemTrigger
+    public DialogueSystemTrigger dialogueSystemTrigger;
+    // the DialogueSystemEvents will tell the NpcDialogueController when to 
+    // start animating, when to talk to the NPC subtitle text gameobject, etc.
+    public DialogueSystemEvents dialogueSystemEvents;
+    [Tooltip("The transform that the player will look at when talking to an NPC")]
+    public Transform viewPointTransform;
+
     public enum Message
     {
         DialogueStarted,
@@ -32,7 +40,7 @@ public class NpcDialogueController : MonoBehaviour
     AudioClip _textScrollAudio = null;
 
     [SerializeField]
-    bool _useAnimator = false;
+    bool _useAnimator = true;
     bool _useSprite => !_useAnimator;
 
     [SerializeField]
@@ -44,8 +52,8 @@ public class NpcDialogueController : MonoBehaviour
     Animator _animator;
     NpcController _npcController;
     EffectsController _effectsController;
-    NpcDialogueScreen _currentDialogueScreen;
     Sprite _initialSprite;
+    UnityUITypewriterEffect _typewriterEffect;
 
     void Awake()
     {
@@ -57,28 +65,28 @@ public class NpcDialogueController : MonoBehaviour
         _npcController = GetComponent<NpcController>();
         _effectsController = GetComponent<EffectsController>();
         _animator = GetComponent<Animator>();
-        
-        // create new database to store players choices
-        var database = new DatabaseInstance();
-        dialogueController = new DialogueController(database);
 
-        // listen to dialogueController start and end events 
-        dialogueController.Events.Speak.AddListener((actor, text) => OnDialogueStarted(actor, text));
-        dialogueController.Events.Choice.AddListener((actor, text, choices) => OnDialogueStarted(actor, text, choices));
-        dialogueController.Events.End.AddListener(OnDialogueEnded);
+        if(!dialogueSystemTrigger)
+            dialogueSystemTrigger = this.FindComponent<DialogueSystemTrigger>();
+        if(!dialogueSystemTrigger)
+            Debug.LogWarning($"[NpcDialogueController] NPC {name} has a NpcDialogueController, but doesn't have a DialogueSystemTrigger in its hierarchy");
 
-        // listen to text scroll events 
-        hub.Connect(Message.TextScrolled, OnTextScrolled);
-        hub.Connect(Message.TextScrollEnded, OnTextScrollEnded);
+        if(!dialogueSystemEvents)
+            dialogueSystemEvents = this.FindComponent<DialogueSystemEvents>();
+        if(!dialogueSystemEvents)
+            Debug.LogWarning($"[NpcDialogueController] NPC {name} has a NpcDialogueController, but doesn't have a DialogueSystemEvents in its hierarchy");
+
+        // listen to conversation events
+        dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStarted);
+        dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnded);
 
         if(_useSprite)
         {
             _initialSprite = _effectsController.GetCurrentSprite();
         }
-
     }
 
-    public void BeginDialogue()
+    public void OnConversationStarted(Transform actor)
     {
         if(!canTalk)
             return;
@@ -89,49 +97,52 @@ public class NpcDialogueController : MonoBehaviour
         if(_useAnimator)
         {
             _animator.speed = 1;
-            _animator.SetBool("Walking", false);
+            _animator.SetBool("Moving", false);
             _animator.SetBool("Speaking", true);
+
+            // find the npcSubtitleText so that we can find its typewriter effect
+            var npcSubtitleText = FindObjectOfType<NpcSubtitleText>(true);
+            if(!npcSubtitleText)
+            {
+                Debug.LogWarning($"[NpcDialogueController] NPC {name} couldn't find the NpcSubtitleText component in the hierarchy.");
+                return;
+            }
+
+            _typewriterEffect = npcSubtitleText.typewriterEffect;
+            // listen to text scroll events
+            _typewriterEffect.onCharacter.AddListener(OnTextScrolled);
+            _typewriterEffect.onEnd.AddListener(OnTextScrollEnded);
+            // add typewriter audio clip
+            if(_textScrollAudio)
+                _typewriterEffect.audioClip = _textScrollAudio;
+            else
+                _typewriterEffect.audioClip = npcSubtitleText.defaultTextScrollAudioClip;
         }
 
-        dialogueController.Play(dialogueGraph);
+        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);
     }
 
-    public void NextDialogue()
+    void OnConversationEnded(Transform actor)
     {
-        Debug.Log("continuing to next dialogue");
-        dialogueController.Next();
-    }
-
-    public void SelectDialogueChoice(int choice)
-    {
-        dialogueController.SelectChoice(choice);
-    }
-
-    void OnDialogueStarted(IActor actor, string text, 
-        List<CleverCrow.Fluid.Dialogues.Choices.IChoice> choices = null)
-    {
-        _currentDialogueScreen = new NpcDialogueScreen(this, actor, text, _textScrollSpeed, choices);
-
-        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened, _currentDialogueScreen);
-        hub.Post(Message.DialogueStarted, _currentDialogueScreen);
-    }
-
-    void OnDialogueEnded()
-    {
-        if(_useAnimator){
-            _animator.SetBool("Speaking", false);}
+        if(_useAnimator)
+        {
+            _animator.SetBool("Speaking", false);
+        
+            // stop listening to text scroll events
+            _typewriterEffect.onCharacter.RemoveAllListeners();
+            _typewriterEffect.onEnd.RemoveAllListeners();
+        }
         else
             _effectsController.ChangeSpriteTo(_initialSprite);
         
         speaking = false;
-        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted, _currentDialogueScreen);
+
+        _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted);
         Debug.Log("Dialogue screen completed");
     }
 
     void OnTextScrolled()
     {
-        _effectsController.PlayAudioClip(_textScrollAudio, overlapSounds: true);
-
         if(_useAnimator)
         {
             _animator.SetTrigger("TextScrolled");

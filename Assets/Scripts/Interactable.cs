@@ -1,6 +1,6 @@
 using UnityEngine;
 using IntrovertStudios.Messaging;
-using Zenject;
+using PixelCrushers.DialogueSystem;
 
 [RequireComponent(typeof(Collider))]
 public class Interactable : MonoBehaviour
@@ -15,8 +15,9 @@ public class Interactable : MonoBehaviour
     }
     public IMessageHub<Message> hub;
     
-    [Tooltip("The maximum distance that the player can be from the selectable in order to select it")]
-    public float maxSelectionDistance = 4f;
+    // The Usable contains events (onSelect, onDeselect, onUse) that the interactable will use to
+    // detect when it has been selected, used, etc.
+    public Usable usable;
 
     public bool selectable = true;
 
@@ -31,12 +32,23 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
-        // move all interactable except for the player's to the interactable layer
+        // move all interactables (except the player) to the interactable layer
+        // and make sure that they have a Usable component
         if(!GetComponent<PlayerController>())
+        {
             gameObject.layer = LayerMask.NameToLayer("Interactable");
+            if(!usable)
+                usable = GetComponent<Usable>();
+            if(!usable)
+                usable = gameObject.AddComponent<Usable>();
+                
+            usable.events.onUse.AddListener(OnUse);
+            usable.events.onSelect.AddListener(OnSelect);
+            usable.events.onDeselect.AddListener(OnDeselect);
+        }
     }
 
-    public void Select()
+    public void OnSelect()
     {
         if(!selectable)
         {
@@ -44,21 +56,27 @@ public class Interactable : MonoBehaviour
             return;
         }
 
-        Debug.Log("selected");
         _selected = true;
         hub.Post(Message.Selected);
     }
 
-    public void Unselect()
+    public void OnDeselect()
     {
-        Debug.Log("unselected");
         _selected = false;
         hub.Post(Message.Unselected);
     }
 
+    public virtual void OnUse()
+    {
+        // whenever OnUse is called, it's because the player has selected and used the 
+        // interactable. Therefore, we can use Interact(player) when usable.events.onUse
+        // event is called.
+        Interactor player = FindObjectOfType<PlayerController>();
+        Interact(player);
+    }
+
     public virtual void Interact(Interactor interactor)
     {
-        Unselect();
         hub.Post(Message.Interacted, interactor);
     }
 }
