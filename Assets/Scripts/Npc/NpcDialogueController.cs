@@ -9,14 +9,17 @@ using PixelCrushers.DialogueSystem;
 [RequireComponent(typeof(NpcController))]
 public class NpcDialogueController : MonoBehaviour
 {
-    // dialogueSystemTrigger should be set in the inspector, but
-    // NpcDialogueController will try to find it in the NPC's gameObject
-    // hierarchy if it's not set in the inspector.
+    // The following variables *should* be set in the inspector for
+    // performance reasons, but GameObject.FindComponent will still
+    // find them if they aren't set (and still exist in the NPC's
+    // hierarchy).
+    // Every NPC with the DialogueController needs a dialogueSystemTrigger
     public DialogueSystemTrigger dialogueSystemTrigger;
-    // dialogueSystemEvents should also be set in the inspector, but
-    // NpcDialogueController will try to find it in the NPC's gameObject
-    // hierarchy if it's not set in the inspector.
+    // the DialogueSystemEvents will tell the NpcDialogueController when to 
+    // start animating, when to talk to the NPC subtitle text gameobject, etc.
     public DialogueSystemEvents dialogueSystemEvents;
+    [Tooltip("The transform that the player will look at when talking to an NPC")]
+    public Transform viewPointTransform;
 
     public enum Message
     {
@@ -50,7 +53,7 @@ public class NpcDialogueController : MonoBehaviour
     NpcController _npcController;
     EffectsController _effectsController;
     Sprite _initialSprite;
-    NpcSubtitleText _npcSubtitleText;
+    UnityUITypewriterEffect _typewriterEffect;
 
     void Awake()
     {
@@ -62,8 +65,6 @@ public class NpcDialogueController : MonoBehaviour
         _npcController = GetComponent<NpcController>();
         _effectsController = GetComponent<EffectsController>();
         _animator = GetComponent<Animator>();
-
-        _npcSubtitleText = FindObjectOfType<NpcSubtitleText>();
 
         if(!dialogueSystemTrigger)
             dialogueSystemTrigger = this.FindComponent<DialogueSystemTrigger>();
@@ -98,32 +99,40 @@ public class NpcDialogueController : MonoBehaviour
             _animator.speed = 1;
             _animator.SetBool("Moving", false);
             _animator.SetBool("Speaking", true);
+
+            // listen to text scroll events
+            var npcSubtitleText = FindObjectOfType<NpcSubtitleText>(true);
+            if(!npcSubtitleText)
+            {
+                Debug.LogWarning($"[NpcDialogueController] NPC {name} couldn't find the NpcSubtitleText component in the hierarchy.");
+                return;
+            }
+
+            _typewriterEffect = npcSubtitleText.typewriterEffect;
+            _typewriterEffect.onCharacter.AddListener(OnTextScrolled);
+            _typewriterEffect.onEnd.AddListener(OnTextScrollEnded);
         }
 
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);
-        
-        _npcSubtitleText = FindObjectOfType<NpcSubtitleText>(true);
-        Debug.Log($"_npcSubtitleText is null? {_npcSubtitleText == null}");
-        Debug.Log($"onCharacter is null? {_npcSubtitleText.onCharacter == null}. onEnd is null? {_npcSubtitleText.onEnd == null}");
-        // listen to text scroll events
-        _npcSubtitleText.onCharacter.AddListener(OnTextScrolled);
-        _npcSubtitleText.onEnd.AddListener(OnTextScrollEnded);
     }
 
     void OnConversationEnded(Transform actor)
     {
-        if(_useAnimator){
-            _animator.SetBool("Speaking", false);}
+        if(_useAnimator)
+        {
+            _animator.SetBool("Speaking", false);
+        
+            // stop listening to text scroll events
+            _typewriterEffect.onCharacter.RemoveAllListeners();
+            _typewriterEffect.onEnd.RemoveAllListeners();
+        }
         else
             _effectsController.ChangeSpriteTo(_initialSprite);
         
         speaking = false;
+
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted);
         Debug.Log("Dialogue screen completed");
-        
-        // stop listening to text scroll events
-        _npcSubtitleText.onCharacter.RemoveAllListeners();
-        _npcSubtitleText.onEnd.RemoveAllListeners();
     }
 
     void OnTextScrolled()

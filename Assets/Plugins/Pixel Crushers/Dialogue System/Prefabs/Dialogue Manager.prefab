@@ -160,8 +160,8 @@ MonoBehaviour:
       allowPCSubtitleReminders: 0
       skipPCSubtitleAfterResponseMenu: 1
       subtitleCharsPerSecond: 30
-      minSubtitleSeconds: 2
-      continueButton: 0
+      minSubtitleSeconds: 0
+      continueButton: 1
       richTextEmphases: 1
       informSequenceStartAndEnd: 0
     cameraSettings:
@@ -212,7 +212,7 @@ MonoBehaviour:
     initializeNewVariables: 1
   allowSimultaneousConversations: 0
   interruptActiveConversations: 0
-  includeSimStatus: 0
+  includeSimStatus: 1
   instantiateDatabase: 0
   preloadResources: 1
   warmUpConversationController: 0

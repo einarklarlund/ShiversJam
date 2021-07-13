@@ -12,8 +12,6 @@ public class NpcMoveBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("moving...");
-
         if(!_npcMovementController)
             _npcMovementController = animator.GetComponent<NpcMovementController>();
         

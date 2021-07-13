@@ -27,7 +27,7 @@ public class NpcMovementController : MonoBehaviour
     [Tooltip("When using a wander movement type, the NPC will wait for this amount of time between movements")]
     public float waitDuration = 3f;
     public float distancePerStep = 0.5f;
-    public float rotationSpeed = 7;
+    public float rotationSpeed = 5;
 
     [HideInInspector]
     public bool canMove = false;
@@ -52,8 +52,12 @@ public class NpcMovementController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
 
+        var npcController = GetComponent<NpcController>();
+        // listen to selected/unselected messages
+        npcController.hub.Connect(NpcController.Message.Selected, OnSelected);
+        npcController.hub.Connect(NpcController.Message.Unselected, OnUnselected);
         // listen for the TargetAcquired message
-        GetComponent<NpcController>().hub.Connect<Transform>(NpcController.Message.TargetAcquired, OnTargetAcquired);
+        npcController.hub.Connect<Transform>(NpcController.Message.TargetAcquired, OnTargetAcquired);
         
         _initialPosition = transform.position;
 
@@ -123,7 +127,11 @@ public class NpcMovementController : MonoBehaviour
     {
         _agent.isStopped = false;
 
-        StartCoroutine(DelaySeconds(Move, waitDuration));
+        // DialogueManager calls the onDeselect event on every usable whenever the
+        // scene is closed. this activeSelf check prevents coroutines from being called
+        // on gameobjects while that's happening.
+        if(gameObject.activeSelf)
+            StartCoroutine(DelaySeconds(Move, waitDuration));
     }
 
     void MoveToPosition(Vector3 position, float displacement = 0)
@@ -159,7 +167,7 @@ public class NpcMovementController : MonoBehaviour
                 lastStepPosition = transform.position;
             }
 
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, _agent.desiredVelocity, 0.05f, 0);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, _agent.desiredVelocity, rotationSpeed / 100, 0);
             transform.rotation = Quaternion.LookRotation(newDirection);
             
             yield return null;
@@ -184,5 +192,17 @@ public class NpcMovementController : MonoBehaviour
     void OnTargetAcquired(Transform target)
     {
         this.target = target;
+    }
+    
+    void OnSelected()
+    {
+        _animator.SetBool("Moving", false);
+
+        StopMoving();
+    }
+
+    void OnUnselected()
+    {
+        ResumeMoving();
     }
 }

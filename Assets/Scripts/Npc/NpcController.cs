@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -27,6 +28,12 @@ public abstract class NpcController : Interactor
     public Animator animator;
     public float pitchModifier;
 
+    [Tooltip("if true, the NPC will turn to face the player when it is selected.")]
+    public bool facePlayerOnSelect = true;
+    
+    [ShowIf("facePlayerOnSelect")]
+    public float rotationSpeed = 5;
+
     [HideInInspector]
     public List<AudioClip> audioClips;
     public IMessageHub<NpcController.Message> hub;
@@ -35,6 +42,9 @@ public abstract class NpcController : Interactor
 
     [Inject]
     NpcManager _npcManager;
+
+    Interactable _interactable;
+    PlayerController _player;
 
     void Awake()
     {
@@ -45,23 +55,21 @@ public abstract class NpcController : Interactor
     {
         // get controllers that npc controller will communicate w/
         effectsController = GetComponent<EffectsController>();
-        Interactable interactable = this.FindComponent<Interactable>();
-        if(!interactable)
+        _interactable = this.FindComponent<Interactable>();
+        if(!_interactable)
             Debug.LogWarning($"[NpcController] {name} needs to have an Interactable component in its hierarchy.");
 
         // connect the Interactable messages from the Interactable's hub to
         // the NpcController Messages in the NpcController's hub
-        interactable.hub.Connect(Interactable.Message.Selected, () => hub.Post(NpcController.Message.Selected));
-        interactable.hub.Connect(Interactable.Message.Unselected, () => hub.Post(NpcController.Message.Unselected));
-        interactable.hub.Connect<Interactor>(Interactable.Message.Interacted, OnInteracted);
+        _interactable.hub.Connect(Interactable.Message.Selected, OnSelected);
+        _interactable.hub.Connect(Interactable.Message.Unselected, OnUnselected);
+        _interactable.hub.Connect<Interactor>(Interactable.Message.Interacted, OnInteracted);
 
         // connect OnInteracted handler
         hub.Connect<Interactor>(Message.Interacted, OnInteracted);
-    }
-    
-    protected virtual void OnInteracted(Interactor interactor)
-    {
-        Debug.Log($"NPC {name} recevied interaction from {interactor.name}.");
+
+        // find player so that NPC can face the player when it's selected
+        _player = FindObjectOfType<PlayerController>();
     }
 
     public void PlayRandomAudioClip(float pitchMod = 0.2f)
@@ -97,6 +105,46 @@ public abstract class NpcController : Interactor
         else
         {
             Debug.LogError($"[NpcController] Could not find audio clip with name {name}.");
+        }
+    }
+
+    protected virtual void OnSelected()
+    {
+        if(facePlayerOnSelect)
+        {
+            StartCoroutine(TurnTowardsPlayer());
+        }
+
+        hub.Post(NpcController.Message.Selected);
+    }
+
+    protected virtual void OnUnselected()
+    {
+        if(facePlayerOnSelect)
+        {
+            StopAllCoroutines();
+        }
+
+        hub.Post(NpcController.Message.Unselected);
+    }
+
+    protected virtual void OnInteracted(Interactor interactor)
+    {
+        Debug.Log($"NPC {name} recevied interaction from {interactor.name}.");
+    }
+
+    IEnumerator TurnTowardsPlayer()
+    {
+        while(_interactable.Selected)
+        {
+            // find vector that points from NPC position to player position
+            Vector3 towardsPlayer = _player.transform.position - transform.position;
+            // rotate the NPCs current forward direction towards the towardsPlayer vector
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, towardsPlayer, rotationSpeed / 100, 0);
+            // apply the new rotation
+            transform.rotation = Quaternion.LookRotation(newDirection);
+            
+            yield return null;
         }
     }
 }

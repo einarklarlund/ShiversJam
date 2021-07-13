@@ -133,7 +133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   distanceFrom: 0
-  maxSelectionDistance: 30
+  maxSelectionDistance: 5
   runRaycasts: 1
   raycastAll: 0
   useDefaultGUI: 1
@@ -149,9 +149,9 @@ MonoBehaviour:
     outOfRange: {fileID: 0}
     width: 64
     height: 64
-  useKey: 32
-  useButton: Fire2
-  defaultUseMessage: (spacebar to interact)
+  useKey: 101
+  useButton: Fire1
+  defaultUseMessage: 
   broadcastToChildren: 1
   actorTransform: {fileID: 0}
   tooFarMessage: 
@@ -276,7 +276,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4958948729165069657}
   - component: {fileID: 3163529040963418632}
-  - component: {fileID: 6473792807380787320}
   - component: {fileID: 2513311973258647271}
   - component: {fileID: 1489644263753231449}
   - component: {fileID: 4958948729165069656}
@@ -316,22 +315,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 4958948728164181919}
-  damageable: {fileID: 0}
---- !u!114 &6473792807380787320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4958948729165069663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1300cefb008b5954cad5b164957fe247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1024
+  damageable: {fileID: 1489644263753231449}
+  dialogueSystemEvents: {fileID: 1875899775122998316}
+  fpsController: {fileID: 4958948729165069656}
+  speaking: 0
 --- !u!114 &2513311973258647271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30f4b5f58996ae4c9f52310e2af89f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSelectionDistance: 4
+  usable: {fileID: 0}
   selectable: 1
   invincible: 0
   maxHealth: 20
