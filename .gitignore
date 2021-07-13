@@ -36,6 +36,7 @@
 ExportedObj/
 .consulo/
 *.csproj
+*.csproj.meta
 *.unityproj
 *.sln
 *.suo
@@ -62,6 +63,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+*.unitypackage.meta
 
 # Crashlytics generated file
 crashlytics-build.properties

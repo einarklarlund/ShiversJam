@@ -26,8 +26,8 @@ public class PlayerController : Interactor
     PlayerInventory _playerInventory;
 
     // these 2 tweens will be used to look at view points during dialogue
-    ITween<Quaternion> _cameraRotationTween;
-    ITween<Quaternion> _playerRotationTween;
+    ITween<Vector3> _cameraRotationTween;
+    ITween<Vector3> _playerRotationTween;
 
 
     void Awake()
@@ -64,6 +64,12 @@ public class PlayerController : Interactor
     {
         speaking = true;      
 
+        // disable movement, mouse movement will be enabled after
+        // LookAtViewPoint tween is finished
+        fpsController.movementEnabled = false;
+        fpsController.mouseLocked = false;
+        fpsController.mouseLookEnabled = false;
+
         Debug.Log($"Conversation starting with {actor.name}");
         // if a dialogue view point exists, start the coroutine to look at it.
         var npcDialogueController = actor.GetComponent<NpcDialogueController>();
@@ -71,9 +77,6 @@ public class PlayerController : Interactor
         {
             LookAtViewPoint(npcDialogueController.viewPointTransform);
         }
-        
-        // disable movement and enable the mouse
-        fpsController.movementEnabled = false;
     }
 
     void OnConversationEnd(Transform actor)
@@ -93,6 +96,7 @@ public class PlayerController : Interactor
         
         // enable movement and disable the mouse
         fpsController.movementEnabled = true;
+        fpsController.mouseLookEnabled = true;
         fpsController.mouseLocked = true;
     }
 
@@ -101,22 +105,15 @@ public class PlayerController : Interactor
         // find vector that points from camera position to viewpoint position
         Vector3 targetVector = viewPoint.position - playerCamera.transform.position;
 
-        // project the vector onto local x-z plane and local y-z plane to find xz and yz components 
-        // of the target vector, so that we can find horizontal and vertical displacement seperately
-        Vector3 targetVectorComponentXZ = Vector3.ProjectOnPlane(targetVector, transform.up);
-        Vector3 targetVectorComponentYZ = Vector3.ProjectOnPlane(targetVector, transform.right);
+        Quaternion targetRotation = Quaternion.LookRotation(targetVector, transform.up);
 
-        // create and start the tweens
-        // apply horizontal rotation (on XZ plane) to player transform. apply vertical rotation (YZ plane) to camera
-        _cameraRotationTween = playerCamera.transform.ZKrotationTo(Quaternion.LookRotation(targetVectorComponentYZ), 0.75f);
-        _playerRotationTween = transform.ZKrotationTo(Quaternion.LookRotation(targetVectorComponentXZ), 0.75f);
+        // create tweens for horizontal and vertical rotation
+        _cameraRotationTween = playerCamera.transform.ZKlocalEulersTo(new Vector3(targetRotation.eulerAngles.x, 0, 0), 0.75f);
+        _playerRotationTween = transform.ZKlocalEulersTo(new Vector3(0, targetRotation.eulerAngles.y, 0), 0.75f);
 
+        // start tweens
         _cameraRotationTween.setEaseType(EaseType.QuadOut).start();
-        // set a completion handler to enable mouse movement only after the tween is finished
-        _playerRotationTween
-            .setEaseType(EaseType.QuadOut)
-            .setCompletionHandler(tween => fpsController.mouseLocked = false)
-            .start();
+        _playerRotationTween.setEaseType(EaseType.QuadOut).start();
     }
 
     void OnDamaged(int damage)

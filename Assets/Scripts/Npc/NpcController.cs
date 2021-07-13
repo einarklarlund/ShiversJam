@@ -32,7 +32,8 @@ public abstract class NpcController : Interactor
     public bool facePlayerOnSelect = true;
     
     [ShowIf("facePlayerOnSelect")]
-    public float rotationSpeed = 5;
+    [Tooltip("Rotation speed when the NPC rotates to face the player.")]
+    public float rotationSpeedTowardsPlayer = 5;
 
     [HideInInspector]
     public List<AudioClip> audioClips;
@@ -146,7 +147,7 @@ public abstract class NpcController : Interactor
             // find vector that points from NPC position to player position
             Vector3 towardsPlayer = _player.transform.position - transform.position;
             // rotate the NPCs current forward direction towards the towardsPlayer vector
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, towardsPlayer, rotationSpeed / 100, 0);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, towardsPlayer, rotationSpeedTowardsPlayer / 100, 0);
             // apply the new rotation
             transform.rotation = Quaternion.LookRotation(newDirection);
             

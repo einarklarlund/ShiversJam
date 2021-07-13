@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45210528, g: NaN, b: NaN, a: 1}
+  m_IndirectSpecularColor: {r: 0.45255858, g: NaN, b: NaN, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11724,7 +11724,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26496
+  m_Name: pb_Mesh138910
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12532,10 +12532,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 79144844, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: facePlayerOnSelect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: conversation
       value: Burgahman/Burgahman 1 Conversation
