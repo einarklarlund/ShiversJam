@@ -139,6 +139,7 @@ namespace TheFirstPerson
         public float sensitivity = 10;
         [Tooltip("In editor this may not work correctly but it will in build")]
         public bool mouseLockToggleEnabled = true;
+        public bool mouseLocked;
         public bool startMouseLock = true;
         [ConditionalHide("verticalLookEnabled", true)]
         [Tooltip("Maximum upward or downward angle of the mouselook camera.")]
@@ -203,7 +204,6 @@ namespace TheFirstPerson
         bool jumpHeld;
         bool crouching;
         bool running;
-        bool mouseLocked;
         float jumpPressed;
         float xIn;
         float yIn;

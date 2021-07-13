@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45255858, g: NaN, b: NaN, a: 1}
+  m_IndirectSpecularColor: {r: 0.45210528, g: NaN, b: NaN, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -160,7 +160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.27
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12217,6 +12217,10 @@ PrefabInstance:
     - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958948729165069656, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: mouseLockToggleEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4958948729165069657, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: m_RootOrder

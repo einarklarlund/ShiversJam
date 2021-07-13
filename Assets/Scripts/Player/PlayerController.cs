@@ -62,6 +62,8 @@ public class PlayerController : Interactor
 
     void OnConversationStart(Transform actor)
     {
+        speaking = true;      
+
         Debug.Log($"Conversation starting with {actor.name}");
         // if a dialogue view point exists, start the coroutine to look at it.
         var npcDialogueController = actor.GetComponent<NpcDialogueController>();
@@ -69,16 +71,13 @@ public class PlayerController : Interactor
         {
             LookAtViewPoint(npcDialogueController.viewPointTransform);
         }
-
+        
+        // disable movement and enable the mouse
         fpsController.movementEnabled = false;
-
-        speaking = true;        
     }
 
     void OnConversationEnd(Transform actor)
     {
-        fpsController.movementEnabled = true;
-
         speaking = false;
 
         // stop the camera and player rotation tweens
@@ -87,8 +86,14 @@ public class PlayerController : Interactor
   
         if(_playerRotationTween != default && _playerRotationTween.isRunning())
             _playerRotationTween.stop();
-        // stop all coroutines, specifically LookAtViewPoint
-        // StopAllCoroutines();
+
+        // disable the mouse
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
+        // enable movement and disable the mouse
+        fpsController.movementEnabled = true;
+        fpsController.mouseLocked = true;
     }
 
     void LookAtViewPoint(Transform viewPoint)
@@ -106,8 +111,12 @@ public class PlayerController : Interactor
         _cameraRotationTween = playerCamera.transform.ZKrotationTo(Quaternion.LookRotation(targetVectorComponentYZ), 0.75f);
         _playerRotationTween = transform.ZKrotationTo(Quaternion.LookRotation(targetVectorComponentXZ), 0.75f);
 
-        _cameraRotationTween.start();
-        _playerRotationTween.start();
+        _cameraRotationTween.setEaseType(EaseType.QuadOut).start();
+        // set a completion handler to enable mouse movement only after the tween is finished
+        _playerRotationTween
+            .setEaseType(EaseType.QuadOut)
+            .setCompletionHandler(tween => fpsController.mouseLocked = false)
+            .start();
     }
 
     void OnDamaged(int damage)
