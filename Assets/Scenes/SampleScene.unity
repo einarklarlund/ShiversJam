@@ -194,6 +194,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burgahman 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4f6d88b3264c35498e5e4f3174328d8, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0db42e5c7549d474897c4a483fabd963, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 843000dbc94791c478f596bf6e4afa65, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fc688f7ae0fe7e42a03a0d1c587bb55, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cd8af9a20d20c14a967915c36343790, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c5f78e32bb7a02458949b41248c11cd, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 68f266777c61b7c449f23486047f2906, type: 3}
+    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: _textScrollAudioClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: f98356a1af1432445844b4a276ff3fb6, type: 3}
     - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: trigger
       value: 32
@@ -11724,7 +11760,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh138910
+  m_Name: pb_Mesh26204
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
