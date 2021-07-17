@@ -53,10 +53,6 @@ public abstract class EnemyController : NpcController
     protected virtual void OnDamaged(int damage)
     {
         animator.SetTrigger("Damaged");
-
-        // alert nearby enemies
-        // if(spawner)
-        //     spawner.AlertDamageFrom(this);
     }
 
     protected virtual void OnKilled()
@@ -68,6 +64,5 @@ public abstract class EnemyController : NpcController
         var damageable = this.FindComponent<Interactable>();
         if(damageable)
             damageable.GetComponent<Collider>().enabled = false;
-
     }
 }

@@ -29,6 +29,11 @@ public class PlayerController : Interactor
     ITween<Vector3> _cameraRotationTween;
     ITween<Vector3> _playerRotationTween;
 
+    [Inject]
+    public void Construct(GameManager gameManager)
+    {
+        gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
+    }
 
     void Awake()
     {
@@ -59,16 +64,36 @@ public class PlayerController : Interactor
             _playerInventory.UseCurrentItem();
         }
     }
+    public void SetMovementEnabled(bool enabled)
+    {
+        // set movement and mouse look enablers
+        fpsController.movementEnabled = enabled;
+        fpsController.mouseLookEnabled = enabled;
+        fpsController.mouseLocked = enabled;
+    }
+
+    void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
+    {
+        if(currentState == GameManager.GameState.Paused)
+        {
+            SetMovementEnabled(false);
+        }
+        else if(currentState == GameManager.GameState.Running)
+        {
+            SetMovementEnabled(true);
+        }
+    }
 
     void OnConversationStart(Transform actor)
     {
+        if(speaking)
+            return;
+
         speaking = true;      
 
         // disable movement, mouse movement will be enabled after
         // LookAtViewPoint tween is finished
-        fpsController.movementEnabled = false;
-        fpsController.mouseLocked = false;
-        fpsController.mouseLookEnabled = false;
+        SetMovementEnabled(false);
 
         Debug.Log($"Conversation starting with {actor.name}");
         // if a dialogue view point exists, start the coroutine to look at it.
@@ -90,14 +115,8 @@ public class PlayerController : Interactor
         if(_playerRotationTween != default && _playerRotationTween.isRunning())
             _playerRotationTween.stop();
 
-        // disable the mouse
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        
         // enable movement and disable the mouse
-        fpsController.movementEnabled = true;
-        fpsController.mouseLookEnabled = true;
-        fpsController.mouseLocked = true;
+        SetMovementEnabled(true);
     }
 
     void LookAtViewPoint(Transform viewPoint)

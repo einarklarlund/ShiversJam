@@ -123,164 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 74fb033da7d37d34abde3cbcd0f2abb3, type: 2}
---- !u!1001 &79144839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: Burgahman/Burgahman 0 Conversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 79144840}
-    - target: {fileID: 1216250107207348906, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: actor
-      value: Burgahman 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748842, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_Name
-      value: Burgahman 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: d4f6d88b3264c35498e5e4f3174328d8, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0db42e5c7549d474897c4a483fabd963, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 843000dbc94791c478f596bf6e4afa65, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8fc688f7ae0fe7e42a03a0d1c587bb55, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2cd8af9a20d20c14a967915c36343790, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2c5f78e32bb7a02458949b41248c11cd, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 68f266777c61b7c449f23486047f2906, type: 3}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudioClips.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: f98356a1af1432445844b4a276ff3fb6, type: 3}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: trigger
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: New Conversation 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 79144840}
-    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: New Conversation 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 79144840}
-    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: Burgahman/Burgahman 0 Conversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 79144840}
-    - target: {fileID: 4857143884549550948, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2631f53809fe8e14886650e2f5161aeb, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
---- !u!4 &79144840 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-  m_PrefabInstance: {fileID: 79144839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &84884698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4958948729165069663, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
@@ -11918,6 +11760,72 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &671028326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671028329}
+  - component: {fileID: 671028328}
+  - component: {fileID: 671028327}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &671028327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671028326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &671028328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671028326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &671028329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671028326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -12556,151 +12464,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1722631942 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4958948729165069657, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
-  m_PrefabInstance: {fileID: 1163692524}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1730364663
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: Burgahman/Burgahman 1 Conversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 1730364664}
-    - target: {fileID: 179567499547987277, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: actor
-      value: Burgahman 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216250107207348906, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: actor
-      value: BUrgahman 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182906631430, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182906631430, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1263729182988748842, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_Name
-      value: Burgahman 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296295340203174947, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: _textScrollAudio
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: trigger
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: New Conversation 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 1730364664}
-    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: New Conversation 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 3114292157273261856, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 1730364664}
-    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversation
-      value: Burgahman/Burgahman 1 Conversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationActor
-      value: 
-      objectReference: {fileID: 1722631942}
-    - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: conversationConversant
-      value: 
-      objectReference: {fileID: 1730364664}
-    - target: {fileID: 4857143884549550948, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2631f53809fe8e14886650e2f5161aeb, type: 2}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
---- !u!4 &1730364664 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-  m_PrefabInstance: {fileID: 1730364663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1764156514
 GameObject:
   m_ObjectHideFlags: 0
