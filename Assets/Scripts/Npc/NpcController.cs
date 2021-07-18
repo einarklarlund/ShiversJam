@@ -137,7 +137,7 @@ public abstract class NpcController : Interactor
 
     protected virtual void OnInteracted(Interactor interactor)
     {
-        Debug.Log($"NPC {name} recevied interaction from {interactor.name}.");
+        Debug.Log($"[NpcController] NPC {name} recevied interaction from {interactor.name}.");
     }
 
     IEnumerator TurnTowardsPlayer()

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     public string CurrentLevel { get; private set; }
-    public GameState CurrentGameState { get; private set; } = GameState.MainMenu;
+    public GameState CurrentGameState { get; private set; } = GameState.Loading;
 
     // these scenes need to be set in the inspector
     // public SceneAsset bootScene;
@@ -39,12 +39,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         var saveSystemEvents = GetComponent<SaveSystemEvents>();
-        saveSystemEvents.onSceneLoad.AddListener(() => UpdateState(GameState.Running));
-
-        // update state to running if we're in a scene w the player controller
-        _playerController = FindObjectOfType<PlayerController>();
-        if(_playerController)
-            UpdateState(GameState.Running);
+        saveSystemEvents.onSceneLoad.AddListener(() => OnSceneLoaded());
+        
+        OnSceneLoaded();
     }
 
     void Update()
@@ -72,7 +69,6 @@ public class GameManager : MonoBehaviour
         switch(CurrentGameState)
         {           
             case GameState.Paused:
-            case GameState.Loading:
                 Time.timeScale = 0.0f;
                 break;
 
@@ -87,5 +83,17 @@ public class GameManager : MonoBehaviour
         }
         
         onGameStateChanged.Invoke(previousGameState, CurrentGameState);
+    }
+
+    void OnSceneLoaded()
+    {
+        // update state to running if we're in a scene w the player controller (if
+        // a scene has been loaded from within Unity Editor). Otherwise, enter the
+        // MainMenu state
+        _playerController = FindObjectOfType<PlayerController>();
+        if(_playerController)
+            UpdateState(GameState.Running);
+        else
+            UpdateState(GameState.MainMenu);
     }
 }

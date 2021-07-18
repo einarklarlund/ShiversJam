@@ -198,8 +198,8 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   lightingIsEnabled:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   bakedLightingMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   fogFalloffMode:
     m_OverrideState: 0
     m_Value: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d335ddfaff71d4493ab520ae36643e, type: 3}
   m_Name: TonemapperVolume
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1

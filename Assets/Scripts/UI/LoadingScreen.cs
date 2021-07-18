@@ -12,21 +12,22 @@ public class LoadingScreen : MonoBehaviour
 
     void Start()
     {
-        backdrop.gameObject.SetActive(false);
-        loadingText.gameObject.SetActive(false);
+        Hide();
     }
 
     public void Show()
     {
         Debug.Log("showing loading screen");
-        backdrop.gameObject.SetActive(true);
-        loadingText.gameObject.SetActive(true);
+        gameObject.SetActive(true);
+        loadingText.enabled = true;
+        backdrop.enabled = true;
     }
 
     public void Hide()
     {
         Debug.Log("hiding loading screen");
-        backdrop.gameObject.SetActive(false);
-        loadingText.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+        loadingText.enabled = false;
+        backdrop.enabled = false;
     }
 }

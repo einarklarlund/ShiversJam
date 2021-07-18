@@ -92,7 +92,6 @@ public class NpcDialogueController : MonoBehaviour
         if(!canTalk)
             return;
 
-        Debug.Log("beginning dialogue");
         speaking = true;
 
         _animator.speed = 1;
@@ -173,6 +172,6 @@ public class NpcDialogueController : MonoBehaviour
 
     void OnTextScrollEnded()
     {
-        Debug.Log("End text scroll");
+        
     }
 }

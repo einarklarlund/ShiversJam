@@ -38,23 +38,35 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         pauseMenu.gameObject.SetActive(false);
-
         pauseMenu.resumeButton.onClick.AddListener(_gameManager.TogglePause);
+
+        dummyCamera.enabled = false;
     }
 
     void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
     {
-        // loading screen logic
+        // show/hide Main Menu
+        if(currentState == GameManager.GameState.MainMenu)
+        {
+            mainMenu.Show();
+        }
+        else if(previousState == GameManager.GameState.MainMenu &&
+            currentState != GameManager.GameState.MainMenu)
+        {
+            mainMenu.Hide();
+        }
+
+        // show/hide loading screen
         if(currentState == GameManager.GameState.Loading)
         {
-            dummyCamera.gameObject.SetActive(true);
             loadingScreen.Show();
+            dummyCamera.enabled = true;
         }
-        if((previousState == GameManager.GameState.Loading || previousState == GameManager.GameState.MainMenu) 
-            && currentState != GameManager.GameState.Loading)
+        else if(previousState == GameManager.GameState.Loading &&
+            currentState != GameManager.GameState.Loading)
         {
-            dummyCamera.gameObject.SetActive(false);
             loadingScreen.Hide();
+            dummyCamera.enabled = false;
         }
         
         // set the pause menu's world space camera
