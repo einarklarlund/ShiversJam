@@ -29,25 +29,50 @@ public class UIManager : MonoBehaviour
     {
         hub = new MessageHub<Message>();
     }
+
     void OnEnable()
     {
-        _gameManager.hub.Connect<(GameManager.GameState previousState, GameManager.GameState currentState)>(
-            GameManager.Message.GameStateChanged, OnGameStateChanged);
-        
+        _gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
     }
-    void OnGameStateChanged((GameManager.GameState previousState, GameManager.GameState currentState) states)
+
+    void Start()
     {
-        Debug.Log($"{states.previousState} {states.currentState}");
-        if(states.currentState == GameManager.GameState.Loading)
+        pauseMenu.gameObject.SetActive(false);
+
+        pauseMenu.resumeButton.onClick.AddListener(_gameManager.TogglePause);
+    }
+
+    void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
+    {
+        // loading screen logic
+        if(currentState == GameManager.GameState.Loading)
         {
             dummyCamera.gameObject.SetActive(true);
             loadingScreen.Show();
         }
-        if((states.previousState == GameManager.GameState.Loading || states.previousState == GameManager.GameState.MainMenu) 
-            && states.currentState != GameManager.GameState.Loading)
+        if((previousState == GameManager.GameState.Loading || previousState == GameManager.GameState.MainMenu) 
+            && currentState != GameManager.GameState.Loading)
         {
             dummyCamera.gameObject.SetActive(false);
             loadingScreen.Hide();
+        }
+        
+        // set the pause menu's world space camera
+        if(currentState == GameManager.GameState.Loading ||
+            currentState == GameManager.GameState.MainMenu ||
+            currentState == GameManager.GameState.Running)
+        {
+            pauseMenu.SetWorldSpaceCamera();
+        }
+        
+        // toggle/untoggle the pause menu
+        if(currentState == GameManager.GameState.Paused)
+        {
+            pauseMenu.gameObject.SetActive(true);
+        }
+        else
+        {
+            pauseMenu.gameObject.SetActive(false);
         }
     }
 }

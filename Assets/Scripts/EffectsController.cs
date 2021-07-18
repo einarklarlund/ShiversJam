@@ -39,7 +39,7 @@ public class EffectsController : MonoBehaviour
         // var meshRenderer = this.FindComponent<MeshRenderer>(); 
     }
 
-    public void PlayAudioClip(AudioClip clip, float pitch = 1, bool overlapSounds = false)
+    public void PlayAudioClip(AudioClip clip, float pitch = 1, bool interruptAudioClip = true, bool playOneShot = true)
     {
         var audioSource = this.FindComponent<AudioSource>();
 
@@ -54,15 +54,22 @@ public class EffectsController : MonoBehaviour
             return;
         }
 
-        // stop the audiosource from playing - will prevent sounds from
-        // overlapping 
-        if(!overlapSounds)
-            audioSource.Stop();
-
         // set the pitch and play the clip
         // audioSource.clip = clip;
         audioSource.pitch = pitch;
-        audioSource.PlayOneShot(clip);
+
+        // stop the audiosource from playing - will prevent sounds from
+        // overlapping 
+        if(interruptAudioClip)
+            audioSource.Stop();
+
+        if(playOneShot)
+            audioSource.PlayOneShot(clip);
+        else
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
     
     public void PlayAnimationClip(AnimationClip clip)
