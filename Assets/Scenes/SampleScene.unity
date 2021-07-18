@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45255858, g: NaN, b: NaN, a: 1}
+  m_IndirectSpecularColor: {r: 0.45237696, g: NaN, b: NaN, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 79144843, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79144844, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: conversation
       value: Burgahman/Burgahman 0 Conversation
@@ -142,9 +150,33 @@ PrefabInstance:
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 79144840}
+    - target: {fileID: 179567499547987277, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: actor
+      value: Commanding Officer
+      objectReference: {fileID: 0}
+    - target: {fileID: 179567499547987277, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: spritePortrait
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 536288655839694233, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1216250107207348906, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: actor
       value: Burgahman 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263729182906631428, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6bfc84da77d9412ea6b6392b684668f, type: 3}
+    - target: {fileID: 1263729182906631430, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263729182906631430, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1263729182988748840, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_RootOrder
@@ -192,7 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1263729182988748842, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: m_Name
-      value: Burgahman 0
+      value: Commanding Officer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364435538254194727, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364435538254194727, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1654977995722446524, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: trigger
@@ -222,6 +262,10 @@ PrefabInstance:
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 79144840}
+    - target: {fileID: 4346523861948950005, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 968f4b16de68042b0bc324a8818e026a, type: 3}
     - target: {fileID: 4622885401356595547, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: conversation
       value: Burgahman/Burgahman 0 Conversation
@@ -238,6 +282,38 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2631f53809fe8e14886650e2f5161aeb, type: 2}
+    - target: {fileID: 6323093439574308377, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 513cd6ecb1608485fa0bcb6366710107, type: 3}
+    - target: {fileID: 8372724624219791187, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372724624219791187, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372724624219791187, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372724624219791187, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.457
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660855146236824177, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660855146236824177, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660855146236824177, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
 --- !u!4 &79144840 stripped
@@ -11724,7 +11800,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh138910
+  m_Name: pb_Mesh23792
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12064,6 +12140,10 @@ PrefabInstance:
       propertyPath: initialDatabase
       value: 
       objectReference: {fileID: 11400000, guid: 815a02162b97b9644aab652d401413f9, type: 2}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.dialogueUI
+      value: 
+      objectReference: {fileID: 101180, guid: 5ba51781a19f8a843abeb2d304d0d26e, type: 3}
     - target: {fileID: 22325660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Camera
       value: 
@@ -24951,7 +25031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000311839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.61, z: 4.72}
+  m_LocalPosition: {x: -6.01, y: 1.61, z: 4.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 437356819}
