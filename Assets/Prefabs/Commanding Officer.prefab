@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1263729182906631431}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4429961836260134576}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb7a5401e393316488a5e2b570acbe14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6bfc84da77d9412ea6b6392b684668f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1263729182988748822}
   - component: {fileID: 8225905200886290125}
   m_Layer: 0
-  m_Name: Burgahman
+  m_Name: Commanding Officer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,9 +158,10 @@ MonoBehaviour:
   dialogueSystemEvents: {fileID: 1295756274472762201}
   viewPointTransform: {fileID: 7576676884223258038}
   _textScrollSpeed: 20
-  _textScrollAudio: {fileID: 8300000, guid: 5512b4c148479b5459ba4c5f7471cf9a, type: 3}
-  _useAnimator: 1
-  _textScrollSprite: {fileID: 0}
+  _textScrollAudioClips: []
+  _chooseAudioClipsRandomly: 0
+  _playOneShot: 1
+  _interruptAudioClip: 0
 --- !u!114 &79144843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 2461861057332843474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4429961836260134576}
   m_RootOrder: 1
@@ -401,7 +402,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0aae5ce35be52ae4e921218faf5508d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 968f4b16de68042b0bc324a8818e026a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -781,8 +782,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7748935423425199990}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.16, y: -0.31, z: 0.111}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -0.075, y: -0.289, z: 0.057}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 8660855146236824177}
   m_Father: {fileID: 4429961836260134576}
@@ -814,7 +815,7 @@ Transform:
   m_GameObject: {fileID: 8906073320184144313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8372724624219791187}
   m_RootOrder: 0
@@ -859,7 +860,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ac33164e1ebcb64d919cdfb4e7f7574, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 513cd6ecb1608485fa0bcb6366710107, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
