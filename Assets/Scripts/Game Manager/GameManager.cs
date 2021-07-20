@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using PixelCrushers;
+using Zenject;
 
-[RequireComponent(typeof(SaveSystemEvents))]
+[RequireComponent(typeof(SaveSystemMethods))]
 public class GameManager : MonoBehaviour
 {
     public enum GameState
@@ -16,20 +16,25 @@ public class GameManager : MonoBehaviour
         Loading
     }
 
-    public string CurrentLevel { get; private set; }
-    public GameState CurrentGameState { get; private set; } = GameState.MainMenu;
+    public GameState CurrentGameState { get; private set; } = GameState.Loading;
 
     // these scenes need to be set in the inspector
     // public SceneAsset bootScene;
     // public SceneAsset mainMenuScene;
     // public SceneAsset beginningScene;
 
+    [HideInInspector]
+    public Camera mainCamera;
     public UnityEvent<GameState, GameState> onGameStateChanged;
+    public SaveSystemMethods saveSystemMethods;
 
     List<string> _loadedLevelNames;
     List<AsyncOperation> _loadOperations;
     List<AsyncOperation> _unloadOperations;
-    PlayerController _playerController;
+
+    [Inject]
+    UIManager _UIManager;
+    string _nextScene;
 
     void Awake()
     {
@@ -38,12 +43,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        var saveSystemEvents = GetComponent<SaveSystemEvents>();
-        saveSystemEvents.onSceneLoad.AddListener(() => UpdateState(GameState.Running));
+        saveSystemMethods = GetComponent<SaveSystemMethods>();
 
-        // update state to running if we're in a scene w the player controller
-        _playerController = FindObjectOfType<PlayerController>();
-        if(_playerController)
+        _nextScene = SceneManager.GetActiveScene().name;
+
+        _UIManager.onLoadTransitionInComplete.AddListener(OnLoadTransitionInComplete);
+        _UIManager.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
+
+        // check if we should be in main menu or running state
+        if(_nextScene == "Main Menu")
+            UpdateState(GameState.MainMenu);
+        else
             UpdateState(GameState.Running);
     }
 
@@ -72,7 +82,6 @@ public class GameManager : MonoBehaviour
         switch(CurrentGameState)
         {           
             case GameState.Paused:
-            case GameState.Loading:
                 Time.timeScale = 0.0f;
                 break;
 
@@ -80,12 +89,30 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1.0f;
                 break;
         }
-
-        if(CurrentGameState == GameState.Running)
-        {
-            _playerController = FindObjectOfType<PlayerController>();
-        }
         
         onGameStateChanged.Invoke(previousGameState, CurrentGameState);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        _nextScene = sceneName;
+        UpdateState(GameState.Loading);
+        _UIManager.BeginLoadTransitionIn();
+    }
+
+    // load the next scene once the loading screen has completely transitioned in
+    void OnLoadTransitionInComplete()
+    {
+        Debug.Log($"[GameManager] loading scene {_nextScene}.");
+        saveSystemMethods.LoadScene(_nextScene);
+    }
+
+    // set state and camera once the load transtion is complete
+    void OnLoadTransitionOutComplete()
+    {
+        if(_nextScene == "Main Menu")
+            UpdateState(GameState.MainMenu);
+        else
+            UpdateState(GameState.Running);
     }
 }

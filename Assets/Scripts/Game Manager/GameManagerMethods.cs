@@ -14,4 +14,9 @@ public class GameManagerMethods : MonoBehaviour
         var state = (GameManager.GameState) Enum.Parse(typeof(GameManager.GameState), newState);
         _gameManager.UpdateState(state);
     }
+
+    public void LoadScene(string newScene)
+    {
+        _gameManager.LoadScene(newScene);
+    }
 }
