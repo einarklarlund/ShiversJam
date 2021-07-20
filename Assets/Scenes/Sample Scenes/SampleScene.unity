@@ -11780,7 +11780,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26226
+  m_Name: pb_Mesh23816
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25120,8 +25120,6 @@ GameObject:
   - component: {fileID: 2000311841}
   - component: {fileID: 2000311845}
   - component: {fileID: 2000311844}
-  - component: {fileID: 2000311846}
-  - component: {fileID: 2000311847}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -25214,10 +25212,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000311839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d3329b6cd68ab4a99cdab5d7d333c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 698c6a955964b9b46afe61a3415cdf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultStartingSceneName: 
 --- !u!114 &2000311845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25243,70 +25240,18 @@ MonoBehaviour:
     onUse:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2000311846}
-          m_TargetAssemblyTypeName: VolumeEffect, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
+        - m_Target: {fileID: 2000311844}
+          m_TargetAssemblyTypeName: GameManagerMethods, Assembly-CSharp
+          m_MethodName: LoadScene
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: SampleScene 1
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &2000311846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000311839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa766cb916c175845b56163c5211f680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: {fileID: 1576616623}
-  onEffectFinished:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2000311844}
-        m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SampleScene 1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2000311847}
-        m_TargetAssemblyTypeName: GameManagerMethods, Assembly-CSharp
-        m_MethodName: UpdateState
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Loading
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2000311847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000311839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698c6a955964b9b46afe61a3415cdf47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2053718297
 GameObject:
   m_ObjectHideFlags: 0

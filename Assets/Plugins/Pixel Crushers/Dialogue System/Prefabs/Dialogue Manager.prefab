@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 8935869398320793603}
   - component: {fileID: 2758867493028057548}
   - component: {fileID: 2655455264742929514}
-  - component: {fileID: 3544207454997036972}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -348,21 +347,3 @@ MonoBehaviour:
   m_saveCurrentScene: 1
   m_framesToWaitBeforeApplyData: 1
   m_debug: 0
---- !u!114 &3544207454997036972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70284ad54dd03d24780e77ae2506f64e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveSlotNumber: 1
-  dontSaveInScenes: 
-  loadOnStart: 1
-  saveOnQuit: 0
-  saveOnPause: 0
-  saveOnLoseFocus: 0

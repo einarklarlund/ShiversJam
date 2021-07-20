@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 7561391655802903545}
   - component: {fileID: 4541570814656129741}
   - component: {fileID: 8907955538556172344}
+  - component: {fileID: 419005437835517360}
   m_Layer: 5
   m_Name: Loading Screen
   m_TagString: Untagged
@@ -209,6 +210,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingText: {fileID: 8123260131914579558}
   backdrop: {fileID: 1842888825509241312}
+  animator: {fileID: 0}
+  onLoadTransitionInComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onLoadTransitionOutComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!223 &7561391655802903545
 Canvas:
   m_ObjectHideFlags: 0
@@ -218,7 +226,7 @@ Canvas:
   m_GameObject: {fileID: 6887723011365589708}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -270,3 +278,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &419005437835517360
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887723011365589708}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43bcbc96667f411408a5f96370cfb6b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
