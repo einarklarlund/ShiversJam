@@ -144,7 +144,6 @@ public class NpcDialogueController : MonoBehaviour
         speaking = false;
 
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted);
-        Debug.Log("Dialogue screen completed");
     }
 
     void OnTextScrolled()

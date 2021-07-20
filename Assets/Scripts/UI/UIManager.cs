@@ -49,11 +49,7 @@ public class UIManager : MonoBehaviour
     {
         // the end load transition will play after the savesystem finishes loading
         var saveSystemEvents = GetComponent<SaveSystemEvents>();
-
-        // loadingScreen.gameObject.SetActive(false);
-        // pauseMenu.gameObject.SetActive(false);
-        // mainMenu.gameObject.SetActive(false);
-
+        
         pauseMenu.resumeButton.onClick.AddListener(_gameManager.TogglePause);
 
         saveSystemEvents.onSceneLoad.AddListener(OnSceneLoad);

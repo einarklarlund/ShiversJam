@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Prime31.ZestKit;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MainMenu : MonoBehaviour
 
     public UnityEvent onTransitionInComplete;
     public UnityEvent onTransitionOutComplete;
+
+    public float tweenValue { get; private set; }
 
     void Awake()
     {
@@ -26,14 +29,12 @@ public class MainMenu : MonoBehaviour
 
     public void Show()
     {
-        Debug.Log("Showing main menu");
         gameObject.SetActive(true);
         animator.SetTrigger("TransitionIn");
     }
 
     public void Hide()
     {
-        Debug.Log("Hiding main menu");
         animator.SetTrigger("TransitionOut");
     }
 

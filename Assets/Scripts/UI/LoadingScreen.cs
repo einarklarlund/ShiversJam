@@ -31,13 +31,16 @@ public class LoadingScreen : MonoBehaviour
                 Debug.LogWarning("[LoadingScreen] Could not find Animator component.");
             }
         }
+
+        var newColor = backdrop.color;
+        newColor.a = 0;
+        backdrop.color = newColor;
     }
 
     // !! the load transition end animation MUST call this method using
     // an animation event at the end of the transition !!
     public void CompleteLoadTransitionIn()
     {
-        Debug.Log("completed load transition in");
         onLoadTransitionInComplete.Invoke();
     }
 

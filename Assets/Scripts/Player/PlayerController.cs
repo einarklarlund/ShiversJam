@@ -95,7 +95,7 @@ public class PlayerController : Interactor
         // LookAtViewPoint tween is finished
         SetMovementEnabled(false);
 
-        Debug.Log($"Conversation starting with {actor.name}");
+        Debug.Log($"[PlayerController] Conversation starting with {actor.name}");
         // if a dialogue view point exists, start the coroutine to look at it.
         var npcDialogueController = actor.GetComponent<NpcDialogueController>();
         if(npcDialogueController && npcDialogueController.viewPointTransform)
