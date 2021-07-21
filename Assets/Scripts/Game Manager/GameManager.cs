@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState CurrentGameState { get; private set; } = GameState.Loading;
+    public string nextScene => _nextScene;
 
     // these scenes need to be set in the inspector
     // public SceneAsset bootScene;
@@ -38,7 +39,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        onGameStateChanged = new UnityEvent<GameState, GameState>();
+        if(onGameStateChanged == null)
+            onGameStateChanged = new UnityEvent<GameState, GameState>();
     }
 
     void Start()
@@ -96,6 +98,19 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         _nextScene = sceneName;
+        UpdateState(GameState.Loading);
+        _UIManager.BeginLoadTransitionIn();
+    }
+
+    // sets next scene without changing its value
+    public void QueueNextScene(string sceneName)
+    {
+        _nextScene = sceneName;
+    }
+
+    // begins scene load transition without setting _nextScene
+    public void LoadNextScene()
+    {
         UpdateState(GameState.Loading);
         _UIManager.BeginLoadTransitionIn();
     }

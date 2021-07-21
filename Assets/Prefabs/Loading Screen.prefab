@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2901961, g: 0.28627452, b: 0.25882354, a: 1}
+  m_Color: {r: 0.11764707, g: 0.06666667, b: 0.23529413, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingText: {fileID: 8123260131914579558}
   backdrop: {fileID: 1842888825509241312}
-  animator: {fileID: 0}
+  animator: {fileID: 419005437835517360}
   onLoadTransitionInComplete:
     m_PersistentCalls:
       m_Calls: []

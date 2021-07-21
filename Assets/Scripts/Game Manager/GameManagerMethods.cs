@@ -19,4 +19,14 @@ public class GameManagerMethods : MonoBehaviour
     {
         _gameManager.LoadScene(newScene);
     }
+
+    public void QueueNextScene(string nextScene)
+    {
+        _gameManager.QueueNextScene(nextScene);
+    }
+
+    public void LoadNextScene()
+    {
+        _gameManager.LoadNextScene();
+    }
 }

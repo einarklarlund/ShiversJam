@@ -5,6 +5,7 @@ using Prime31.ZestKit;
 
 public class MainMenu : MonoBehaviour
 {
+    public Canvas canvas;
     public Text text;
     public Image backdrop;
     public Button newGameButton;
@@ -18,36 +19,48 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
-        onTransitionInComplete = new UnityEvent();
-        onTransitionOutComplete = new UnityEvent();
+        if(onTransitionInComplete == null)
+            onTransitionInComplete = new UnityEvent();
+        
+        if(onTransitionOutComplete == null)
+            onTransitionOutComplete = new UnityEvent();
     }
 
     void Start()
     {
         animator = GetComponent<Animator>();
-    }
+        canvas = GetComponent<Canvas>();
+        
+        var color = backdrop.color;
+        color.a = 1;
 
-    public void Show()
+        // make sure backdrop doesn't lose alpha value after transitioning out
+        onTransitionOutComplete.AddListener(() => 
+        {
+            Debug.Log("setting backdrop alpha value to 1");
+            backdrop.color = color;
+        });
+    }
+    public void TransitionIn()
     {
-        gameObject.SetActive(true);
+        Debug.Log("main menu transitioning in");
         animator.SetTrigger("TransitionIn");
     }
-
-    public void Hide()
+    
+    public void TransitionOut()
     {
         animator.SetTrigger("TransitionOut");
     }
 
     // !! the following 2 methods MUST be called at the end of their
     // respective animation clips !!
-    public void CompleteLoadTransitionIn()
+    public void CompleteTransitionIn()
     {
         onTransitionInComplete.Invoke();
     }
 
-    public void CompleteLoadTransitionOut()
+    public void CompleteTransitionOut()
     {
-        gameObject.SetActive(false);
         onTransitionOutComplete.Invoke();
     }
 }

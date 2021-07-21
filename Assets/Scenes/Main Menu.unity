@@ -215,8 +215,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+      propertyPath: onTransitionOutComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+      propertyPath: onTransitionOutComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1096055057}
+    - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
       propertyPath: onTransitionInComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+      propertyPath: onTransitionOutComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+      propertyPath: onTransitionOutComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+      propertyPath: onTransitionOutComplete.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManagerMethods, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 838367426013370983, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+      propertyPath: onTransitionOutComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3924792537198069836, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
       propertyPath: m_RootOrder
@@ -705,6 +729,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 56.18, y: 0, z: 0}
+--- !u!1 &1096055057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6900873658199434023, guid: 8ddbee4218fe01d48ae5c7bdf5ef7a26, type: 3}
+  m_PrefabInstance: {fileID: 327404712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1321895677
 PrefabInstance:
   m_ObjectHideFlags: 0

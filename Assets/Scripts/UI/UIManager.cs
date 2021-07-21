@@ -34,14 +34,17 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         hub = new MessageHub<Message>();
-        onLoadTransitionInComplete = new UnityEvent();
-        onLoadTransitionOutComplete = new UnityEvent();
+
+        if(onLoadTransitionInComplete == null)
+            onLoadTransitionInComplete = new UnityEvent();
+        
+        if(onLoadTransitionOutComplete == null)
+            onLoadTransitionOutComplete = new UnityEvent();
     }
 
 
     void OnEnable()
     {
-
         _gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
     }
 
@@ -49,7 +52,7 @@ public class UIManager : MonoBehaviour
     {
         // the end load transition will play after the savesystem finishes loading
         var saveSystemEvents = GetComponent<SaveSystemEvents>();
-        
+
         pauseMenu.resumeButton.onClick.AddListener(_gameManager.TogglePause);
 
         saveSystemEvents.onSceneLoad.AddListener(OnSceneLoad);
@@ -65,7 +68,8 @@ public class UIManager : MonoBehaviour
     // ie. in LoadScene()
     public void BeginLoadTransitionIn()
     {
-        loadingScreen.gameObject.SetActive(true);
+        Debug.Log("Loading screen transitioning in");
+        loadingScreen.canvas.enabled = true;
         loadingScreen.animator.SetTrigger("TransitionIn");
     }
 
@@ -80,6 +84,22 @@ public class UIManager : MonoBehaviour
     // finished loading a scene
     public void OnSceneLoad()
     {
+        // hide the main menu's backdrop if transitioning to main menu scene
+        // show the backdrop if transitioning to main menu scene
+        if(_gameManager.nextScene != "Main Menu")
+        {
+            mainMenu.animator.SetTrigger("HideBackdrop");
+        }
+        else
+        {
+            Debug.Log("main menu showing backdrop");
+            mainMenu.animator.SetTrigger("ShowBackdrop");
+        }
+
+        // enable main menu canvas if transitioning to Main Menu scene
+        mainMenu.canvas.enabled = _gameManager.nextScene == "Main Menu";
+
+        Debug.Log("transitioning loadingscreen out");
         loadingScreen.animator.SetTrigger("TransitionOut");
         SetCanvasWorldCameras();
     }
@@ -88,7 +108,15 @@ public class UIManager : MonoBehaviour
     // can listen
     public void OnLoadTransitionOutComplete()
     {
-        loadingScreen.gameObject.SetActive(false);
+        // transition in the main menu if necessary
+        if(_gameManager.nextScene == "Main Menu")
+        {
+            Debug.Log("main menu transition in");
+            mainMenu.canvas.enabled = true;
+            mainMenu.TransitionIn();
+        }
+
+        loadingScreen.canvas.enabled = false;
         onLoadTransitionOutComplete.Invoke();
     }
     
@@ -111,21 +139,14 @@ public class UIManager : MonoBehaviour
 
     void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
     {
-        // show main menu (main menu is hidden when new game/load game button is pressed)
-        if(currentState == GameManager.GameState.MainMenu)
-        {
-            mainMenu.gameObject.SetActive(true);
-            mainMenu.Show();
-        }
-        
         // toggle/untoggle the pause menu
         if(currentState == GameManager.GameState.Paused)
         {
-            pauseMenu.gameObject.SetActive(true);
+            pauseMenu.canvas.enabled = true;
         }
         else
         {
-            pauseMenu.gameObject.SetActive(false);
+            pauseMenu.canvas.enabled = false;
         }
     }
 }

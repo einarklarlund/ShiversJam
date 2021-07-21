@@ -8,6 +8,7 @@ using Coffee.UIEffects;
 
 public class LoadingScreen : MonoBehaviour
 {
+    public Canvas canvas;
     public Text loadingText;
     public Image backdrop;
     public Animator animator;
@@ -32,6 +33,9 @@ public class LoadingScreen : MonoBehaviour
             }
         }
 
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+
         var newColor = backdrop.color;
         newColor.a = 0;
         backdrop.color = newColor;
@@ -51,22 +55,4 @@ public class LoadingScreen : MonoBehaviour
     {
         onLoadTransitionOutComplete.Invoke();
     }
-
-    // public void Show()
-    // {
-        // Debug.Log("showing loading screen");
-        // gameObject.SetActive(true);
-        // loadingText.enabled = true;
-        // backdrop.enabled = true;
-        // animator.SetTrigger("Show");        
-    // }
-
-    // public void Hide()
-    // {
-        // Debug.Log("hiding loading screen");
-        // gameObject.SetActive(false);
-        // loadingText.enabled = false;
-        // backdrop.enabled = false;
-        // animator.SetTrigger("Hide");
-    // }
 }

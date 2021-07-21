@@ -260,8 +260,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I was going to the poop store and they ran out of poop.\. I hate mondays.\.
-          Worst shit I've ever seen in my life.
+        value: I was going to the poop store,\, and they ran out of poop.\. Worst
+          shit I've ever seen in my life.
         type: 0
         typeString: 
       - title: Sequence
@@ -316,7 +316,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Welp, that sucks.
+        value: Welp,\, that sucks.
         type: 0
         typeString: 
       - title: Sequence
@@ -399,8 +399,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 73
-        y: 291
+        x: 71
+        y: 289
         width: 160
         height: 30
     - id: 4
@@ -448,7 +448,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 469
+        x: 472
         y: 180
         width: 160
         height: 30
@@ -687,8 +687,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 219
-        y: 96
+        x: 220
+        y: 97
         width: 160
         height: 30
     - id: 2
@@ -932,8 +932,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Go to that other guy and talk to him. He'll have the Poop Store Talk
-          with you for sure.
+        value: Go to that other guy and talk to him.\. He'll have the Poop Store
+          Talk with you,\, for sure.
         type: 0
         typeString: 
       - title: Sequence
@@ -1099,7 +1099,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Honestly, I loved it.
+        value: Honestly,\, I loved it.
         type: 0
         typeString: 
       - title: Sequence
@@ -1258,7 +1258,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: That's pretty crazy, bro.
+        value: That's pretty crazy,\, bro.
         type: 0
         typeString: 
       - title: Sequence
@@ -1281,11 +1281,11 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 956
-        y: 113
+        y: 111
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 164, y: 0}
+    canvasScrollPosition: {x: 153, y: 42}
     canvasZoom: 1
   syncInfo:
     syncActors: 0
