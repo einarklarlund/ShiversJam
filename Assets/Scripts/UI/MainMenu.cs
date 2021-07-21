@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using Prime31.ZestKit;
+using Zenject;
 
 public class MainMenu : MonoBehaviour
 {
@@ -16,6 +16,9 @@ public class MainMenu : MonoBehaviour
     public UnityEvent onTransitionOutComplete;
 
     public float tweenValue { get; private set; }
+
+    [Inject]
+    GameManager _gameManager;
 
     void Awake()
     {
@@ -41,16 +44,6 @@ public class MainMenu : MonoBehaviour
             backdrop.color = color;
         });
     }
-    public void TransitionIn()
-    {
-        Debug.Log("main menu transitioning in");
-        animator.SetTrigger("TransitionIn");
-    }
-    
-    public void TransitionOut()
-    {
-        animator.SetTrigger("TransitionOut");
-    }
 
     // !! the following 2 methods MUST be called at the end of their
     // respective animation clips !!
@@ -62,5 +55,33 @@ public class MainMenu : MonoBehaviour
     public void CompleteTransitionOut()
     {
         onTransitionOutComplete.Invoke();
+    }
+    
+    // listens to UIManager.onMainMenuEnter
+    public void TransitionIn()
+    {
+        Debug.Log("[MainMenu] transitioning in");
+        animator.SetTrigger("TransitionIn");
+    }
+
+    // listens to newGameButton.onClick and loadGameButton.onClick
+    public void TransitionOut()
+    {
+        Debug.Log("[MainMenu] transitioning out");
+        animator.SetTrigger("TransitionOut");
+    }
+
+    // listens to UIManager.onMainMenuTransitionOutComplete
+    public void ShowBackdrop()
+    {
+        Debug.Log($"[MainMenu] showing backdrop");
+        animator.SetBool("ShowBackdrop", true);
+    }
+
+    // listens to UIManager.onLoadingScreenTransitionInComplete
+    public void HideBackdrop()
+    {
+        Debug.Log($"[MainMenu] hiding backdrop");
+        animator.SetBool("ShowBackdrop", false);
     }
 }

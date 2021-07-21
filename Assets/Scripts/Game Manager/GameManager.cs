@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour
 {
     public enum GameState
     {
+        Boot,
         MainMenu,
         Running,
         Paused,
         Loading
     }
 
-    public GameState CurrentGameState { get; private set; } = GameState.Loading;
+    public GameState CurrentGameState { get; private set; } = GameState.Boot;
     public string nextScene => _nextScene;
 
     // these scenes need to be set in the inspector
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Camera mainCamera;
     public UnityEvent<GameState, GameState> onGameStateChanged;
+    public UnityEvent onLoadSceneTransitionStart;
     public SaveSystemMethods saveSystemMethods;
 
     List<string> _loadedLevelNames;
@@ -99,21 +101,9 @@ public class GameManager : MonoBehaviour
     {
         _nextScene = sceneName;
         UpdateState(GameState.Loading);
-        _UIManager.BeginLoadTransitionIn();
+        onLoadSceneTransitionStart.Invoke();
     }
 
-    // sets next scene without changing its value
-    public void QueueNextScene(string sceneName)
-    {
-        _nextScene = sceneName;
-    }
-
-    // begins scene load transition without setting _nextScene
-    public void LoadNextScene()
-    {
-        UpdateState(GameState.Loading);
-        _UIManager.BeginLoadTransitionIn();
-    }
 
     // load the next scene once the loading screen has completely transitioned in
     void OnLoadTransitionInComplete()

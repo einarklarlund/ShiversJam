@@ -41,13 +41,26 @@ public class LoadingScreen : MonoBehaviour
         backdrop.color = newColor;
     }
 
+    // listens to UIManager.onLoadTransitionInStart
+    public void TransitionIn()
+    {
+        Debug.Log("[LoadingScreen] transitioning in");
+        animator.SetTrigger("TransitionIn");
+    }
+
+    // listens to UIManager.onLoadTransitionOutStart
+    public void TransitionOut()
+    {
+        Debug.Log("[LoadingScreen] transitioning out");
+        animator.SetTrigger("TransitionOut");
+    }
+
     // !! the load transition end animation MUST call this method using
     // an animation event at the end of the transition !!
     public void CompleteLoadTransitionIn()
     {
         onLoadTransitionInComplete.Invoke();
     }
-
 
     // !! the load transition out animation MUST call this method using
     // an animation event at the end of the transition !!
