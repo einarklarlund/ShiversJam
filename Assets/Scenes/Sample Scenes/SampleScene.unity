@@ -11793,7 +11793,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25744
+  m_Name: pb_Mesh26530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12355,6 +12355,14 @@ PrefabInstance:
     - target: {fileID: 1875899775122998316, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958948728164181919, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958948728164181919, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4958948729165069656, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: mouseLockToggleEnabled
