@@ -169,6 +169,16 @@ public class UIManager : MonoBehaviour
             onMainMenuEnter.Invoke();
         }
 
+        // Hide the main menu backdrop if a non-main menu scene
+        // has been loaded on boot (when a scene is loaded from within
+        // UnityEditor)
+        if(currentState == GameManager.GameState.Running &&
+            previousState == GameManager.GameState.Boot)
+        {
+            mainMenu.HideBackdrop();
+            mainMenu.canvas.enabled = false;
+        }
+
         // toggle/untoggle the pause menu
         if(currentState == GameManager.GameState.Paused)
         {
