@@ -149,7 +149,8 @@ public abstract class NpcController : Interactor
             // rotate the NPCs current forward direction towards the towardsPlayer vector
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, towardsPlayer, rotationSpeedTowardsPlayer / 100, 0);
             // apply the new rotation
-            transform.rotation = Quaternion.LookRotation(newDirection);
+            var lookRotation = Quaternion.LookRotation(newDirection).eulerAngles;
+            transform.eulerAngles = new Vector3(0f, lookRotation.y, 0f);
             
             yield return null;
         }

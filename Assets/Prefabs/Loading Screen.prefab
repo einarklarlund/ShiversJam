@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 429286516486837492}
   - component: {fileID: 7530745333983112556}
   - component: {fileID: 8123260131914579558}
+  - component: {fileID: 5133002449326238239}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -79,6 +80,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: LOADING
+--- !u!114 &5133002449326238239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279519256097295439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 1
+  m_ColorFactor: 1
+  m_BlurFactor: 1
+  m_EffectMode: 0
+  m_ColorMode: 0
+  m_BlurMode: 0
+  m_AdvancedBlur: 0
 --- !u!1 &3978113792013052479
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,14 +157,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.11764707, g: 0.06666667, b: 0.23529413, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: da4ff4d7435912a49a7ecfe0d91daea0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa08731946752bf46904fc7fbdd8be2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -210,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingText: {fileID: 8123260131914579558}
   backdrop: {fileID: 1842888825509241312}
-  animator: {fileID: 0}
+  animator: {fileID: 419005437835517360}
   onLoadTransitionInComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -250,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

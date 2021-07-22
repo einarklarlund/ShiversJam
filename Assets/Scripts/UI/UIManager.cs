@@ -6,7 +6,7 @@ using Zenject;
 using PixelCrushers;
 using PixelCrushers.DialogueSystem;
 
-[RequireComponent(typeof(SaveSystemEvents))]
+[RequireComponent(typeof(GameManagerEvents))]
 public class UIManager : MonoBehaviour
 {
     public enum Message
@@ -19,13 +19,39 @@ public class UIManager : MonoBehaviour
     }
 
     public IMessageHub<Message> hub;
+
+    [Header("UI objects")]
     public MainMenu mainMenu;
     public PauseMenu pauseMenu;
     public HUD HUD;
     public LoadingScreen loadingScreen;
 
+    [Header("Loading screen events")]
+    public UnityEvent onLoadTransitionInStart;
+        // ~~~~~ GOES TO onLoadTransitionInStart ~~~~~
+        // loadingScreen.canvas.enabled = true;
+        // loadingScreen.TransitionIn();
+
     public UnityEvent onLoadTransitionInComplete;
+        // ~~~~~ GOES TO onLoadTransitionInComplete ~~~~~
+        // mainMenu.HideBackdrop()
+
+    public UnityEvent onLoadTransitionOutStart;
+        // ~~~~~ GOES TO onLoadTransitionOutStart ~~~~~~
+        // loadingScreen.TransitionOut()
+        // this.SetCanvasWorldCameras()
+
     public UnityEvent onLoadTransitionOutComplete;
+        // ~~~~~ GOES INTO onLoadTransitionOutComplete ~~~~~
+        // loadingScreen.canvas.enabled = false;
+    
+    [Header("Main menu events")]
+    public UnityEvent onMainMenuSceneLoaded;
+    public UnityEvent onMainMenuEnter;
+            // ~~~~~ GOES INTO onMainMenuEnter ~~~~~
+            //     mainMenu.TransitionIn();
+    public UnityEvent onMainMenuTransitionInComplete;
+    public UnityEvent onMainMenuTransitionOutComplete;
 
 
     [Inject]
@@ -34,14 +60,37 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         hub = new MessageHub<Message>();
-        onLoadTransitionInComplete = new UnityEvent();
-        onLoadTransitionOutComplete = new UnityEvent();
-    }
 
+        // load transition in
+        if(onLoadTransitionInStart == null)
+            onLoadTransitionInStart = new UnityEvent();
+
+        if(onLoadTransitionInComplete == null)
+            onLoadTransitionInComplete = new UnityEvent();
+        // load transition out
+        if(onLoadTransitionOutStart == null)
+            onLoadTransitionOutStart = new UnityEvent();
+
+        if(onLoadTransitionOutComplete == null)
+            onLoadTransitionOutComplete = new UnityEvent();
+
+        // main menu
+        if(onMainMenuSceneLoaded == null)
+            onMainMenuSceneLoaded = new UnityEvent();
+
+        if(onMainMenuEnter == null)
+            onMainMenuEnter = new UnityEvent();
+        
+        if(onMainMenuTransitionInComplete == null)
+            onMainMenuTransitionInComplete = new UnityEvent();
+
+        if(onMainMenuTransitionOutComplete == null)
+            onMainMenuTransitionOutComplete = new UnityEvent();
+        
+    }
 
     void OnEnable()
     {
-
         _gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
     }
 
@@ -49,10 +98,6 @@ public class UIManager : MonoBehaviour
     {
         // the end load transition will play after the savesystem finishes loading
         var saveSystemEvents = GetComponent<SaveSystemEvents>();
-
-        // loadingScreen.gameObject.SetActive(false);
-        // pauseMenu.gameObject.SetActive(false);
-        // mainMenu.gameObject.SetActive(false);
 
         pauseMenu.resumeButton.onClick.AddListener(_gameManager.TogglePause);
 
@@ -62,15 +107,17 @@ public class UIManager : MonoBehaviour
         loadingScreen.onLoadTransitionInComplete.AddListener(OnLoadTransitionInComplete);
         loadingScreen.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
 
+        // bubble up the transition events from Main Menu
+        mainMenu.onTransitionInComplete.AddListener(() => onMainMenuTransitionInComplete.Invoke());
+        mainMenu.onTransitionOutComplete.AddListener(() => onMainMenuTransitionOutComplete.Invoke());
+
         SetCanvasWorldCameras();
     }
 
-    // called by the GameManager when it decides to load a scene
-    // ie. in LoadScene()
+    // listens to gameManager.onLoadSceneTransitionStart
     public void BeginLoadTransitionIn()
     {
-        loadingScreen.gameObject.SetActive(true);
-        loadingScreen.animator.SetTrigger("TransitionIn");
+        onLoadTransitionInStart.Invoke();
     }
 
     // bubble up this event from the loading screen so that GameManager
@@ -84,15 +131,16 @@ public class UIManager : MonoBehaviour
     // finished loading a scene
     public void OnSceneLoad()
     {
-        loadingScreen.animator.SetTrigger("TransitionOut");
-        SetCanvasWorldCameras();
+        if(_gameManager.nextScene == "Main Menu")
+            onMainMenuSceneLoaded.Invoke();
+
+        onLoadTransitionOutStart.Invoke();
     }
 
     // bubble up this event from the loadings creen so that the GameManager
     // can listen
     public void OnLoadTransitionOutComplete()
     {
-        loadingScreen.gameObject.SetActive(false);
         onLoadTransitionOutComplete.Invoke();
     }
     
@@ -114,22 +162,31 @@ public class UIManager : MonoBehaviour
     }
 
     void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
-    {
-        // show main menu (main menu is hidden when new game/load game button is pressed)
-        if(currentState == GameManager.GameState.MainMenu)
+    {   
+        if(currentState == GameManager.GameState.MainMenu &&
+            previousState == GameManager.GameState.Loading)
         {
-            mainMenu.gameObject.SetActive(true);
-            mainMenu.Show();
+            onMainMenuEnter.Invoke();
         }
-        
+
+        // Hide the main menu backdrop if a non-main menu scene
+        // has been loaded on boot (when a scene is loaded from within
+        // UnityEditor)
+        if(currentState == GameManager.GameState.Running &&
+            previousState == GameManager.GameState.Boot)
+        {
+            mainMenu.HideBackdrop();
+            mainMenu.canvas.enabled = false;
+        }
+
         // toggle/untoggle the pause menu
         if(currentState == GameManager.GameState.Paused)
         {
-            pauseMenu.gameObject.SetActive(true);
+            pauseMenu.canvas.enabled = true;
         }
         else
         {
-            pauseMenu.gameObject.SetActive(false);
+            pauseMenu.canvas.enabled = false;
         }
     }
 }

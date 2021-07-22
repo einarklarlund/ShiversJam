@@ -7,6 +7,7 @@ using Zenject;
 public class GameManagerEvents : MonoBehaviour
 {
     public UnityEvent<GameManager.GameState, GameManager.GameState> onGameStateChanged;
+    public UnityEvent onLoadSceneTransitionStart;
 
     [Inject]
     GameManager _gameManager;
@@ -16,5 +17,7 @@ public class GameManagerEvents : MonoBehaviour
         _gameManager.onGameStateChanged.AddListener(
             (GameManager.GameState previousState, GameManager.GameState currentState) => 
                 onGameStateChanged.Invoke(previousState, currentState));
+
+        _gameManager.onLoadSceneTransitionStart.AddListener(() => onLoadSceneTransitionStart.Invoke());
     }
 }
