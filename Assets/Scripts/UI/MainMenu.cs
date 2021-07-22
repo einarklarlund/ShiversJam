@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public UnityEvent onTransitionInComplete;
     public UnityEvent onTransitionOutComplete;
+    public bool loadGamePressed;
 
     public float tweenValue { get; private set; }
 
@@ -49,11 +50,13 @@ public class MainMenu : MonoBehaviour
     // respective animation clips !!
     public void CompleteTransitionIn()
     {
+        Debug.Log("[MainMenu] completing transition in");
         onTransitionInComplete.Invoke();
     }
 
     public void CompleteTransitionOut()
     {
+        Debug.Log("[MainMenu] completing transition out");
         onTransitionOutComplete.Invoke();
     }
     

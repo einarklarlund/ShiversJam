@@ -53,7 +53,6 @@ public class UIManager : MonoBehaviour
     public UnityEvent onMainMenuTransitionInComplete;
     public UnityEvent onMainMenuTransitionOutComplete;
 
-
     [Inject]
     GameManager _gameManager;
 

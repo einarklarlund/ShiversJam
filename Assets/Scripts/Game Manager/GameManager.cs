@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public Camera mainCamera;
+    [HideInInspector]
+    public bool loadGameOnNextSceneLoad;
     public UnityEvent<GameState, GameState> onGameStateChanged;
     public UnityEvent onLoadSceneTransitionStart;
     public SaveSystemMethods saveSystemMethods;
@@ -51,7 +53,6 @@ public class GameManager : MonoBehaviour
 
         _nextScene = SceneManager.GetActiveScene().name;
 
-        _UIManager.onLoadTransitionInComplete.AddListener(OnLoadTransitionInComplete);
         _UIManager.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
 
         // check if we should be in main menu or running state
@@ -97,19 +98,35 @@ public class GameManager : MonoBehaviour
         onGameStateChanged.Invoke(previousGameState, CurrentGameState);
     }
 
-    public void LoadScene(string sceneName)
+    public void SetLoadGameOnNextSceneLoad(bool setTo)
+    {
+        loadGameOnNextSceneLoad = setTo;
+    }
+
+    public void BeginLoadTransitionTo(string sceneName)
     {
         _nextScene = sceneName;
         UpdateState(GameState.Loading);
         onLoadSceneTransitionStart.Invoke();
     }
 
-
-    // load the next scene once the loading screen has completely transitioned in
-    void OnLoadTransitionInComplete()
+    public void LoadNextScene()
     {
-        Debug.Log($"[GameManager] loading scene {_nextScene}.");
-        saveSystemMethods.LoadScene(_nextScene);
+        if(loadGameOnNextSceneLoad)
+        {
+            Debug.Log($"[GameManager] loading game from save slot 1.");
+            saveSystemMethods.LoadFromSlot(1);
+        }
+        else
+        {        
+            Debug.Log($"[GameManager] loading scene {_nextScene}.");
+            saveSystemMethods.LoadScene(_nextScene);
+        }
+    }
+
+    public void ResetGameState()
+    {
+        SaveSystem.ResetGameState();
     }
 
     // set state and camera once the load transtion is complete
