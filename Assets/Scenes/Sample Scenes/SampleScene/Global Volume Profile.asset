@@ -128,7 +128,7 @@ MonoBehaviour:
     min: 0
     max: 1
   affineTextureWarping:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.462
     min: 0
     max: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
     min: 0
     max: 1
   drawDistanceFalloffMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   drawDistance:
     m_OverrideState: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lightingIsEnabled:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   bakedLightingMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -394,8 +394,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   contrast:
-    m_OverrideState: 1
-    m_Value: 0.814
+    m_OverrideState: 0
+    m_Value: 0.773
     min: 0
     max: 1
   shoulder:
@@ -422,7 +422,7 @@ MonoBehaviour:
     min: 0
     max: 1
   saturation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
     min: 0
     max: 1
@@ -447,9 +447,9 @@ MonoBehaviour:
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   bloom:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
     min: 0
     max: 1
@@ -484,7 +484,7 @@ MonoBehaviour:
     max: 1
   noiseIntensity:
     m_OverrideState: 1
-    m_Value: 0.031
+    m_Value: 0.018
     min: 0
     max: 1
   noiseSaturation:
@@ -494,7 +494,7 @@ MonoBehaviour:
     max: 1
   grateMaskIntensityMin:
     m_OverrideState: 1
-    m_Value: 0.069
+    m_Value: 0.352
     min: 0
     max: 1
   grateMaskIntensityMax:
@@ -543,12 +543,12 @@ MonoBehaviour:
     m_Value: 3
   targetRasterizationResolutionWidth:
     m_OverrideState: 0
-    m_Value: 256
+    m_Value: 476
     min: 1
     max: 4096
   targetRasterizationResolutionHeight:
-    m_OverrideState: 0
-    m_Value: 224
+    m_OverrideState: 1
+    m_Value: 231
     min: 1
     max: 4096
   isDepthBufferEnabled:
