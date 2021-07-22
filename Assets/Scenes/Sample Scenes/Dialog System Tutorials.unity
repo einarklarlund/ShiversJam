@@ -338,11 +338,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &366826470 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8416424871809624399, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
-  m_PrefabInstance: {fileID: 1201671979}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &417215209
 GameObject:
   m_ObjectHideFlags: 0
@@ -12807,7 +12802,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39070
+  m_Name: pb_Mesh39820
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13416,7 +13411,11 @@ PrefabInstance:
     - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: conversationActor
       value: 
-      objectReference: {fileID: 366826470}
+      objectReference: {fileID: 1337394460}
+    - target: {fileID: 62582874035961521, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: conversationConversant
+      value: 
+      objectReference: {fileID: 1064281792}
     - target: {fileID: 179567499547987277, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
       propertyPath: actor
       value: Commanding Officer
@@ -13535,6 +13534,11 @@ MonoBehaviour:
   m_restoreStateOnStart: 0
   m_usePlayerSpawnpoint: 1
   m_multiscene: 0
+--- !u!4 &1337394460 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4958948729165069657, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+  m_PrefabInstance: {fileID: 909130908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1460081174
 GameObject:
   m_ObjectHideFlags: 0
@@ -25210,6 +25214,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ce12b6a0df7154efbb0bc8b66141d0c1, type: 2}
+    - target: {fileID: 8372724624219791187, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed77e58d5b02d740ad7c3de7b4eceb6, type: 3}
 --- !u!1001 &2046897813
