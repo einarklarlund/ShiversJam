@@ -28,28 +28,13 @@ public class UIManager : MonoBehaviour
 
     [Header("Loading screen events")]
     public UnityEvent onLoadTransitionInStart;
-        // ~~~~~ GOES TO onLoadTransitionInStart ~~~~~
-        // loadingScreen.canvas.enabled = true;
-        // loadingScreen.TransitionIn();
-
     public UnityEvent onLoadTransitionInComplete;
-        // ~~~~~ GOES TO onLoadTransitionInComplete ~~~~~
-        // mainMenu.HideBackdrop()
-
     public UnityEvent onLoadTransitionOutStart;
-        // ~~~~~ GOES TO onLoadTransitionOutStart ~~~~~~
-        // loadingScreen.TransitionOut()
-        // this.SetCanvasWorldCameras()
-
     public UnityEvent onLoadTransitionOutComplete;
-        // ~~~~~ GOES INTO onLoadTransitionOutComplete ~~~~~
-        // loadingScreen.canvas.enabled = false;
     
     [Header("Main menu events")]
     public UnityEvent onMainMenuSceneLoaded;
     public UnityEvent onMainMenuEnter;
-            // ~~~~~ GOES INTO onMainMenuEnter ~~~~~
-            //     mainMenu.TransitionIn();
     public UnityEvent onMainMenuTransitionInComplete;
     public UnityEvent onMainMenuTransitionOutComplete;
 

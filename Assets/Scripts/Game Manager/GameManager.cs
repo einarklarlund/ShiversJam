@@ -61,16 +61,7 @@ public class GameManager : MonoBehaviour
         else
             UpdateState(GameState.Running);
     }
-
-    void Update()
-    {
-        if((CurrentGameState == GameState.Running || CurrentGameState == GameState.Paused)
-            && Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePause();
-        }
-    }
-
+    
     //change game state to paused/running
     public void TogglePause()
     {

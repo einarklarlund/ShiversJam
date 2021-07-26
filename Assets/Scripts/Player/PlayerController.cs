@@ -30,10 +30,7 @@ public class PlayerController : Interactor
     ITween<Vector3> _playerRotationTween;
 
     [Inject]
-    public void Construct(GameManager gameManager)
-    {
-        gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
-    }
+    GameManager _gameManager;
 
     void Awake()
     {
@@ -55,6 +52,8 @@ public class PlayerController : Interactor
         fpsController = GetComponent<FPSController>();
 
         Cursor.lockState = CursorLockMode.Locked;
+        
+        _gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
     }
 
     void Update()
@@ -63,6 +62,14 @@ public class PlayerController : Interactor
         {
             _playerInventory.UseCurrentItem();
         }
+        
+        if((_gameManager.CurrentGameState == GameManager.GameState.Running || 
+                _gameManager.CurrentGameState == GameManager.GameState.Paused)
+            && Input.GetKeyDown(KeyCode.Escape)
+            && !speaking )
+        {
+            _gameManager.TogglePause();
+        }
     }
     public void SetMovementEnabled(bool enabled)
     {
@@ -70,6 +77,27 @@ public class PlayerController : Interactor
         fpsController.movementEnabled = enabled;
         fpsController.mouseLookEnabled = enabled;
         fpsController.mouseLocked = enabled;
+
+        // disable selector
+        var selector = GetComponentInChildren<Selector>();
+
+        selector.enabled = enabled;
+    }
+
+    public void LookAtViewPoint(Transform viewPoint, float duration = 0.75f)
+    {
+        // find vector that points from camera position to viewpoint position
+        Vector3 targetVector = viewPoint.position - playerCamera.transform.position;
+
+        Quaternion targetRotation = Quaternion.LookRotation(targetVector, transform.up);
+
+        // create tweens for horizontal and vertical rotation
+        _cameraRotationTween = playerCamera.transform.ZKlocalEulersTo(new Vector3(targetRotation.eulerAngles.x, 0, 0), 0.75f);
+        _playerRotationTween = transform.ZKlocalEulersTo(new Vector3(0, targetRotation.eulerAngles.y, 0), 0.75f);
+
+        // start tweens
+        _cameraRotationTween.setEaseType(EaseType.QuadOut).start();
+        _playerRotationTween.setEaseType(EaseType.QuadOut).start();
     }
 
     void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
@@ -117,22 +145,6 @@ public class PlayerController : Interactor
 
         // enable movement and disable the mouse
         SetMovementEnabled(true);
-    }
-
-    void LookAtViewPoint(Transform viewPoint)
-    {
-        // find vector that points from camera position to viewpoint position
-        Vector3 targetVector = viewPoint.position - playerCamera.transform.position;
-
-        Quaternion targetRotation = Quaternion.LookRotation(targetVector, transform.up);
-
-        // create tweens for horizontal and vertical rotation
-        _cameraRotationTween = playerCamera.transform.ZKlocalEulersTo(new Vector3(targetRotation.eulerAngles.x, 0, 0), 0.75f);
-        _playerRotationTween = transform.ZKlocalEulersTo(new Vector3(0, targetRotation.eulerAngles.y, 0), 0.75f);
-
-        // start tweens
-        _cameraRotationTween.setEaseType(EaseType.QuadOut).start();
-        _playerRotationTween.setEaseType(EaseType.QuadOut).start();
     }
 
     void OnDamaged(int damage)
