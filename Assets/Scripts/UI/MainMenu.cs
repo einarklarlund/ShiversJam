@@ -35,15 +35,15 @@ public class MainMenu : MonoBehaviour
         animator = GetComponent<Animator>();
         canvas = GetComponent<Canvas>();
         
-        var color = backdrop.color;
-        color.a = 1;
+        // var color = backdrop.color;
+        // color.a = 1;
 
-        // make sure backdrop doesn't lose alpha value after transitioning out
-        onTransitionOutComplete.AddListener(() => 
-        {
-            Debug.Log("setting backdrop alpha value to 1");
-            backdrop.color = color;
-        });
+        // // make sure backdrop doesn't lose alpha value after transitioning out
+        // onTransitionOutComplete.AddListener(() => 
+        // {
+        //     Debug.Log("setting backdrop alpha value to 1");
+        //     backdrop.color = color;
+        // });
     }
 
     // !! the following 2 methods MUST be called at the end of their

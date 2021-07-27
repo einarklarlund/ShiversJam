@@ -153,9 +153,16 @@ public class UIManager : MonoBehaviour
             onMainMenuEnter.Invoke();
         }
 
+        // start the transition in animation when booted to main menu
+        if(currentState == GameManager.GameState.MainMenu &&
+            previousState == GameManager.GameState.Boot)
+        {
+            mainMenu.TransitionIn();
+        }
+
         // Hide the main menu backdrop if a non-main menu scene
         // has been loaded on boot (when a scene is loaded from within
-        // UnityEditor)
+        // UnityEditor).
         if(currentState == GameManager.GameState.Running &&
             previousState == GameManager.GameState.Boot)
         {
