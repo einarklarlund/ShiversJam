@@ -284,7 +284,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -691,7 +691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1138062884258819708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_BlurFactor: 0
   m_EffectMode: 4
   m_ColorMode: 0
-  m_BlurMode: 3
+  m_BlurMode: 1
   m_AdvancedBlur: 0
 --- !u!114 &4885716300773158548
 MonoBehaviour:
@@ -1267,7 +1267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 838367426013370983}
-  pauseMenu: {fileID: 1399956402962620414}
+  pauseMenu: {fileID: 4347691879206051707}
   HUD: {fileID: 4662014267979400759}
   loadingScreen: {fileID: 8955329359240791134}
   onLoadTransitionInStart:
@@ -1848,8 +1848,8 @@ MonoBehaviour:
   m_BlurFactor: 0
   m_EffectMode: 4
   m_ColorMode: 0
-  m_BlurMode: 3
-  m_AdvancedBlur: 0
+  m_BlurMode: 1
+  m_AdvancedBlur: 1
 --- !u!1 &6900873658199434023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6037328250132735963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1964,7 +1964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2789018455671294738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2238,7 +2238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2934865118601010304}
-  - component: {fileID: 1399956402962620414}
+  - component: {fileID: 4347691879206051707}
   - component: {fileID: 2551977465573800160}
   - component: {fileID: 340674061054092022}
   - component: {fileID: 8307250348726035135}
@@ -2270,7 +2270,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1399956402962620414
+--- !u!114 &4347691879206051707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2282,10 +2282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278efd26e5963fe4c9fc40773eeed687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 2551977465573800160}
   resumeButton: {fileID: 8007449937725641573}
-  saveLoadButton: {fileID: 0}
-  quitButton: {fileID: 1668786865539342887}
+  pauseButton: {fileID: 0}
+  canvas: {fileID: 2551977465573800160}
 --- !u!223 &2551977465573800160
 Canvas:
   m_ObjectHideFlags: 0
