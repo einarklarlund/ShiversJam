@@ -322,6 +322,8 @@ namespace TheFirstPerson
 
 
             ExecuteExtension(ExtFunc.PreUpdate);
+            CorrectRotation();
+
             if (movementEnabled)
             {
                 UpdateInput();
@@ -355,6 +357,20 @@ namespace TheFirstPerson
                 UpdateMovement(Time.deltaTime);
             }
             ExecuteExtension(ExtFunc.PostFixedUpdate);
+        }
+
+        void CorrectRotation()
+        {
+            // correct rotation
+            if(transform.eulerAngles.x != 0)
+            {
+                cameraAngle += transform.eulerAngles.x;
+            }
+            
+            if(cam.transform.localEulerAngles.y != 0)
+            {
+                transform.localEulerAngles += new Vector3(0, cam.transform.localEulerAngles.y, 0);
+            }
         }
 
         void UpdateMovement(float dt)
