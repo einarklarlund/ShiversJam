@@ -55,9 +55,6 @@ public class Periscope : MonoBehaviour
         // enable camera
         _camera.enabled = true;
 
-        // start periscope animation
-        Debug.Log("exit periscope");
-
         // tween the player camera rotation
 
         // tween the player camera position
