@@ -166,6 +166,7 @@ MonoBehaviour:
   _chooseAudioClipsRandomly: 1
   _playOneShot: 1
   _interruptAudioClip: 0
+  _mininumTypewriterSFXDuration: 0.05
 --- !u!114 &79144845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,6 +764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8660855146236824177}
   - component: {fileID: 6323093439574308377}
+  - component: {fileID: 8664578741701636189}
   m_Layer: 0
   m_Name: Head sprite
   m_TagString: Untagged
@@ -835,3 +837,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8664578741701636189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906073320184144313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788d5f0df0e6e0b4c88b4fed09b12136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displacement: 0
+  framesBeforeUpdate: 2

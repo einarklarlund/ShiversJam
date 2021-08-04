@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67968
+  m_Name: pb_Mesh-107072
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 314256548}
   - component: {fileID: 314256547}
   - component: {fileID: 314256546}
+  - component: {fileID: 314256552}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -666,13 +667,29 @@ Transform:
   m_Father: {fileID: 589892368}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314256552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314256545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b17c4e8d486b140a480e58d9ac0aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_key: 
+  m_appendSaverTypeToKey: 0
+  m_saveAcrossSceneChanges: 1
+  m_restoreStateOnStart: 0
 --- !u!43 &328730204
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68712
+  m_Name: pb_Mesh-107938
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -836,7 +853,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66426
+  m_Name: pb_Mesh146690
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -994,102 +1011,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &391274146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 391274147}
-  - component: {fileID: 391274150}
-  - component: {fileID: 391274149}
-  - component: {fileID: 391274148}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &391274147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391274146}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0.007, y: -0.06, z: 0}
-  m_LocalScale: {x: 0.4, y: 1, z: 0.4}
-  m_Children: []
-  m_Father: {fileID: 1180765955}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
---- !u!64 &391274148
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391274146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &391274149
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391274146}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7cfc5299578f05c41bd15ee51b585438, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &391274150
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391274146}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &436834630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1113,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67844
+  m_Name: pb_Mesh-106888
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1356,7 +1277,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68764
+  m_Name: pb_Mesh-107990
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1520,7 +1441,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68672
+  m_Name: pb_Mesh-107898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1855,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4958948729165069657, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4958948729165069657, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1963,7 +1884,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68776
+  m_Name: pb_Mesh-108002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2127,7 +2048,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68828
+  m_Name: pb_Mesh-108054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2315,7 +2236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1866571532}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &701609631
 MonoBehaviour:
@@ -2358,6 +2279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 2
+      objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
@@ -2412,7 +2337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _textScrollAudioClips.Array.size
@@ -2482,6 +2407,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 587903024}
@@ -2535,7 +2464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _textScrollAudioClips.Array.size
@@ -2591,7 +2520,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67956
+  m_Name: pb_Mesh-107060
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2778,7 +2707,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1866571532}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &966700715
 MonoBehaviour:
@@ -2804,6 +2733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 4
+      objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
@@ -2858,7 +2791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _textScrollAudioClips.Array.size
@@ -2910,7 +2843,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67944
+  m_Name: pb_Mesh-107048
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6271,6 +6204,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 587903024}
@@ -6324,7 +6261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _textScrollAudioClips.Array.size
@@ -6380,7 +6317,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68752
+  m_Name: pb_Mesh-107978
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6538,18 +6475,13 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &1180765955 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8372724624219791187, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
-  m_PrefabInstance: {fileID: 1273394711}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1193641129
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66364
+  m_Name: pb_Mesh146590
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6721,6 +6653,7 @@ GameObject:
   - component: {fileID: 1202473837}
   - component: {fileID: 1202473836}
   - component: {fileID: 1202473835}
+  - component: {fileID: 1202473840}
   m_Layer: 0
   m_Name: Fade
   m_TagString: Untagged
@@ -7048,6 +6981,22 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1202473840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202473833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b17c4e8d486b140a480e58d9ac0aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_key: 
+  m_appendSaverTypeToKey: 0
+  m_saveAcrossSceneChanges: 1
+  m_restoreStateOnStart: 0
 --- !u!1001 &1227120674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10068,6 +10017,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 587903024}
@@ -10121,7 +10074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6323093439574308377, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10144,7 +10097,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68660
+  m_Name: pb_Mesh-107886
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10332,7 +10285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1866571532}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1356194597
 MonoBehaviour:
@@ -21742,7 +21695,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68804
+  m_Name: pb_Mesh-108030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21946,6 +21899,274 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - guid: 90ca9c1e-7f39-4895-b1b6-abb5d734a4b7
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 2497837b95caee94a93a6618fe4d2c76, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 20acb7dc-be80-4083-b150-c2e63fbab566
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 2497837b95caee94a93a6618fe4d2c76, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202473837}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: a90ed918f17a61b4fb9c06dec4af2e04, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: c2ca907f-a886-4b00-a195-87e3390433d7
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 3ee4a098ff6339b4abfee448d14037dc, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202473837}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 48d617061959d6d49a52494565364b59, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 8c44ccfa-0753-4bc4-a30b-89bb7df4acbd
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 965f62a227c6f8b4c935202f33fefda4, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202473837}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: b8b9f84709bbaa64795970777fb1961e, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: b7d6dd2f-b47f-4839-9951-da77278630cc
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 2e7c0bc5123a9b34f9cb1db32a402347, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202473837}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 70329ecf68eeadf4db5de615522c8805, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 0f371352-294e-4ca7-ae0d-b471a8f65e35
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 39a8e253fb596af4788850fbb3734854, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202473837}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 42d223c5c4e25eb4fb3efa98a39701b3, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: d506e00c-77ee-4e2e-ad83-db525d9ac015
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047292641}
+          m_TargetAssemblyTypeName: PixelCrushers.SaveSystemMethods, Assembly-CSharp-firstpass
+          m_MethodName: SaveSlot
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 314256548}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 95e83953b3863e942bd30fc88fd07a33, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1202473837}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 8f83c73ca91b88e4b8d34533b457a62d, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1399534411
 Transform:
   m_ObjectHideFlags: 0
@@ -21958,7 +22179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1403080317
 PrefabInstance:
@@ -21967,6 +22188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 3
+      objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
@@ -22021,7 +22246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _textScrollAudioClips.Array.size
@@ -22073,7 +22298,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68648
+  m_Name: pb_Mesh-107874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24210,6 +24435,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1613954486}
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
+      propertyPath: conversation
+      value: Test Conversation 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
       value: 
       objectReference: {fileID: 587903024}
@@ -24263,7 +24492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _mininumTypewriterSFXDuration
-      value: 0.075
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1296295340203174947, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: _textScrollAudioClips.Array.size
@@ -24604,7 +24833,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66444
+  m_Name: pb_Mesh146714
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24768,7 +24997,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67868
+  m_Name: pb_Mesh-106912
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24932,7 +25161,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68816
+  m_Name: pb_Mesh-108042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27981,7 +28210,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68700
+  m_Name: pb_Mesh-107926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31020,7 +31249,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2047292642}
   - {fileID: 966700714}
   - {fileID: 701609630}
   - {fileID: 1356194596}
@@ -36741,7 +36969,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67856
+  m_Name: pb_Mesh-106900
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36904,7 +37132,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1866571532}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 125852, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Name
@@ -36912,7 +37140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36964,11 +37192,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
---- !u!4 &2047292642 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+--- !u!114 &2047292641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9141583094388786155, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
   m_PrefabInstance: {fileID: 2047292640}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d3329b6cd68ab4a99cdab5d7d333c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085076428
 GameObject:
   m_ObjectHideFlags: 0
@@ -37071,7 +37305,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68724
+  m_Name: pb_Mesh-107950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

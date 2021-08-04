@@ -57,7 +57,7 @@ public class NpcDialogueController : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Minimum amount of time to wait between typewriter sfx. Must be set to an appropriately high amount or else sounds will overlap too much.")]
-    float _mininumTypewriterSFXDuration = 0.125f;
+    float _mininumTypewriterSFXDuration = 0.05f;
 
     [Inject]
     UIManager _UIManager;
@@ -114,10 +114,7 @@ public class NpcDialogueController : MonoBehaviour
         _typewriterEffect = npcSubtitleText.GetComponent<UnityUITypewriterEffect>();
         // listen to text scroll events
         _typewriterEffect.onCharacter.AddListener(OnCharacter);
-        // _typewriterEffect.onEnd.AddListener(OnTextScrollEnded);
-        // npcSubtitleText.onCharacter.AddListener(OnCharacter);
-        Debug.Log($"Listening to typewriter events. _typewriterEffect is null? {_typewriterEffect == null}. _typewriterEffect.onCharacter is null? {_typewriterEffect.onCharacter == null} ");
-        
+
         // if text scroll audio clips have been defined, the typewriter won't play any sounds.
         // the npc will play the sounds instead.
         if(_textScrollAudioClips != null && _textScrollAudioClips.Count > 0)
