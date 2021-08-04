@@ -55,12 +55,17 @@ public class NpcDialogueController : MonoBehaviour
     [Tooltip("True if a new audio clip should interrupt the previous one")]
     bool _interruptAudioClip = false;
 
+    [SerializeField]
+    [Tooltip("Minimum amount of time to wait between typewriter sfx. Must be set to an appropriately high amount or else sounds will overlap too much.")]
+    float _mininumTypewriterSFXDuration = 0.125f;
+
     [Inject]
     UIManager _UIManager;
     Animator _animator;
     EffectsController _effectsController;
     UnityUITypewriterEffect _typewriterEffect;
     int _currentAudioClipIndex;
+    float _lastTypewriterSFXTime;
 
     void Awake()
     {
@@ -106,10 +111,12 @@ public class NpcDialogueController : MonoBehaviour
             return;
         }
 
-        _typewriterEffect = npcSubtitleText.typewriterEffect;
+        _typewriterEffect = npcSubtitleText.GetComponent<UnityUITypewriterEffect>();
         // listen to text scroll events
-        _typewriterEffect.onCharacter.AddListener(OnTextScrolled);
-        _typewriterEffect.onEnd.AddListener(OnTextScrollEnded);
+        _typewriterEffect.onCharacter.AddListener(OnCharacter);
+        // _typewriterEffect.onEnd.AddListener(OnTextScrollEnded);
+        // npcSubtitleText.onCharacter.AddListener(OnCharacter);
+        Debug.Log($"Listening to typewriter events. _typewriterEffect is null? {_typewriterEffect == null}. _typewriterEffect.onCharacter is null? {_typewriterEffect.onCharacter == null} ");
         
         // if text scroll audio clips have been defined, the typewriter won't play any sounds.
         // the npc will play the sounds instead.
@@ -125,12 +132,20 @@ public class NpcDialogueController : MonoBehaviour
             _typewriterEffect.audioClip = npcSubtitleText.defaultTextScrollAudioClip;
         }
 
+        // if(_textScrollAudioClips != null)
+        //     _typewriterEffect.audioClip = _textScrollAudioClips[0];
+        // _typewriterEffect.alternateAudioClips = _textScrollAudioClips.ToArray();
+
+        _lastTypewriterSFXTime = Time.time - _mininumTypewriterSFXDuration;
+
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);
     }
 
     void OnConversationEnded(Transform actor)
     {
         _animator.SetBool("Speaking", false);
+
+        GetComponent<AudioSource>().Stop();
     
         // stop listening to text scroll events
         _typewriterEffect.onCharacter.RemoveAllListeners();
@@ -139,20 +154,29 @@ public class NpcDialogueController : MonoBehaviour
         // remove audio clip because it'll play on the first character that
         // the typewriter does next
         _typewriterEffect.audioClip = null;
-        _typewriterEffect.audioSource.clip = null;
+        if(_typewriterEffect.audioSource)
+            _typewriterEffect.audioSource.clip = null;
         
         speaking = false;
 
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted);
     }
 
-    void OnTextScrolled()
+    void OnCharacter()
     {
-        _animator.SetTrigger("TextScrolled");
+        _animator.SetTrigger("OnCharacter");
 
         // if no audio clips have been defined, the npc wont play any sounds
         if(_textScrollAudioClips == null || _textScrollAudioClips.Count == 0)
             return;
+
+        // if the time between the onCharacter event and the last typewriter sfx is less
+        // than the minimum typewriter sfx duration, then don't play any sounds
+        if(Time.time - _lastTypewriterSFXTime < _mininumTypewriterSFXDuration)
+            return;
+
+        // otherwise, play SFX will play on this onCharacter event
+        _lastTypewriterSFXTime = Time.time;
 
         // wrap audio clip index back to 0 if it has gone out of bounds
         _currentAudioClipIndex = 
@@ -166,6 +190,7 @@ public class NpcDialogueController : MonoBehaviour
         else
             audioClip = _textScrollAudioClips[_currentAudioClipIndex++];
         
+        // GetComponent<AudioSource>().PlayOneShot(audioClip, 1);
         _effectsController.PlayAudioClip(audioClip, interruptAudioClip: _interruptAudioClip, playOneShot: _playOneShot);
     }
 

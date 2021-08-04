@@ -322,11 +322,11 @@ namespace TheFirstPerson
 
 
             ExecuteExtension(ExtFunc.PreUpdate);
-            CorrectRotation();
 
             if (movementEnabled)
             {
                 UpdateInput();
+                CorrectRotation();
             }
 
             UpdateMouseLock();

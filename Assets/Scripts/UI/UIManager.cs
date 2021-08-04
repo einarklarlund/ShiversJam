@@ -131,16 +131,22 @@ public class UIManager : MonoBehaviour
     public void SetCanvasWorldCameras()
     {
         Camera camera;
-        var canvases = GetComponentsInChildren<Canvas>(true);
+        var canvases = FindObjectsOfType<Canvas>(true);
 
         var playerController = FindObjectOfType<PlayerController>();
         if(playerController)
+        {
+            Debug.Log("found player camera");
             camera = playerController.playerCamera;
+        }
         else
+        {
             camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        }
 
         foreach(Canvas canvas in canvases)
         {
+            Debug.Log($"setting canvas world camera for {canvas.name}");
             canvas.worldCamera = camera;
         }
     }

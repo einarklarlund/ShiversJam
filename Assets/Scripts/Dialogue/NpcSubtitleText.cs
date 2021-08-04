@@ -16,4 +16,17 @@ public class NpcSubtitleText : MonoBehaviour
 
     public UnityUITypewriterEffect typewriterEffect =>
         GetComponent<UnityUITypewriterEffect>();
+
+    public UnityEvent onCharacter;
+
+    void Awake()
+    {
+        onCharacter = new UnityEvent();
+    }
+
+    public void InvokeOnCharacter()
+    {
+        Debug.Log("NPC subtitle text OnCharacter invoked");
+        onCharacter.Invoke();
+    }
 }

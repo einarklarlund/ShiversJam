@@ -91,7 +91,14 @@ public class GameManager : MonoBehaviour
 
     public void SetLoadGameOnNextSceneLoad(bool setTo)
     {
-        loadGameOnNextSceneLoad = setTo;
+        if(setTo == true && SaveSystem.HasSavedGameInSlot(1))
+        {
+            loadGameOnNextSceneLoad = true;
+        }
+        else
+        {
+            loadGameOnNextSceneLoad = false;
+        }
     }
 
     public void BeginLoadTransitionTo(string sceneName)
