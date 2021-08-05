@@ -50,41 +50,41 @@ public class MainMenu : MonoBehaviour
     // respective animation clips !!
     public void CompleteTransitionIn()
     {
-        Debug.Log("[MainMenu] completing transition in");
+        // Debug.Log("[MainMenu] completing transition in");
         onTransitionInComplete.Invoke();
     }
 
     public void CompleteTransitionOut()
     {
-        Debug.Log("[MainMenu] completing transition out");
+        // Debug.Log("[MainMenu] completing transition out");
         onTransitionOutComplete.Invoke();
     }
     
     // listens to UIManager.onMainMenuEnter
     public void TransitionIn()
     {
-        Debug.Log("[MainMenu] transitioning in");
+        // Debug.Log("[MainMenu] transitioning in");
         animator.SetTrigger("TransitionIn");
     }
 
     // listens to newGameButton.onClick and loadGameButton.onClick
     public void TransitionOut()
     {
-        Debug.Log("[MainMenu] transitioning out");
+        // Debug.Log("[MainMenu] transitioning out");
         animator.SetTrigger("TransitionOut");
     }
 
     // listens to UIManager.onMainMenuTransitionOutComplete
     public void ShowBackdrop()
     {
-        Debug.Log($"[MainMenu] showing backdrop");
+        // Debug.Log($"[MainMenu] showing backdrop");
         animator.SetBool("ShowBackdrop", true);
     }
 
     // listens to UIManager.onLoadingScreenTransitionInComplete
     public void HideBackdrop()
     {
-        Debug.Log($"[MainMenu] hiding backdrop");
+        // Debug.Log($"[MainMenu] hiding backdrop");
         animator.SetBool("ShowBackdrop", false);
     }
 }

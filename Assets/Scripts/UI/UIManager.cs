@@ -136,7 +136,6 @@ public class UIManager : MonoBehaviour
         var playerController = FindObjectOfType<PlayerController>();
         if(playerController)
         {
-            Debug.Log("found player camera");
             camera = playerController.playerCamera;
         }
         else
@@ -146,7 +145,6 @@ public class UIManager : MonoBehaviour
 
         foreach(Canvas canvas in canvases)
         {
-            Debug.Log($"setting canvas world camera for {canvas.name}");
             canvas.worldCamera = camera;
         }
     }

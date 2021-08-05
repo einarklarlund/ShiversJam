@@ -44,14 +44,14 @@ public class LoadingScreen : MonoBehaviour
     // listens to UIManager.onLoadTransitionInStart
     public void TransitionIn()
     {
-        Debug.Log("[LoadingScreen] transitioning in");
+        // Debug.Log("[LoadingScreen] transitioning in");
         animator.SetTrigger("TransitionIn");
     }
 
     // listens to UIManager.onLoadTransitionOutStart
     public void TransitionOut()
     {
-        Debug.Log("[LoadingScreen] transitioning out");
+        // Debug.Log("[LoadingScreen] transitioning out");
         animator.SetTrigger("TransitionOut");
     }
 
@@ -59,7 +59,7 @@ public class LoadingScreen : MonoBehaviour
     // an animation event at the end of the transition !!
     public void CompleteLoadTransitionIn()
     {
-        Debug.Log("[LoadingScreen] completing transition in");
+        // Debug.Log("[LoadingScreen] completing transition in");
         onLoadTransitionInComplete.Invoke();
     }
 
@@ -67,7 +67,7 @@ public class LoadingScreen : MonoBehaviour
     // an animation event at the end of the transition !!
     public void CompleteLoadTransitionOut()
     {
-        Debug.Log("[LoadingScreen] completing transition out");
+        // Debug.Log("[LoadingScreen] completing transition out");
         onLoadTransitionOutComplete.Invoke();
     }
 }
