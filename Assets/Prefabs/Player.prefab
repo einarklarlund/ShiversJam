@@ -362,12 +362,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementEnabled: 1
-  extensionsEnabled: 0
+  extensionsEnabled: 1
   slopeSlideEnabled: 1
   sprintEnabled: 1
   momentumEnabled: 1
   crouchEnabled: 1
-  jumpEnabled: 1
+  jumpEnabled: 0
   thirdPersonMode: 0
   mouseLookEnabled: 1
   verticalLookEnabled: 1
@@ -411,6 +411,7 @@ MonoBehaviour:
   backwardMult: 0.5
   sensitivity: 4
   mouseLockToggleEnabled: 0
+  mouseLocked: 0
   startMouseLock: 1
   verticalLookLimit: 80
   crouchToggleStyle: 0

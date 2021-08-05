@@ -32,7 +32,10 @@ namespace PixelCrushers
             Debug.Log($"MaterialSaver on gameObject {name} received data {data}");
             var meshRenderer = GetComponent<MeshRenderer>();
             var material = (Material) Resources.Load(data);
-            meshRenderer.material = material;
+            if(material != null)
+            {
+                meshRenderer.material = material;
+            }
         }
 
         //public override void ApplyDataImmediate()
