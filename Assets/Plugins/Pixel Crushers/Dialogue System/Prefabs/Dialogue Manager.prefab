@@ -199,10 +199,10 @@ MonoBehaviour:
       barkCharsPerSecond: 0
       minBarkSeconds: 0
     alertSettings:
-      allowAlertsDuringConversations: 0
+      allowAlertsDuringConversations: 1
       alertCheckFrequency: 0
       alertCharsPerSecond: 0
-      minAlertSeconds: 0
+      minAlertSeconds: 7
   persistentDataSettings:
     recordPersistentDataOn: 0
     includeActorData: 1

@@ -853,7 +853,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23948
+  m_Name: pb_Mesh23950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1853,107 +1853,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4958948729165069657, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
   m_PrefabInstance: {fileID: 587903020}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &587903025
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587903023}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.05
-  m_Pitch: 0.6
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &587903026
+--- !u!114 &587903026 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5618647933575281827, guid: ba8b891e248363448b54dfdd61919e90, type: 3}
+  m_PrefabInstance: {fileID: 587903020}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587903023}
   m_Enabled: 1
@@ -1961,11 +1864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59313d68557847d4faccfc7a25888279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetweenFootsteps: 1.75
-  leftFoot: {fileID: 587903025}
-  rightFoot: {fileID: 587903025}
-  footsteps: []
-  defaultFootsteps: {fileID: 11400000, guid: 5a2a47e2ede6eec4aa4ffb67575f5d64, type: 2}
 --- !u!1 &589892367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2300,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 2
+      value: Tests/Test Conversation 2
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -2529,7 +2427,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 6
+      value: Tests/Test Conversation 6
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -2870,7 +2768,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 4
+      value: Tests/Test Conversation 4
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -6340,7 +6238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 5
+      value: Tests/Test Conversation 5
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -10153,7 +10051,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 0
+      value: Tests/Test Conversation 0
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -22337,7 +22235,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 3
+      value: Tests/Test Conversation 3
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -24583,7 +24481,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversation
-      value: Test Conversation 1
+      value: Tests/Test Conversation 1
       objectReference: {fileID: 0}
     - target: {fileID: 62582874035961521, guid: 193656b629eb70247b6ef1f7e4e18a3a, type: 3}
       propertyPath: conversationConversant
@@ -24980,7 +24878,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23972
+  m_Name: pb_Mesh23974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37329,6 +37227,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+      propertyPath: displaySettings.dialogueUI
+      value: 
+      objectReference: {fileID: 177140, guid: f7ae5d67c952b014ca4b5aa60194add5, type: 3}
     - target: {fileID: 22325660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Camera
       value: 
