@@ -71,6 +71,19 @@ public class PlayerController : Interactor
             _gameManager.TogglePause();
         }
     }
+
+    public void SetMovementEnabled(string setTo)
+    {
+        if(setTo == "false")
+        {
+            SetMovementEnabled(false);
+        }
+        else if(setTo == "true")
+        {
+            SetMovementEnabled(true);
+        }
+    }
+
     public void SetMovementEnabled(bool enabled)
     {
         // set movement and mouse look enablers

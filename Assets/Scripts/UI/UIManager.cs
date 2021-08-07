@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     public PauseMenu pauseMenu;
     public HUD HUD;
     public LoadingScreen loadingScreen;
+    public EndingScreen endingScreen;
 
     [Header("Loading screen events")]
     public UnityEvent onLoadTransitionInStart;
@@ -102,6 +103,12 @@ public class UIManager : MonoBehaviour
     public void BeginLoadTransitionIn()
     {
         onLoadTransitionInStart.Invoke();
+    }
+
+    public void BeginEndingIllustrationIn()
+    {
+        Debug.Log("[UIManager] BeginEndingIllustrationIn");
+        endingScreen.IllustrationIn();
     }
 
     // bubble up this event from the loading screen so that GameManager

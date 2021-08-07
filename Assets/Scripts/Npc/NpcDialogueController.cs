@@ -100,7 +100,7 @@ public class NpcDialogueController : MonoBehaviour
         speaking = true;
 
         _animator.speed = 1;
-        _animator.SetBool("Moving", false);
+        // _animator.SetBool("Moving", false);
         _animator.SetBool("Speaking", true);
 
         // find the npcSubtitleText so that we can find its typewriter effect
