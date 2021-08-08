@@ -93,8 +93,8 @@ public class PlayerController : Interactor
 
         // disable selector
         var selector = GetComponentInChildren<Selector>();
-
-        selector.enabled = enabled;
+        if(selector)
+            selector.enabled = enabled;
     }
 
     public void LookAtViewPoint(Transform viewPoint, float duration = 0.75f)
@@ -113,6 +113,11 @@ public class PlayerController : Interactor
         _playerRotationTween.setEaseType(EaseType.QuadOut).start();
     }
 
+    public void DestroySelector()
+    {
+        var selector = GetComponentInChildren<Selector>();
+        Destroy(selector);
+    }
     void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
     {
         if(currentState == GameManager.GameState.Paused)

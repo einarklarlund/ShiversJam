@@ -11,6 +11,7 @@ public class Periscope : MonoBehaviour
     public Transform cameraPositionTo;
     public Animator animator;
     public SceneAsset periscopeScene;
+    public Transform endingNpcGroup;
 
     PlayerController _player;
     Camera _playerCamera;
@@ -78,6 +79,7 @@ public class Periscope : MonoBehaviour
         if(DialogueLua.GetVariable("Clock").asInt >= 6)
         {
             DialogueLua.SetVariable("ReadyForEnding", true);
+            endingNpcGroup.gameObject.SetActive(true);
         }
     }
 

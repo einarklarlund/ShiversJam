@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 11488680}
   - component: {fileID: 11487282}
   m_Layer: 5
-  m_Name: Continue Button
+  m_Name: NPC Continue Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

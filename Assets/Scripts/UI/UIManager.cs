@@ -111,6 +111,12 @@ public class UIManager : MonoBehaviour
         endingScreen.IllustrationIn();
     }
 
+    public void BeginEndingImageIn()
+    {
+        Debug.Log("[UIManager] BeginEndingImageIn()");
+        endingScreen.EndImageIn();
+    }
+
     // bubble up this event from the loading screen so that GameManager
     // can listen
     public void OnLoadTransitionInComplete()
