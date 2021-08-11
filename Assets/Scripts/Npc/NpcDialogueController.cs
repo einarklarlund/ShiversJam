@@ -63,7 +63,7 @@ public class NpcDialogueController : MonoBehaviour
     UIManager _UIManager;
     Animator _animator;
     EffectsController _effectsController;
-    UnityUITypewriterEffect _typewriterEffect;
+    TextMeshProTypewriterEffect _typewriterEffect;
     int _currentAudioClipIndex;
     float _lastTypewriterSFXTime;
 
@@ -111,7 +111,7 @@ public class NpcDialogueController : MonoBehaviour
             return;
         }
 
-        _typewriterEffect = npcSubtitleText.GetComponent<UnityUITypewriterEffect>();
+        _typewriterEffect = npcSubtitleText.GetComponent<TextMeshProTypewriterEffect>();
         // listen to text scroll events
         _typewriterEffect.onCharacter.AddListener(OnCharacter);
 
