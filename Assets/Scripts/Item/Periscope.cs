@@ -103,6 +103,10 @@ public class Periscope : MonoBehaviour
         _periscopeSceneCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         _periscopeSceneCamera.enabled = true;
         _periscopeSceneCamera.GetComponent<AudioListener>().enabled = true;
+
+        // enable periscope mouse look
+        var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
+        periscopeMouseLook.mouseLookEnabled = true;
         
         StartCoroutine(WaitForInput());
     }
@@ -120,5 +124,10 @@ public class Periscope : MonoBehaviour
         // dialogue trigger OnTriggerEnter
         var dialogueSystemTriggerTransform = transform.Find("Dialogue system trigger");
         dialogueSystemTriggerTransform.gameObject.SetActive(true);
+
+        // reset periscope camera rotation and disable persicope mouse look
+        var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
+        periscopeMouseLook.transform.eulerAngles = Vector3.zero;
+        periscopeMouseLook.mouseLookEnabled = false;
     }
 }
