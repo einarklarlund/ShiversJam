@@ -9,13 +9,13 @@ All this does is provide a way to find the NPC subtitle typewriter effect easily
 through FindObjectOfType(NpcSubtitleText).typeWriterEffect
 */
 
-[RequireComponent(typeof(UnityUITypewriterEffect))]
+[RequireComponent(typeof(TextMeshProTypewriterEffect))]
 public class NpcSubtitleText : MonoBehaviour
 {
     public AudioClip defaultTextScrollAudioClip;
 
-    public UnityUITypewriterEffect typewriterEffect =>
-        GetComponent<UnityUITypewriterEffect>();
+    public TextMeshProTypewriterEffect typewriterEffect =>
+        GetComponent<TextMeshProTypewriterEffect>();
 
     public UnityEvent onCharacter;
 

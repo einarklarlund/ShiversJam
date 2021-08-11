@@ -152,7 +152,7 @@ MonoBehaviour:
       cancelConversation:
         key: 27
         buttonName: 
-    dialogueUI: {fileID: 177140, guid: 43ba2e04253e827408c50b26f08c74fc, type: 3}
+    dialogueUI: {fileID: 177140, guid: f7ae5d67c952b014ca4b5aa60194add5, type: 3}
     defaultCanvas: {fileID: 22325660}
     localizationSettings:
       language: 

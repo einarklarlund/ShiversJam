@@ -159,9 +159,10 @@ MonoBehaviour:
   viewPointTransform: {fileID: 7576676884223258038}
   _textScrollSpeed: 20
   _textScrollAudioClips: []
-  _chooseAudioClipsRandomly: 0
+  _chooseAudioClipsRandomly: 1
   _playOneShot: 1
   _interruptAudioClip: 0
+  _mininumTypewriterSFXDuration: 0.075
 --- !u!114 &79144843
 MonoBehaviour:
   m_ObjectHideFlags: 0

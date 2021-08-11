@@ -271,20 +271,6 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
-  - id: 2
-    fields:
-    - title: Name
-      value: IntroCompleted
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: True if the player has gone thru the intro dialogue
-      type: 0
-      typeString: 
   - id: 3
     fields:
     - title: Name
@@ -311,6 +297,21 @@ MonoBehaviour:
       typeString: CustomFieldType_Number
     - title: Description
       value: Counter that determines how close the player is to ending the game
+      type: 0
+      typeString: 
+  - id: 5
+    fields:
+    - title: Name
+      value: NewGame
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: True if the current game is a new game, the PlayerController will set
+        it to false.
       type: 0
       typeString: 
   conversations:
