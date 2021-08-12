@@ -29,7 +29,6 @@ namespace PixelCrushers
             /// it to the current state of the game. You can use SaveSystem.Deserialize()
             /// to deserialize the string to an object that specifies the state to apply to
             /// the game.
-            Debug.Log($"MaterialSaver on gameObject {name} received data {data}");
             var meshRenderer = GetComponent<MeshRenderer>();
             var material = (Material) Resources.Load(data);
             if(material != null)
