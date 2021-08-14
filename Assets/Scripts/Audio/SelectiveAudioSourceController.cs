@@ -35,7 +35,7 @@ public class SelectiveAudioSourceController : MonoBehaviour
         // set volume to 0 so that the volume must be set by the Play() method
         if(canOnlyBeHeardInGroupCollider)
         {
-            audioSource.volume = 0;
+            audioSource.volume = fadeOutVolume;
         }
         
         if(controlAudioLooping)

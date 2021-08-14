@@ -56,16 +56,14 @@ public class NpcDialogueController : MonoBehaviour
     bool _interruptAudioClip = false;
 
     [SerializeField]
-    [Tooltip("Minimum amount of time to wait between typewriter sfx. Must be set to an appropriately high amount or else sounds will overlap too much.")]
-    float _mininumTypewriterSFXDuration = 0.05f;
+    [Tooltip("Minimum amount of time to wait between typewriter onCharacter events for animation.")]
+    float _typewriterAnimationInterval = 0.05f;
 
     [Inject]
     UIManager _UIManager;
     Animator _animator;
-    EffectsController _effectsController;
     TextMeshProTypewriterEffect _typewriterEffect;
-    int _currentAudioClipIndex;
-    float _lastTypewriterSFXTime;
+    float _lastTypewriterAnimationTime;
 
     void Awake()
     {
@@ -74,7 +72,6 @@ public class NpcDialogueController : MonoBehaviour
 
     void Start()
     {
-        _effectsController = GetComponent<EffectsController>();
         _animator = GetComponent<Animator>();
 
         if(!dialogueSystemTrigger)
@@ -92,6 +89,7 @@ public class NpcDialogueController : MonoBehaviour
         dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnded);
     }
 
+    // listen to TypeWriterEffect onCharacter events and set animation variables
     public void OnConversationStarted(Transform actor)
     {
         if(!canTalk)
@@ -111,88 +109,35 @@ public class NpcDialogueController : MonoBehaviour
             return;
         }
 
+        // set _lastTypeWriterAnimationTime to an appropriately early time
+        _lastTypewriterAnimationTime = Time.time - _typewriterAnimationInterval;
+
         _typewriterEffect = npcSubtitleText.GetComponent<TextMeshProTypewriterEffect>();
         // listen to text scroll events
         _typewriterEffect.onCharacter.AddListener(OnCharacter);
-
-        // if text scroll audio clips have been defined, the typewriter won't play any sounds.
-        // the npc will play the sounds instead.
-        if(_textScrollAudioClips != null && _textScrollAudioClips.Count > 0)
-        {
-            // disable typewriter audio clip because now it'll just be the npc who plays sounds
-            _typewriterEffect.audioClip = null;
-        }
-        else
-        {
-            // if no text scroll audio clips have been defined, the typewriter effect will use 
-            // the default audio clip.
-            _typewriterEffect.audioClip = npcSubtitleText.defaultTextScrollAudioClip;
-        }
-
-        // if(_textScrollAudioClips != null)
-        //     _typewriterEffect.audioClip = _textScrollAudioClips[0];
-        // _typewriterEffect.alternateAudioClips = _textScrollAudioClips.ToArray();
-
-        _lastTypewriterSFXTime = Time.time - _mininumTypewriterSFXDuration;
-
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);
     }
+    
+    // animate the character speaking
+    void OnCharacter()
+    {
+        // if the time between the onCharacter event and the last typewriter animation is less
+        // than the minimum typewriter animation interval, then don't play any animation
+        if(Time.time - _lastTypewriterAnimationTime < _typewriterAnimationInterval)
+            return;
 
+        _animator.SetTrigger("OnCharacter");
+    }
+
+    // set animation variables and stop listening to onCharacter event
     void OnConversationEnded(Transform actor)
     {
         _animator.SetBool("Speaking", false);
 
-        GetComponent<AudioSource>().Stop();
-    
-        // stop listening to text scroll events
-        _typewriterEffect.onCharacter.RemoveAllListeners();
-        _typewriterEffect.onEnd.RemoveAllListeners();
-
-        // remove audio clip because it'll play on the first character that
-        // the typewriter does next
-        _typewriterEffect.audioClip = null;
-        if(_typewriterEffect.audioSource)
-            _typewriterEffect.audioSource.clip = null;
-        
         speaking = false;
 
+        _typewriterEffect.onCharacter.RemoveListener(OnCharacter);
+
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenCompleted);
-    }
-
-    void OnCharacter()
-    {
-        _animator.SetTrigger("OnCharacter");
-
-        // if no audio clips have been defined, the npc wont play any sounds
-        if(_textScrollAudioClips == null || _textScrollAudioClips.Count == 0)
-            return;
-
-        // if the time between the onCharacter event and the last typewriter sfx is less
-        // than the minimum typewriter sfx duration, then don't play any sounds
-        if(Time.time - _lastTypewriterSFXTime < _mininumTypewriterSFXDuration)
-            return;
-
-        // otherwise, play SFX will play on this onCharacter event
-        _lastTypewriterSFXTime = Time.time;
-
-        // wrap audio clip index back to 0 if it has gone out of bounds
-        _currentAudioClipIndex = 
-            (_currentAudioClipIndex >= _textScrollAudioClips.Count) ?
-                0 : _currentAudioClipIndex;
-
-        // choose a random audio clip or sequentially scroll thru the audio clip list, then play it
-        AudioClip audioClip;
-        if(_chooseAudioClipsRandomly)
-            audioClip = _textScrollAudioClips[Random.Range(0, _textScrollAudioClips.Count - 1)];
-        else
-            audioClip = _textScrollAudioClips[_currentAudioClipIndex++];
-        
-        // GetComponent<AudioSource>().PlayOneShot(audioClip, 1);
-        _effectsController.PlayAudioClip(audioClip, interruptAudioClip: _interruptAudioClip, playOneShot: _playOneShot);
-    }
-
-    void OnTextScrollEnded()
-    {
-        
     }
 }
