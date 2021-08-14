@@ -25,36 +25,37 @@ public class AudioGroupSelector : MonoBehaviour
     {
         if(collider.tag == "AudioSourceGroup")
         {
-            Debug.Log($"AudioSourceGroup {collider.name} trigger entered");
-
             var audioSourceGroup = collider.GetComponent<SelectiveAudioSourceGroup>();
             // any gameobject with the AudioSourceGroup tag should have a SelectiveAudioSourceGroup component
             if(!audioSourceGroup)
                 Debug.LogWarning($"GameObject {collider.name} has tag \"AudioSourceGroup\" but doesn't have a SelectiveAudioSourceGroup component");
 
-            // initialize the activeAudioSourceGroup if there isn't one
             if(!activeAudioSourceGroup)
-            {    
+            {
+                // if activeAudioSourceGroup hasn't been set (the AudioGroupSelector wasn't in a 
+                // SelectiveAudioSourceGroup trigger), then set it as the new AudioSourceGroup and fade it in.
                 activeAudioSourceGroup = audioSourceGroup;
+                activeAudioSourceGroup.SetAudioSourcesEnabled(true, activeAudioSourceGroup.fadeInDuration);
             }
             else if(audioSourceGroup.GetInstanceID() == activeAudioSourceGroup.GetInstanceID())
             {
                 // if the trigger collider that was entered is of the same AudioSourceGroup as the 
-                // activeAudioSourceGroup, then add the collider to the list of activeAudioSourceGroup colliders
+                // activeAudioSourceGroup, then add the collider to the list of activeAudioSourceGroup colliders.
                 _activeAudioSourceGroupColliders.Add(collider);
-                return;
             }
+            else
+            {
+                // Otherwise, the AudioGroupSelector is exiting the activeAudioSourceGroup and entering a new one.
+                // Therfore, the activeAudioSourceGroup must be faded out and be reset to the new audio source group.
+                activeAudioSourceGroup.SetAudioSourcesEnabled(false, activeAudioSourceGroup.fadeOutDuration);
 
-            // Otherwise, the AudioGroupSelector is exiting the activeAudioSourceGroup and entering a new one.
-            // Therfore, the activeAudioSourceGroup must be faded out and be reset to the new audio source group.
-            activeAudioSourceGroup.SetAudioSourcesEnabled(false, activeAudioSourceGroup.fadeOutDuration);
+                // set the activeAudioSourceGroup to the new audio source group and fade it in
+                activeAudioSourceGroup = audioSourceGroup;
+                activeAudioSourceGroup.SetAudioSourcesEnabled(true, activeAudioSourceGroup.fadeInDuration);
 
-            // set the activeAudioSourceGroup to the new audio source group and fade it in
-            activeAudioSourceGroup = audioSourceGroup;
-            activeAudioSourceGroup.SetAudioSourcesEnabled(true, activeAudioSourceGroup.fadeInDuration);
-
-            // The list of colliders must be reset to just include the collider of the new activeAudioSourceGroup 
-            _activeAudioSourceGroupColliders = new List<Collider>() { collider };
+                // The list of colliders must be reset to just include the collider of the new activeAudioSourceGroup 
+                _activeAudioSourceGroupColliders = new List<Collider>() { collider };
+            }
         }
     }
 
@@ -64,8 +65,6 @@ public class AudioGroupSelector : MonoBehaviour
     {
         if(collider.tag == "AudioSourceGroup")
         {
-            Debug.Log($"{name} trigger exited");
-
             // remove the exited collider from the current audio source colliders
             _activeAudioSourceGroupColliders.Remove(collider);
 

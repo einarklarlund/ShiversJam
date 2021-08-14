@@ -23,8 +23,6 @@ public class SelectiveAudioSourceGroup : MonoBehaviour
         _otherAudioSourceGroups.Remove(this);
 
         selectiveAudioSources = GetComponentsInChildren<SelectiveAudioSourceController>();
-
-        SetAudioSourcesEnabled(false);
     }
 
     public void SetAudioSourcesEnabled(bool enabled, float fadeDuration = 0)
@@ -35,14 +33,14 @@ public class SelectiveAudioSourceGroup : MonoBehaviour
             {
                 if(selectiveAudioSource.canOnlyBeHeardInGroupCollider)
                 {
-                    selectiveAudioSource.Play(fadeInDuration);
+                    selectiveAudioSource.Play(fadeDuration);
                 }
             }
             else
             {
                 if(selectiveAudioSource.canOnlyBeHeardInGroupCollider)
                 {
-                    selectiveAudioSource.Stop(fadeOutDuration);
+                    selectiveAudioSource.Stop(fadeDuration);
                 }
             }
         }
