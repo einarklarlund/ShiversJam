@@ -18,6 +18,7 @@ public class NpcDialogueController : MonoBehaviour
     // the DialogueSystemEvents will tell the NpcDialogueController when to 
     // start animating, when to talk to the NPC subtitle text gameobject, etc.
     public DialogueSystemEvents dialogueSystemEvents;
+    public DialogueActor dialogueActor;
     [Tooltip("The transform that the player will look at when talking to an NPC")]
     public Transform viewPointTransform;
 
@@ -34,28 +35,6 @@ public class NpcDialogueController : MonoBehaviour
     public bool speaking { get; private set; } = false;
 
     [SerializeField]
-    [Tooltip("While the NPC is in dialogue, its dialogue text will scroll at this speed")]
-    float _textScrollSpeed = 20;
-
-    [Header("Audio settings")]
-
-    [SerializeField]
-    [Tooltip("While the NPC is in dialogue, these audio clips will be used while their dialogue text is scrolling")]
-    List<AudioClip> _textScrollAudioClips = null;
-    
-    [SerializeField]
-    [Tooltip("NPC audio scroll clips will be chose randomly if true, or sequentially if false")]
-    bool _chooseAudioClipsRandomly;
-
-    [SerializeField]
-    [Tooltip("True if the AudioSource.PlayOneShot() method is to be used. Otherwise, AudioSource.Play() will be used")]
-    bool _playOneShot = true;
-
-    [SerializeField]
-    [Tooltip("True if a new audio clip should interrupt the previous one")]
-    bool _interruptAudioClip = false;
-
-    [SerializeField]
     [Tooltip("Minimum amount of time to wait between typewriter onCharacter events for animation.")]
     float _typewriterAnimationInterval = 0.05f;
 
@@ -64,6 +43,7 @@ public class NpcDialogueController : MonoBehaviour
     Animator _animator;
     TextMeshProTypewriterEffect _typewriterEffect;
     float _lastTypewriterAnimationTime;
+    bool _speakingInCurrentDialogueLine;
 
     void Awake()
     {
@@ -87,6 +67,8 @@ public class NpcDialogueController : MonoBehaviour
         // listen to conversation events
         dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStarted);
         dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnded);
+
+        dialogueSystemEvents.conversationEvents.onConversationLine.AddListener(OnConversationLine);
     }
 
     // listen to TypeWriterEffect onCharacter events and set animation variables
@@ -112,15 +94,27 @@ public class NpcDialogueController : MonoBehaviour
         // set _lastTypeWriterAnimationTime to an appropriately early time
         _lastTypewriterAnimationTime = Time.time - _typewriterAnimationInterval;
 
+        // set the _typewriterEffect so that we can listen to onCharacter and stop listening after
+        // the conversation ends
         _typewriterEffect = npcSubtitleText.GetComponent<TextMeshProTypewriterEffect>();
-        // listen to text scroll events
         _typewriterEffect.onCharacter.AddListener(OnCharacter);
+
         _UIManager.hub.Post(UIManager.Message.NpcDialogueScreenOpened);
+    }
+
+    void OnConversationLine(Subtitle subtitle)
+    {
+        // keep record of whether or not dialogueActor is speaking during this conversation line
+        _speakingInCurrentDialogueLine = subtitle.speakerInfo.Name == dialogueActor.actor;
     }
     
     // animate the character speaking
     void OnCharacter()
     {
+        // return if the current conversation line doesn't belong to this actor
+        if(!_speakingInCurrentDialogueLine)
+            return;
+
         // if the time between the onCharacter event and the last typewriter animation is less
         // than the minimum typewriter animation interval, then don't play any animation
         if(Time.time - _lastTypewriterAnimationTime < _typewriterAnimationInterval)

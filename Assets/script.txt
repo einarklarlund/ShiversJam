@@ -1,0 +1,342 @@
+Supply Officer - teaches LIMITED SUPPLIES
+//DEFAULT DIALOG
+ 
+[The Supply Officer is hunched over her clipboard, looking back and forth to the shelves.]
+Twelve cans of meal... Three jugs of fresh water...
+...
+Oh! You’re awake!
+Are you - You’re okay, aren’t you? You hit your head on the - w-when the, uh... 
+[The Supply Officer goes quiet, her eye wide.]
+... Um! A-anyway! I’m taking stock of our supplies. We may uh - well, we haven’t shored →
+for months now, and I don’t know if... If we’ll be able to do that again any time soon.
+//LEARNED: LIMITED SUPPLIES
+...
+
+//DEATH ABOVE
+I don’t really want to... think too hard about what happened, if that’s okay.
+I mean - Not what happened, but, uh, what it could be like up there.
+I don’t wanna b... break down.
+[Her eye waters.]
+Ah! S-sorry!
+
+//UNEXPECTED
+We just... really had no idea it was coming.
+I don’t want to lay blame, you know? I think we’re all just a little rattled.
+Like... What could we have done if we knew ahead of time, anyway?
+...
+[She mutters.] Maybe get some more supplies...
+
+//NUCLEAR KNOWLEDGE
+With the engine the way it is, we can at least stay afloat for... Well, forever.
+I’m trying to be hopeful, you know? The Handler is really good at their job.
+S-so if we can keep moving, I’m sure we’ll find somewhere to shore and restock soon.
+...
+[She looks like she only half believes that.]
+
+//SLOW ASCENT
+... Do you not, uh, remember?
+The descent was so sudden that everything rattled. The Speaker says we angered the sea.
+Maybe that’s why you hit your head.
+I sure hope you’re alright...
+
+//NUCLEAR DEVASTATION
+...
+I hope the world is alright.
+
+//CLOSING DIALOG
+Um.. Just get some rest, okay?
+
+//ENDING DIALOG (IF LAST ONE SPOKEN TO)
+//SCREEN SHAKES. WATER SFX PLAYS
+D-did you hear that?
+We must have breached!
+I’ll follow you to the periscope.
+
+Auxiliary Engineer - teaches DEATH ABOVE
+//DEFAULT DIALOG
+[The Auxiliary Engineer faces you with a scowl.]
+What?
+Don’t look at me like that. This ain’t getting fixed anytime soon.
+What’s the point anyway? What’s even left up there?
+Is there even a world for us to return to?
+...
+If we’re all that’s left...
+//LEARNED: DEATH ABOVE
+
+//LIMITED SUPPLIES
+If we starve, does it matter?
+That Supplies Officer is smart to stay away from me right now.
+I don’t have room in my heart for hopefulness.
+The world is dead and we’re going to starve.
+...
+
+//UNEXPECTED
+You know what?
+If that damned Seer hadn’t been so worthless, then maybe -
+Just maybe -
+We could’ve done something to prevent the damage.
+And our homeland wouldn’t have turned into a wasteland.
+And we wouldn’t be stuck in a tin can full of holes.
+And I wouldn’t be the one fixing them.
+
+//NUCLEAR KNOWLEDGE
+Handler will get on my ass if I don’t fix this, but I couldn’t care less.
+They act like nothing happened. That it’s just another day at work.
+... I’d quit if it made a difference.
+
+//SLOW ASCENT
+We dove so fast that something got agitated and stabbed the hull.
+Could’ve been worse. I’m sure it is worse, if I looked at the outside.
+But frankly, I couldn’t give enough of a damn to check.
+... Some cruel twist of fate that we made it and nothing - Nothing else did.
+
+//NUCLEAR DEVASTATION
+...
+[The Engineer looks choked up.]
+My baby girls...
+Do you... Do you think the homeland’s safe?
+
+//CLOSING DIALOG
+You’ll find out if we flood sooner or later.
+...
+I’ll get around to it.
+
+//ENDING DIALOG (IF LAST ONE SPOKEN TO)
+//SCREEN SHAKES. WATER SFX PLAYS
+... I think we - we surfaced.
+Go look, will you?
+I... I need to know how bad it is.
+
+Seer - teaches UNEXPECTED
+//DEFAULT DIALOG
+...
+[You find the Seer hidden away in a dark corner.]
+I...need not to be spoken to.
+Perhaps it is best that you leave me be.
+...
+I just... I don’t understand.
+I should’ve - I should’ve seen it coming!
+...
+But I didn’t.
+Just darkness.
+
+//LIMITED SUPPLIES
+It’s my fault. If I knew, we could’ve stocked up when we last shored.
+Maybe then we’d... We would have a fighting chance.
+[It holds itself under its cloak.]
+I’ve doomed us, haven’t I...?
+
+//DEATH ABOVE
+I can’t even... I can’t even see the present.
+I have no idea what it’s like up there!
+It’s terrifying.
+Why can’t I see anything?
+
+//NUCLEAR KNOWLEDGE
+The engine will last longer than any of us.
+So why is it... How can the same technology be used to...
+...
+I never thought I’d - We would last longer than the world.
+
+//SLOW ASCENT
+I feel awful. If I knew this was coming, we could’ve dove down sooner and avoided the damage.
+There must be so much of it...
+I wouldn’t blame the Speaker for hating me.
+... Or anyone.
+
+//NUCLEAR DEVASTATION
+I wish everything wasn’t so... cloudy.
+I want to tell everyone it’s okay, and our homeland is alive.
+I want to... I want to be useful.
+But there’s nothing.
+...
+If what Weapons says is true...
+Maybe that’s why I can only see our futures.
+
+//CLOSING DIALOG
+Please don’t let the others know where I am.
+I... I need some time.
+
+//ENDING DIALOG (IF LAST ONE SPOKEN TO)
+//SCREEN SHAKES. WATER SFX PLAYS
+Ah!
+The -  we’ve surfaced.
+I... Still can’t see anything.
+Will you - Will you go look? The periscope?
+
+Engine Handler - teaches NUCLEAR KNOWLEDGE
+//DEFAULT DIALOG
+Ey. Ya head feeling better? Knocked your noggin good.
+You wondering how the engine’s faring? Fine as ever.
+This thing’ll last us from this life till the next, heh.
+It’s powered by molecules ‘n the tiniest explosions you can imagine.
+Long as we got junk to feed it, we keep afloat. It’s a miracle, I think.
+//LEARNED: NUCLEAR KNOWLEDGE
+
+//LIMITED SUPPLIES
+If we run low of stuff, we run low. S’happens.
+We’ll have t’ ration our food, but I’m sure somethin’ll come along.
+I ain’t one to worry too much. If anything, we can always catch ourselves some fish.
+Or eat each other! Gnahahaha!
+... ‘Twas a joke, kid. Don’t look so scared.
+
+//DEATH ABOVE
+Auxiliary ain’t fixing the hull? Why th’ hell not?!
+[Their mouth drops as you explain.]
+... Oh.
+I get it. He needs some time, I bet.
+He has a family, y’know. Probably worried about ‘em.
+Not a lot of us on this hunk o’ metal with others to worry about. Well, not me anyway.
+Just the engine and me crew.
+
+//UNEXPECTED
+Th’ PSA crackled over the speakers while I was gettin’ sleep.
+You know how hard it is for me t’ find the time to sleep?!
+Anyway - I had to rush to make sure the engine stayed stable.
+Th’ damn ocean can be so temperamental.
+
+//SLOW ASCENT
+If th’ Speaker says we go slow, we go slow. I’m good at m’ job, but I can’t work miracles.
+If the creatures of the deep decided we were gonna sink, then the ocean itself would have its own lil’ apocalypse from this here thing.
+
+//NUCLEAR DEVASTATION
+Aye, Weapons has the gist of it. Our engine’s tech can be devastatin’ if used in the wrong way.
+But if th’ homeland thought it best, it was probably best.
+I ain’t paid enough to know the right ways to war.
+We been spyin’ on the capitals for god knows how long.
+... Just gotta hope they didn’ fire back.
+
+//CLOSING DIALOG
+I’ll keep us afloat, don’t you worry, pal.
+You just rest your busted head.
+Or go talk to the others. I ain’t yer boss.
+
+//ENDING DIALOG (IF LAST ONE SPOKEN TO)
+//SCREEN SHAKES. WATER SFX PLAYS
+Oy, there we go.
+Must’ve resurfaced.
+Ye probably want to go peek, yeah?
+Go check the periscope, then.
+
+Speaker - teaches SLOW ASCENT
+//DEFAULT DIALOG
+Oh. Hello. You’re alive.
+The seas were so angry when we dove, I thought we lost you.
+They would be just to expect a sacrifice, after all. But thankfully, you have been granted mercy from the depths.
+[They interlace their four hands.]
+We have to go forward with caution, lest we anger the seas again.
+I know everyone is antsy to see the surface, but we must ascend slowly...
+[The Speaker sighs.]
+//LEARNED: SLOW ASCENT
+
+//LIMITED SUPPLIES
+If supplies are low, whatever we do, we must not seek replenishment from the seas.
+We’d assuredly sink if we tried such a thing. No, we would be swallowed.
+If it were just a few of us - then maybe we could get away with it.
+But the whole crew? No possibility of it.
+
+//DEATH ABOVE
+The announcement that the homeland was firing death came with no warning.
+It’s only natural to assume the capitals have perished.
+The sea’s surface is turbulent, that much I can tell for sure.
+
+//UNEXPECTED
+[The Speaker sighs again, heavy in their posture.]
+The Seer nearly cost us our lives.
+If we knew the announcement was coming ahead of time, we would have been able to dive with more care.
+The CO issued the command without seeking my advice, and as such, you are damaged along with our hull.
+I understand why, of course, but we must not anger the depths again.
+
+//NUCLEAR KNOWLEDGE
+Our submarine is akin to a foreign body in the waters.
+Think of the depths as an immune system, ready to purge us.
+The engine is too unnatural for it to tolerate. So we must move with permission from the seas.
+
+//NUCLEAR DEVASTATION
+Something as unnatural as what drives our container forward is sure to be capable of devastation.
+We all knew the risks of war.
+I wonder what tipped the scales.
+
+//CLOSING DIALOG
+We are all glad to see you moving again.
+Be careful in your steps.
+I wouldn’t want you to get hurt again.
+
+//ENDING DIALOG (IF LAST ONE SPOKEN TO)
+//SCREEN SHAKES. WATER SFX PLAYS
+Ah. A thankfully uneventful ascent.
+You’d best be the one to check the periscope.
+You’re the one the seas took mercy on, after all. It’s a sign of reverence.
+
+Weapons Officer - teaches NUCLEAR DEVASTATION
+//DEFAULT DIALOG
+[The Weapons officer looks exhausted. She is wearing a heavy burden.]
+... Oh... You’re alive.
+That’s surprising.
+[She sighs.]
+I’m sure you’ve gotten the gist by now, but the world has died.
+Some on the crew may be feeling more hopeful than that, but I know what those missiles can do.
+Our engine keeps us afloat, but if the CO wanted to, detonating it could destroy a city.
+Imagine a hundred - a thousand being dropped on a country.
+...
+I can only imagine the capitals retaliated the second they knew.
+
+//LIMITED SUPPLIES
+It’s ironic we’re more likely to starve to death than die by fire.
+And what could we do? Restock at shore? Hah.
+The radiation will poison the soil for generations.
+Our best bet is to pray.
+
+//DEATH ABOVE
+You’re asking if I have anything to grieve?
+My career, I guess. I was hoping to be a CO one day.
+I doubt there’s anybody left to promote me.
+Part of me regrets making a career out of war, but it’s too late for that now.
+
+//UNEXPECTED
+Everyone blames the seer for not seeing it, but honestly, this was the obvious outcome, wasn’t it?
+We’re at war.
+It was just a matter of time.
+
+//NUCLEAR KNOWLEDGE
+Those tiny explosions the Handler mentioned - they’re more powerful than you can imagine.
+More powerful than any bullet, gunpowder, or napalm.
+Enough to raze the world.
+If the homeland has the power, I can only imagine the capitals did too.
+
+//SLOW ASCENT
+I’m not excited to see what’s become of the surface.
+I can imagine it, and it’s not pretty.
+
+//CLOSING DIALOG
+I’d wish you on your way, but where are you to go?
+
+//ENDING DIALOG (IF LAST ONE SPOKEN TO)
+//SCREEN SHAKES. WATER SFX PLAYS
+Mmh. We’ve surfaced.
+Go see how bad it is, will you?
+
+
+Commanding Officer - doesn’t move clock forward
+//DEFAULT DIALOG
+...
+[The CO has never been one for speaking much.]
+[He looks the same as ever.]
+...
+[He salutes you.]
+
+
+Ending
+//Player looks out Periscope and sees a ruined city, covered with smoke and fire. A plume of a nuclear mushroom still has remnants in the sky.
+//Scene is a skybox with JPGs of the burning city in the far distance. Player can spin about 180 degrees to view until they are ready to exit the scene.
+//Upon exiting the scene, all NPCs are gathered around and facing the Player.
+CO: ... 
+CO: It is that bad, is it?
+[The control room is eerily silent. The air is filled with grief.]
+//Illustration of the characters huddled to cry and grieve.
+[After a silence, you speak.]
+“We have survived.”
+CO: We have survived.
+Supply: We have survived.
+//Etc, repeated by each character until the game fades out
+END

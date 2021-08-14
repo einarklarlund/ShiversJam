@@ -118,7 +118,6 @@ public class NpcSubtitleText : MonoBehaviour
         
         // play a random audio clip from the list of the speaker's audio clips
         int randomIndex = Random.Range(0, _currentSpeakerVoiceClips.Count);
-        Debug.Log(_currentSpeakerVoiceClips[randomIndex].name);
         audioSource.PlayOneShot(_currentSpeakerVoiceClips[randomIndex]);
     }
 

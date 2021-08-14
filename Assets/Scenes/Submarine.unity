@@ -40285,7 +40285,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Tests/Test Conversation 0
+  conversation: NPCs/Supply Officer
   conversationConversant: {fileID: 4958948728645389685}
   conversationActor: {fileID: 1263729183617071197}
   startConversationEntryID: -1
@@ -40488,7 +40488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263729183617071199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3164e16d505b96e4abb233f148e28419, type: 3}
+  m_Script: {fileID: 11500000, guid: f728b1ab769a46e45957c3100ccdb43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   npcDialogueController: {fileID: 1296295339473574998}
@@ -40684,6 +40684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSystemTrigger: {fileID: 62582874615008964}
   dialogueSystemEvents: {fileID: 1295756273994844972}
+  dialogueActor: {fileID: 179567498786487608}
   viewPointTransform: {fileID: 7576676883779460547}
   _textScrollSpeed: 20
   _textScrollAudioClips:
@@ -40695,7 +40696,7 @@ MonoBehaviour:
   _chooseAudioClipsRandomly: 1
   _playOneShot: 1
   _interruptAudioClip: 0
-  _mininumTypewriterSFXDuration: 0.075
+  _typewriterAnimationInterval: 0.05
 --- !u!4 &1364435538732619858
 Transform:
   m_ObjectHideFlags: 0
