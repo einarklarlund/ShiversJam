@@ -6,7 +6,7 @@ using NaughtyAttributes;
 using IntrovertStudios.Messaging;
 
 [RequireComponent(typeof(EffectsController))]
-public abstract class NpcController : Interactor
+public class NpcController : Interactor
 {    
     public class Factory : PlaceholderFactory<UnityEngine.Object, NpcController> { }
 
