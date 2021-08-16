@@ -2325,7 +2325,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "I don\u2019t really want to...\\.think too hard about what happened,\\,
+        value: "I don\u2019t really want to...\\. think too hard about what happened,\\,
           if that\u2019s okay."
         type: 0
         typeString: CustomFieldType_Text
@@ -2438,7 +2438,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I don\u2019t wanna b...\\.break down."
+        value: "I don\u2019t wanna b...\\. break down."
         type: 0
         typeString: 
       - title: Sequence
@@ -2548,7 +2548,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Ah!\\.S-sorry!\r"
+        value: "Ah!\\. S-sorry!\r"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2627,7 +2627,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: We just...\.really had no idea it was coming.
+        value: We just...\. really had no idea it was coming.
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2683,7 +2683,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I don\u2019t want to lay blame,\\, you know?\\.I think we\u2019re
+        value: "I don\u2019t want to lay blame,\\, you know?\\. I think we\u2019re
           all just a little rattled."
         type: 0
         typeString: 
@@ -2739,7 +2739,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Like...\.What could we have done if we knew ahead of time,\, anyway?
+        value: Like...\. What could we have done if we knew ahead of time,\, anyway?
         type: 0
         typeString: 
       - title: Sequence
@@ -2989,8 +2989,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "With the engine the way it is,\\, we can at least stay afloat for...\\.Well,\\,
-          forever.\r"
+        value: "With the engine the way it is,\\, we can at least stay afloat for...\\.
+          Well,\\, forever.\r"
         type: 0
         typeString: 
       - title: Sequence
@@ -3046,7 +3046,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I\u2019m trying to be hopeful,\\, you know?\\.The Handler is really
+        value: "I\u2019m trying to be hopeful,\\, you know?\\. The Handler is really
           good at their job.\r"
         type: 0
         typeString: 
@@ -3286,7 +3286,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "...\\.Do you not,\\, uh,\\, remember?\r"
+        value: "...\\. Do you not,\\, uh,\\, remember?\r"
         type: 0
         typeString: 
       - title: Sequence
@@ -3342,8 +3342,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'The descent was so sudden that everything rattled.\.The Speaker says
-          we angered the sea.
+        value: 'The descent was so sudden that everything rattled.\. The Speaker
+          says we angered the sea.
 
 '
         type: 0
@@ -3804,7 +3804,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Um..\.Just get some rest,\, okay?
+        value: 'Um..\. Just get some rest,\, okay?
 
 '
         type: 0
@@ -4348,7 +4348,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I just...\\.I don\u2019t understand.\r\n"
+        value: "I just...\\. I don\u2019t understand.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -4666,8 +4666,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "It\u2019s my fault.\\.If I knew,\\, we could\u2019ve stocked up when
-          we last shored.\r\n"
+        value: "It\u2019s my fault.\\. If I knew,\\, we could\u2019ve stocked up
+          when we last shored.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -4723,7 +4723,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Maybe then we\u2019d...\\.We would have a fighting chance.\r\n"
+        value: "Maybe then we\u2019d...\\. We would have a fighting chance.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -4920,7 +4920,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I can\u2019t even...\\.I can\u2019t even see the present.\r\n"
+        value: "I can\u2019t even...\\. I can\u2019t even see the present.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -5223,7 +5223,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'So why is it...\.How can the same technology be used to...
+        value: 'So why is it...\. How can the same technology be used to...
 
 '
         type: 0
@@ -5410,7 +5410,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I feel awful.\\.If I knew this was coming,\\, we could\u2019ve dove
+        value: "I feel awful.\\. If I knew this was coming,\\, we could\u2019ve dove
           down sooner and avoided \u2192"
         type: 0
         typeString: 
@@ -5579,7 +5579,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '...\.Or anyone.
+        value: '...\. Or anyone.
 
 '
         type: 0
@@ -5648,7 +5648,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I wish everything wasn\u2019t so...\\.cloudy.\r\n"
+        value: "I wish everything wasn\u2019t so...\\. cloudy.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -5759,7 +5759,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I want to...\.I want to be useful.
+        value: 'I want to...\. I want to be useful.
 
 '
         type: 0
@@ -6158,7 +6158,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I...\\.Still can\u2019t see anything.\r\n"
+        value: "I...\\. Still can\u2019t see anything.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -6213,7 +6213,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Will you -\, Will you go look?\.The periscope?
+        value: 'Will you -\, Will you go look?\. The periscope?
 
 '
         type: 0
@@ -6319,7 +6319,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I...\.I need some time.
+        value: 'I...\. I need some time.
 
 '
         type: 0
@@ -6633,7 +6633,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Ey.\.Ya head feeling better?\.Knocked your noggin good.
+        value: 'Ey.\. Ya head feeling better?\. Knocked your noggin good.
 
 '
         type: 0
@@ -6690,7 +6690,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "You wondering how the engine\u2019s faring?\\.Fine as ever.\r\n"
+        value: "You wondering how the engine\u2019s faring?\\. Fine as ever.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -6856,7 +6856,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Long as we got junk to feed it,\\, we keep afloat.\\.It\u2019s a
+        value: "Long as we got junk to feed it,\\, we keep afloat.\\. It\u2019s a
           miracle,\\, I think.\r\n"
         type: 0
         typeString: 
@@ -6953,7 +6953,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "If we run low of stuff,\\, we run low.\\.S\u2019happens.\r\n"
+        value: "If we run low of stuff,\\, we run low.\\. S\u2019happens.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -7065,7 +7065,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I ain\u2019t one to worry too much.\\.If anything,\\, we can always
+        value: "I ain\u2019t one to worry too much.\\. If anything,\\, we can always
           catch ourselves some fish.\r\n"
         type: 0
         typeString: 
@@ -7121,7 +7121,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Or eat each other!\.Gnahahaha!
+        value: 'Or eat each other!\. Gnahahaha!
 
 '
         type: 0
@@ -7178,7 +7178,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "...\\.\u2018Twas a joke,\\, kid.\\.Don\u2019t look so scared.\r\n"
+        value: "...\\. \u2018Twas a joke,\\, kid.\\. Don\u2019t look so scared.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -7263,7 +7263,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Auxiliary ain\u2019t fixing the hull?\\.Why th\u2019 hell not?!\r\n"
+        value: "Auxiliary ain\u2019t fixing the hull?\\. Why th\u2019 hell not?!\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -7376,7 +7376,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '...\.Oh.
+        value: '...\. Oh.
 
 '
         type: 0
@@ -7433,7 +7433,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I get it.\.He needs some time,\, I bet.
+        value: 'I get it.\. He needs some time,\, I bet.
 
 '
         type: 0
@@ -7490,7 +7490,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "He has a family,\\, y\u2019know.\\.Probably worried about \u2018em.\r\n"
+        value: "He has a family,\\, y\u2019know.\\. Probably worried about \u2018em.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -7545,8 +7545,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Not a lot of us on this hunk o\u2019 metal with others to worry about.\\.Well,\\,
-          not me anyway.\r\n"
+        value: "Not a lot of us on this hunk o\u2019 metal with others to worry about.\\.
+          Well,\\, not me anyway.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -7924,7 +7924,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "If th\u2019 Speaker says we go slow,\\, we go slow.\\.I\u2019m good
+        value: "If th\u2019 Speaker says we go slow,\\, we go slow.\\. I\u2019m good
           at m\u2019 job,\\, but I can\u2019t work miracles."
         type: 0
         typeString: 
@@ -8037,7 +8037,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Aye,\\, Weapons has the gist of it.\\.Our engine\u2019s tech can
+        value: "Aye,\\, Weapons has the gist of it.\\. Our engine\u2019s tech can
           be devastatin\u2019 if used in the \u2192"
         type: 0
         typeString: 
@@ -8381,7 +8381,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "...\\.Just gotta hope they didn\u2019 fire back.\r\n"
+        value: "...\\. Just gotta hope they didn\u2019 fire back.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -8774,7 +8774,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Or go talk to the others.\\.I ain\u2019t yer boss.\r\n"
+        value: "Or go talk to the others.\\. I ain\u2019t yer boss.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -9031,7 +9031,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Oh.\\.Hello.\\.You\u2019re alive.\r\n"
+        value: "Oh.\\. Hello.\\. You\u2019re alive.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -9143,7 +9143,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'They would be just to expect a sacrifice,\, after all.\.But thankfully,\,
+        value: 'They would be just to expect a sacrifice,\, after all.\. But thankfully,\,
           you have been granted mercy from the depths.
 
 '
@@ -9530,7 +9530,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "We\u2019d assuredly sink if we tried such a thing.\\.No,\\, we would
+        value: "We\u2019d assuredly sink if we tried such a thing.\\. No,\\, we would
           be swallowed.\r\n"
         type: 0
         typeString: 
@@ -9644,7 +9644,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'But the whole crew?\.No possibility of it.
+        value: 'But the whole crew?\. No possibility of it.
 
 '
         type: 0
@@ -10322,7 +10322,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "The engine is too unnatural for it to tolerate.\\.So we must move
+        value: "The engine is too unnatural for it to tolerate.\\. So we must move
           with permission from \u2192 "
         type: 0
         typeString: 
@@ -10808,7 +10808,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Ah.\.A thankfully uneventful ascent.
+        value: 'Ah.\. A thankfully uneventful ascent.
 
 '
         type: 0
@@ -10920,7 +10920,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "You\u2019re the one the seas took mercy on,\\, after all.\\.It\u2019s
+        value: "You\u2019re the one the seas took mercy on,\\, after all.\\. It\u2019s
           a sign of reverence.\r\n"
         type: 0
         typeString: 
@@ -11341,7 +11341,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[The Weapons officer looks exhausted.\.She is wearing a heavy burden.]
+        value: '[The Weapons officer looks exhausted.\. She is wearing a heavy burden.]
 
 '
         type: 0
@@ -11398,7 +11398,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "...\\.Oh...\\.You\u2019re alive.\r\n"
+        value: "...\\. Oh...\\. You\u2019re alive.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -12060,7 +12060,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'And what could we do?\.Restock at shore?\.Hah.
+        value: 'And what could we do?\. Restock at shore?\. Hah.
 
 '
         type: 0
@@ -12317,7 +12317,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'My career,\, I guess.\.I was hoping to be a CO one day.
+        value: 'My career,\, I guess.\. I was hoping to be a CO one day.
 
 '
         type: 0
@@ -13054,7 +13054,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Mmh.\\.We\u2019ve surfaced.\r\n"
+        value: "Mmh.\\. We\u2019ve surfaced.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -14573,7 +14573,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Don\u2019t look at me like that.\\.This ain\u2019t getting fixed
+        value: "Don\u2019t look at me like that.\\. This ain\u2019t getting fixed
           anytime soon.\r\n"
         type: 0
         typeString: 
@@ -14629,7 +14629,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "What\u2019s the point anyway?\\.What\u2019s even left up there?\r\n"
+        value: "What\u2019s the point anyway?\\. What\u2019s even left up there?\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -15678,7 +15678,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "They act like nothing happened.\\.That it\u2019s just another day
+        value: "They act like nothing happened.\\. That it\u2019s just another day
           at work.\r\n"
         type: 0
         typeString: 
@@ -15734,7 +15734,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "...\\.I\u2019d quit if it made a difference.\r\n"
+        value: "...\\. I\u2019d quit if it made a difference.\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -15865,7 +15865,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Could\u2019ve been worse.\\.I\u2019m sure it is worse,\\, if I looked
+        value: "Could\u2019ve been worse.\\. I\u2019m sure it is worse,\\, if I looked
           at the outside.\r\n"
         type: 0
         typeString: 
@@ -15976,7 +15976,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '...\.Some cruel twist of fate that we made it and nothing -\, Nothing
+        value: '...\. Some cruel twist of fate that we made it and nothing -\, Nothing
           else did.
 
 '
@@ -16218,7 +16218,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "Do you...\\.Do you think the homeland\u2019s safe?\r\n"
+        value: "Do you...\\. Do you think the homeland\u2019s safe?\r\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -16279,7 +16279,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '...\.I think we -\, we surfaced.
+        value: '...\. I think we -\, we surfaced.
 
 '
         type: 0
@@ -16393,7 +16393,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I...\.I need to know how bad it is.
+        value: 'I...\. I need to know how bad it is.
 
 '
         type: 0
@@ -16647,8 +16647,8 @@ MonoBehaviour:
         width: 197.72119
         height: 196.08188
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 72.87661}
-    canvasZoom: 0.58000034
+    canvasScrollPosition: {x: 22.950806, y: 85.24585}
+    canvasZoom: 0.6100004
   syncInfo:
     syncActors: 0
     syncItems: 0
