@@ -80,6 +80,7 @@ MonoBehaviour:
   cameraPositionTo: {fileID: 2081859691891758898}
   animator: {fileID: 2081859691974401171}
   periscopeScene: {fileID: 102900000, guid: 1be6df4fa68983d4281e7dc64523f655, type: 3}
+  endingNpcGroup: {fileID: 0}
 --- !u!95 &2081859691974401171
 Animator:
   serializedVersion: 3
@@ -448,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideName: Periscope
   overrideUseMessage: 
-  maxUseDistance: 5
+  maxUseDistance: 4
   events:
     onSelect:
       m_PersistentCalls:

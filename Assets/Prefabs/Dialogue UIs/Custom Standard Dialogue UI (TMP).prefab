@@ -280,7 +280,7 @@ RectTransform:
   - {fileID: 22466764}
   - {fileID: 22499874}
   m_Father: {fileID: 22426882}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -970,7 +970,7 @@ RectTransform:
   - {fileID: 22465240}
   - {fileID: 22447588}
   m_Father: {fileID: 22479810}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2409,7 +2409,7 @@ RectTransform:
   - {fileID: 3399099058042020042}
   - {fileID: 22482330}
   m_Father: {fileID: 22426882}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2450,7 +2450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2583,8 +2583,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22473608}
-  - {fileID: 22405012}
   - {fileID: 22400966}
+  - {fileID: 22405012}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2698,8 +2698,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 805560798015616}
-  - {fileID: 2935449465977801990}
   - {fileID: 22477508}
+  - {fileID: 2935449465977801990}
   m_Father: {fileID: 22409560}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3740,7 +3740,7 @@ RectTransform:
   m_Children:
   - {fileID: 1207602123789577519}
   m_Father: {fileID: 22479810}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4039,7 +4039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4304,7 +4304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightToLeft: 0
-  charactersPerSecond: 30
+  charactersPerSecond: 40
   audioClip: {fileID: 0}
   alternateAudioClips: []
   audioSource: {fileID: 8297750608649825387}
@@ -4313,8 +4313,8 @@ MonoBehaviour:
   silentCharacters: 
   fullPauseCharacters: 
   quarterPauseCharacters: 
-  fullPauseDuration: 0.5
-  quarterPauseDuration: 0.25
+  fullPauseDuration: 0.25
+  quarterPauseDuration: 0.125
   removeDuplicateTypewriterEffects: 1
   playOnEnable: 0
   waitOneFrameBeforeStarting: 0
