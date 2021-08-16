@@ -4628,10 +4628,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'ShowAlert("LEARNED - UNEXPECTED");
+      userScript: 'ShowAlert("LEARNED: UNEXPECTED");
 
-        Variable["Clock"]
-        = Variable["Clock"] + 1;
+        Variable["Clock"] =
+        Variable["Clock"] + 1;
 
         Variable["Knowledge.Unexpected"] = true'
       onExecute:
@@ -5188,7 +5188,7 @@ MonoBehaviour:
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
-      conditionsString: (Variable["Knowledge.NuclearDevastation"] == true) and (Dialog[thisID].SimStatus
+      conditionsString: (Variable["Knowledge.NuclearKnowledge"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
       userScript: 
       onExecute:
@@ -5411,7 +5411,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "I feel awful.\\.If I knew this was coming,\\, we could\u2019ve dove
-          down sooner and avoided the damage."
+          down sooner and avoided \u2192"
         type: 0
         typeString: 
       - title: Sequence
@@ -5429,7 +5429,7 @@ MonoBehaviour:
       - originConversationID: 12
         originDialogueID: 23
         destinationConversationID: 12
-        destinationDialogueID: 24
+        destinationDialogueID: 40
         isConnector: 0
         priority: 2
       conditionsString: (Variable["Knowledge.SlowAscent"] == true) and (Dialog[thisID].SimStatus
@@ -5497,8 +5497,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 954.45166
-        y: 204.03476
+        x: 953.1858
+        y: 249.60437
         width: 160
         height: 30
     - id: 25
@@ -5552,8 +5552,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 954.45166
-        y: 254.03476
+        x: 953.1858
+        y: 297.07272
         width: 160
         height: 30
     - id: 26
@@ -5621,8 +5621,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 954.45166
-        y: 304.0348
+        x: 953.1858
+        y: 347.07275
         width: 160
         height: 30
     - id: 27
@@ -6347,6 +6347,61 @@ MonoBehaviour:
         y: 747.10986
         width: 160
         height: 30
+    - id: 40
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: the damage.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 40
+        destinationConversationID: 12
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 951.6231
+        y: 201.50311
+        width: 160
+        height: 30
     entryGroups:
     - name: Default Dialogue
       rect:
@@ -6385,8 +6440,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 930.66254
         y: 110.76388
-        width: 200.99988
-        height: 258.37695
+        width: 206.06317
+        height: 292.55417
       color: {r: 1, g: 1, b: 1, a: 0.5}
     - name: Nuclear Devastation
       rect:
@@ -6412,8 +6467,8 @@ MonoBehaviour:
         width: 193.5373
         height: 151.74622
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 76.978966}
-    canvasZoom: 0.6100002
+    canvasScrollPosition: {x: 309.58914, y: 127.39731}
+    canvasZoom: 0.72999996
   - id: 13
     fields:
     - title: Title
@@ -8891,7 +8946,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: 
+      falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
@@ -8901,13 +8956,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 20
+        x: 449.2304
+        y: 29.615372
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 14.481926, y: 11.538442}
+    canvasZoom: 0.52000046
   - id: 15
     fields:
     - title: Title
@@ -10976,7 +11031,7 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 317.2411}
     canvasZoom: 0.58000046
   - id: 16
     fields:

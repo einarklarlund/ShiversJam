@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: Dialogue Database (Auto-Backup)
+  m_Name: Dialogue Database
   m_EditorClassIdentifier: 
   version: 
   author: 
@@ -4628,10 +4628,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'ShowAlert("LEARNED - UNEXPECTED");
+      userScript: 'ShowAlert("LEARNED: UNEXPECTED");
 
-        Variable["Clock"]
-        = Variable["Clock"] + 1;
+        Variable["Clock"] =
+        Variable["Clock"] + 1;
 
         Variable["Knowledge.Unexpected"] = true'
       onExecute:
@@ -4949,8 +4949,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 499.2547
-        y: 157.58168
+        x: 500.6833
+        y: 140.43883
         width: 160
         height: 30
     - id: 16
@@ -5004,8 +5004,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 499.2547
-        y: 207.58168
+        x: 500.6833
+        y: 190.43883
         width: 160
         height: 30
     - id: 17
@@ -5059,8 +5059,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 499.2547
-        y: 257.58167
+        x: 500.6833
+        y: 240.4388
         width: 160
         height: 30
     - id: 18
@@ -5138,8 +5138,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 499.2547
-        y: 307.58167
+        x: 500.6833
+        y: 290.43884
         width: 160
         height: 30
     - id: 19
@@ -5188,7 +5188,7 @@ MonoBehaviour:
         destinationDialogueID: 20
         isConnector: 0
         priority: 2
-      conditionsString: (Variable["Knowledge.NuclearDevastation"] == true) and (Dialog[thisID].SimStatus
+      conditionsString: (Variable["Knowledge.NuclearKnowledge"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
       userScript: 
       onExecute:
@@ -5197,7 +5197,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 723.89404
-        y: 173.56726
+        y: 129.28156
         width: 160
         height: 30
     - id: 20
@@ -5254,7 +5254,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 723.89404
-        y: 223.56726
+        y: 179.28156
         width: 160
         height: 30
     - id: 21
@@ -5311,7 +5311,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 723.89404
-        y: 273.56726
+        y: 229.28146
         width: 160
         height: 30
     - id: 22
@@ -5384,7 +5384,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 723.89404
-        y: 323.56726
+        y: 279.28134
         width: 160
         height: 30
     - id: 23
@@ -5411,7 +5411,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: "I feel awful.\\.If I knew this was coming,\\, we could\u2019ve dove
-          down sooner and avoided the damage."
+          down sooner and avoided \u2192"
         type: 0
         typeString: 
       - title: Sequence
@@ -5429,7 +5429,7 @@ MonoBehaviour:
       - originConversationID: 12
         originDialogueID: 23
         destinationConversationID: 12
-        destinationDialogueID: 24
+        destinationDialogueID: 40
         isConnector: 0
         priority: 2
       conditionsString: (Variable["Knowledge.SlowAscent"] == true) and (Dialog[thisID].SimStatus
@@ -5440,7 +5440,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 950.03204
+        x: 952.88916
         y: 154.03476
         width: 160
         height: 30
@@ -5497,8 +5497,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 951.59454
-        y: 204.03476
+        x: 953.1858
+        y: 249.60437
         width: 160
         height: 30
     - id: 25
@@ -5552,8 +5552,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 951.59454
-        y: 254.03476
+        x: 953.1858
+        y: 297.07272
         width: 160
         height: 30
     - id: 26
@@ -5621,8 +5621,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 951.59454
-        y: 304.0348
+        x: 953.1858
+        y: 347.07275
         width: 160
         height: 30
     - id: 27
@@ -5677,8 +5677,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 124.345924
+        x: 1223.2734
+        y: 195.77449
         width: 160
         height: 30
     - id: 28
@@ -5732,8 +5732,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 174.34592
+        x: 1223.2734
+        y: 245.77448
         width: 160
         height: 30
     - id: 29
@@ -5789,8 +5789,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 224.34592
+        x: 1223.2734
+        y: 295.77457
         width: 160
         height: 30
     - id: 30
@@ -5844,8 +5844,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 274.34592
+        x: 1223.2734
+        y: 345.7747
         width: 160
         height: 30
     - id: 31
@@ -5901,8 +5901,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 324.3459
+        x: 1223.2734
+        y: 395.7747
         width: 160
         height: 30
     - id: 32
@@ -5958,8 +5958,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 374.3459
+        x: 1223.2734
+        y: 445.7747
         width: 160
         height: 30
     - id: 33
@@ -6019,8 +6019,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1214.7019
-        y: 424.3459
+        x: 1223.2734
+        y: 495.7747
         width: 160
         height: 30
     - id: 34
@@ -6347,6 +6347,61 @@ MonoBehaviour:
         y: 747.10986
         width: 160
         height: 30
+    - id: 40
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 6
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: the damage.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 40
+        destinationConversationID: 12
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 951.6231
+        y: 201.50311
+        width: 160
+        height: 30
     entryGroups:
     - name: Default Dialogue
       rect:
@@ -6367,8 +6422,8 @@ MonoBehaviour:
     - name: Death Above
       rect:
         serializedVersion: 2
-        x: 488.97983
-        y: 112.92233
+        x: 490.40842
+        y: 95.77948
         width: 185.28568
         height: 249.57138
       color: {r: 1, g: 1, b: 1, a: 0.5}
@@ -6376,23 +6431,23 @@ MonoBehaviour:
       rect:
         serializedVersion: 2
         x: 709.1137
-        y: 122.6991
+        y: 78.41339
         width: 188.14282
         height: 258.1428
       color: {r: 1, g: 1, b: 1, a: 0.5}
     - name: Slow Ascent
       rect:
         serializedVersion: 2
-        x: 927.8054
+        x: 930.66254
         y: 110.76388
-        width: 200.99988
-        height: 258.37695
+        width: 206.06317
+        height: 292.55417
       color: {r: 1, g: 1, b: 1, a: 0.5}
     - name: Nuclear Devastation
       rect:
         serializedVersion: 2
-        x: 1189.6058
-        y: 86.956505
+        x: 1198.1772
+        y: 158.38506
         width: 208.81244
         height: 397.87488
       color: {r: 1, g: 1, b: 1, a: 0.5}
@@ -6412,8 +6467,8 @@ MonoBehaviour:
         width: 193.5373
         height: 151.74622
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 38.463417}
-    canvasZoom: 0.5800002
+    canvasScrollPosition: {x: 309.58914, y: 127.39731}
+    canvasZoom: 0.72999996
   - id: 13
     fields:
     - title: Title
@@ -8891,7 +8946,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: 
+      falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
@@ -8901,13 +8956,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 20
+        x: 449.2304
+        y: 29.615372
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 14.481926, y: 11.538442}
+    canvasZoom: 0.52000046
   - id: 15
     fields:
     - title: Title
@@ -10976,8 +11031,8 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.79000026
+    canvasScrollPosition: {x: 0, y: 317.2411}
+    canvasZoom: 0.58000046
   - id: 16
     fields:
     - title: Title
