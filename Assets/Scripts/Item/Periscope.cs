@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 using Prime31.ZestKit;
+using PixelCrushers.DialogueSystem;
 
 public class Periscope : MonoBehaviour
 {
     public Transform cameraPositionTo;
     public Animator animator;
     public SceneAsset periscopeScene;
+    public Transform endingNpcGroup;
 
     PlayerController _player;
     Camera _playerCamera;
@@ -48,6 +50,11 @@ public class Periscope : MonoBehaviour
 
         // asynchronously load the periscope scene
         SceneManager.LoadSceneAsync(periscopeScene.name, LoadSceneMode.Additive);
+
+        // disable collider so we can enable it on periscope exit and
+        // activate the ending dialogue trigger
+        var dialogueSystemTriggerTransform = transform.Find("Dialogue system trigger");
+        dialogueSystemTriggerTransform.gameObject.SetActive(false);
     }
 
     // !!!!! the Periscope_Exit animation MUST call this method after it finishes !!!!!
@@ -66,6 +73,14 @@ public class Periscope : MonoBehaviour
         _cameraPositionTween.setEaseType(EaseType.QuadOut)
             .setCompletionHandler(tween => OnExitPeriscopeViewComplete())
             .start();
+
+        // set ReadyForEnding variable once the periscope has been exited
+        // after the clock hits 6
+        if(DialogueLua.GetVariable("Clock").asInt >= 6)
+        {
+            DialogueLua.SetVariable("ReadyForEnding", true);
+            endingNpcGroup.gameObject.SetActive(true);
+        }
     }
 
     IEnumerator WaitForInput()
@@ -88,6 +103,10 @@ public class Periscope : MonoBehaviour
         _periscopeSceneCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         _periscopeSceneCamera.enabled = true;
         _periscopeSceneCamera.GetComponent<AudioListener>().enabled = true;
+
+        // enable periscope mouse look
+        var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
+        periscopeMouseLook.mouseLookEnabled = true;
         
         StartCoroutine(WaitForInput());
     }
@@ -100,5 +119,15 @@ public class Periscope : MonoBehaviour
 
         // asynchronously unload the periscope scene
         SceneManager.UnloadSceneAsync(periscopeScene.name);
+
+        // enable collider so that we can activate the ending 
+        // dialogue trigger OnTriggerEnter
+        var dialogueSystemTriggerTransform = transform.Find("Dialogue system trigger");
+        dialogueSystemTriggerTransform.gameObject.SetActive(true);
+
+        // reset periscope camera rotation and disable persicope mouse look
+        var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
+        periscopeMouseLook.transform.eulerAngles = Vector3.zero;
+        periscopeMouseLook.mouseLookEnabled = false;
     }
 }

@@ -46,7 +46,7 @@ Canvas:
   m_GameObject: {fileID: 125850}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -56,7 +56,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &11426068
 MonoBehaviour:
@@ -152,7 +152,7 @@ MonoBehaviour:
       cancelConversation:
         key: 27
         buttonName: 
-    dialogueUI: {fileID: 177140, guid: 43ba2e04253e827408c50b26f08c74fc, type: 3}
+    dialogueUI: {fileID: 177140, guid: 247b6da5a0368bc4982a8123fb610cea, type: 3}
     defaultCanvas: {fileID: 22325660}
     localizationSettings:
       language: 
@@ -199,10 +199,10 @@ MonoBehaviour:
       barkCharsPerSecond: 0
       minBarkSeconds: 0
     alertSettings:
-      allowAlertsDuringConversations: 0
+      allowAlertsDuringConversations: 1
       alertCheckFrequency: 0
       alertCharsPerSecond: 0
-      minAlertSeconds: 0
+      minAlertSeconds: 7
   persistentDataSettings:
     recordPersistentDataOn: 0
     includeActorData: 1
@@ -217,7 +217,7 @@ MonoBehaviour:
     initializeNewVariables: 1
   allowSimultaneousConversations: 0
   interruptActiveConversations: 0
-  includeSimStatus: 0
+  includeSimStatus: 1
   instantiateDatabase: 0
   preloadResources: 1
   warmUpConversationController: 0

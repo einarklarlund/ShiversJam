@@ -20,10 +20,18 @@ public class PlayerController : Interactor
     public Damageable damageable;
     public DialogueSystemEvents dialogueSystemEvents;
     public FPSController fpsController;
+
+    [Header("Get Up From Bed Cutscene")]
+    public Transform cameraInBedTransform;
+    public bool playGetUpFromBedTweens = true;
+    
     [HideInInspector]
     public bool speaking = false;
 
     PlayerInventory _playerInventory;
+
+    // the position that the camera will tween to after getting up from bed
+    Vector3 _uprightCameraPosition;
 
     // these 2 tweens will be used to look at view points during dialogue
     ITween<Vector3> _cameraRotationTween;
@@ -54,6 +62,19 @@ public class PlayerController : Interactor
         Cursor.lockState = CursorLockMode.Locked;
         
         _gameManager.onGameStateChanged.AddListener(OnGameStateChanged);
+
+        if(DialogueLua.GetVariable("NewGame").asBool == true)
+        {   
+            // set NewGame variable to false so that the get up from bed 
+            // tweens aren't played on a loaded game
+            DialogueLua.SetVariable("NewGame", false);
+
+            if(playGetUpFromBedTweens)
+            {
+                // play the get up from bed tweens
+                GetUpFromBed();
+            }
+        }
     }
 
     void Update()
@@ -71,6 +92,19 @@ public class PlayerController : Interactor
             _gameManager.TogglePause();
         }
     }
+
+    public void SetMovementEnabled(string setTo)
+    {
+        if(setTo == "false")
+        {
+            SetMovementEnabled(false);
+        }
+        else if(setTo == "true")
+        {
+            SetMovementEnabled(true);
+        }
+    }
+
     public void SetMovementEnabled(bool enabled)
     {
         // set movement and mouse look enablers
@@ -80,8 +114,44 @@ public class PlayerController : Interactor
 
         // disable selector
         var selector = GetComponentInChildren<Selector>();
+        if(selector)
+            selector.enabled = enabled;
+    }
 
-        selector.enabled = enabled;
+    public void GetUpFromBed()
+    {
+        // record the position that the player camera will tween to 
+        // while gettin up from bed
+        _uprightCameraPosition = playerCamera.transform.localPosition;
+
+        // put the player in bed
+        playerCamera.transform.position = cameraInBedTransform.position;
+        playerCamera.transform.rotation = cameraInBedTransform.rotation;
+
+        // create an empty tween so that the player gets out of bed a few seconds after starting the game
+        ITween<Vector3> emptyTween = 
+            playerCamera.transform.ZKpositionTo(playerCamera.transform.position, 2f);
+
+        // after waiting a few seconds, the player will turn their head
+        ITween<Vector3> turnHead = 
+            playerCamera.transform.ZKlocalEulersTo(Vector3.up, 5f)
+                .setEaseType(EaseType.QuartInOut);
+
+        // then the player will get up from the bed
+        ITween<Vector3> getUp = 
+            playerCamera.transform.ZKlocalPositionTo(_uprightCameraPosition, 2f)
+                .setEaseType(EaseType.BackInOut);
+
+        // set tween order
+        emptyTween.setNextTween(turnHead);
+        turnHead.setNextTween(getUp);
+
+        // disable the fpsController and enable it once the tweens are done
+        fpsController.enabled = false;
+        getUp.setCompletionHandler(iTween => fpsController.enabled = true);
+
+        // start the sequence of tweens
+        emptyTween.start();
     }
 
     public void LookAtViewPoint(Transform viewPoint, float duration = 0.75f)
@@ -100,6 +170,12 @@ public class PlayerController : Interactor
         _playerRotationTween.setEaseType(EaseType.QuadOut).start();
     }
 
+    public void DestroySelector()
+    {
+        var selector = GetComponentInChildren<Selector>();
+        Destroy(selector);
+    }
+    
     void OnGameStateChanged(GameManager.GameState previousState, GameManager.GameState currentState)
     {
         if(currentState == GameManager.GameState.Paused)
