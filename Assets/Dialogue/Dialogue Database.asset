@@ -3897,7 +3897,7 @@ MonoBehaviour:
         width: 229.5711
         height: 237.73431
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 36.354584, y: 0}
+    canvasScrollPosition: {x: 639.8022, y: 49.99994}
     canvasZoom: 0.5800006
   - id: 12
     fields:
@@ -6467,7 +6467,7 @@ MonoBehaviour:
         width: 193.5373
         height: 151.74622
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 608.21936, y: 20.548004}
+    canvasScrollPosition: {x: 709.58923, y: 180.82199}
     canvasZoom: 0.72999996
   - id: 13
     fields:
@@ -8865,7 +8865,7 @@ MonoBehaviour:
         width: 199.2757
         height: 209.62045
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 143.1833}
+    canvasScrollPosition: {x: 620.6891, y: 148.3557}
     canvasZoom: 0.5800005
   - id: 14
     fields:
@@ -10408,8 +10408,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1206.6073
-        y: 197.27261
+        x: 1242.5448
+        y: 181.64761
         width: 160
         height: 30
     - id: 24
@@ -10463,8 +10463,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1206.6073
-        y: 247.27258
+        x: 1242.5448
+        y: 231.64758
         width: 160
         height: 30
     - id: 25
@@ -10520,8 +10520,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1206.6073
-        y: 297.2727
+        x: 1242.5448
+        y: 281.6477
         width: 160
         height: 30
     - id: 26
@@ -10761,7 +10761,19 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 14
+        originDialogueID: 29
+        destinationConversationID: 14
+        destinationDialogueID: 33
+        isConnector: 0
+        priority: 2
+      - originConversationID: 14
+        originDialogueID: 29
+        destinationConversationID: 14
+        destinationDialogueID: 30
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -10769,8 +10781,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1206.6073
-        y: 347.2727
+        x: 1242.5448
+        y: 331.6477
         width: 160
         height: 30
     - id: 30
@@ -11142,8 +11154,8 @@ MonoBehaviour:
     - name: Nuclear Devastation
       rect:
         serializedVersion: 2
-        x: 1191.8547
-        y: 169.16603
+        x: 1227.7922
+        y: 153.54103
         width: 193.68286
         height: 225.3902
       color: {r: 1, g: 1, b: 1, a: 0.5}
@@ -11163,8 +11175,8 @@ MonoBehaviour:
         width: 197.34143
         height: 170.51216
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.49000037
+    canvasScrollPosition: {x: 511.94, y: 259.70148}
+    canvasZoom: 0.6700002
   - id: 15
     fields:
     - title: Title
@@ -13002,6 +13014,12 @@ MonoBehaviour:
         destinationDialogueID: 31
         isConnector: 0
         priority: 2
+      - originConversationID: 15
+        originDialogueID: 28
+        destinationConversationID: 15
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -13233,8 +13251,8 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 317.2411}
-    canvasZoom: 0.58000046
+    canvasScrollPosition: {x: 69.23065, y: 133.39993}
+    canvasZoom: 0.5200005
   - id: 16
     fields:
     - title: Title
@@ -14850,7 +14868,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 27.454971
-        y: 377.90912
+        y: 376.34662
         width: 160
         height: 30
     - id: 8
@@ -15219,8 +15237,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 143.36362
+        x: 523.5341
+        y: 115.23863
         width: 160
         height: 30
     - id: 14
@@ -15275,8 +15293,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 193.36362
+        x: 523.5341
+        y: 165.23863
         width: 160
         height: 30
     - id: 15
@@ -15332,8 +15350,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 243.36362
+        x: 523.5341
+        y: 215.23863
         width: 160
         height: 30
     - id: 16
@@ -15387,8 +15405,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 293.36362
+        x: 523.5341
+        y: 265.23865
         width: 160
         height: 30
     - id: 17
@@ -15442,8 +15460,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 345.1818
+        x: 523.5341
+        y: 317.05682
         width: 160
         height: 30
     - id: 18
@@ -15497,8 +15515,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 395.1818
+        x: 523.5341
+        y: 367.05682
         width: 160
         height: 30
     - id: 19
@@ -15576,8 +15594,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 532.9091
-        y: 445.1818
+        x: 523.5341
+        y: 417.05682
         width: 160
         height: 30
     - id: 20
@@ -15633,8 +15651,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 782.6582
-        y: 157.45226
+        x: 795.1582
+        y: 132.45227
         width: 160
         height: 30
     - id: 21
@@ -15689,8 +15707,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 782.6582
-        y: 208.88084
+        x: 795.1582
+        y: 183.88086
         width: 160
         height: 30
     - id: 22
@@ -15762,8 +15780,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 782.6582
-        y: 258.88086
+        x: 795.1582
+        y: 233.88087
         width: 160
         height: 30
     - id: 23
@@ -15820,8 +15838,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 989.27246
-        y: 136.09088
+        x: 1000.20996
+        y: 293.90332
         width: 160
         height: 30
     - id: 24
@@ -15876,8 +15894,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 989.27246
-        y: 186.09088
+        x: 1000.20996
+        y: 343.90332
         width: 160
         height: 30
     - id: 25
@@ -15931,8 +15949,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 989.27246
-        y: 236.09088
+        x: 1000.20996
+        y: 393.90332
         width: 160
         height: 30
     - id: 26
@@ -16001,8 +16019,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 989.27246
-        y: 286.09085
+        x: 1000.20996
+        y: 443.90326
         width: 160
         height: 30
     - id: 27
@@ -16584,24 +16602,24 @@ MonoBehaviour:
     - name: Unexpected
       rect:
         serializedVersion: 2
-        x: 506.0589
-        y: 118.669876
+        x: 496.6839
+        y: 90.54489
         width: 204.44818
         height: 382.03427
       color: {r: 1, g: 1, b: 1, a: 0.5}
     - name: Nuclear Knowledge
       rect:
         serializedVersion: 2
-        x: 763.79266
-        y: 122.41373
+        x: 776.29266
+        y: 97.41374
         width: 195.82745
         height: 197.55164
       color: {r: 1, g: 1, b: 1, a: 0.5}
     - name: Slow Ascent
       rect:
         serializedVersion: 2
-        x: 969.85175
-        y: 111.77333
+        x: 980.78925
+        y: 269.58575
         width: 195.82745
         height: 232.03436
       color: {r: 1, g: 1, b: 1, a: 0.5}
@@ -16629,8 +16647,8 @@ MonoBehaviour:
         width: 197.72119
         height: 196.08188
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 123.9583, y: 0}
-    canvasZoom: 0.7300002
+    canvasScrollPosition: {x: 0, y: 72.87661}
+    canvasZoom: 0.58000034
   syncInfo:
     syncActors: 0
     syncItems: 0
