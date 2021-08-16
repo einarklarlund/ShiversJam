@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public UnityEvent onTransitionInComplete;
     public UnityEvent onTransitionOutComplete;
+    public bool loadGamePressed;
 
     public float tweenValue { get; private set; }
 
@@ -34,54 +35,56 @@ public class MainMenu : MonoBehaviour
         animator = GetComponent<Animator>();
         canvas = GetComponent<Canvas>();
         
-        var color = backdrop.color;
-        color.a = 1;
+        // var color = backdrop.color;
+        // color.a = 1;
 
-        // make sure backdrop doesn't lose alpha value after transitioning out
-        onTransitionOutComplete.AddListener(() => 
-        {
-            Debug.Log("setting backdrop alpha value to 1");
-            backdrop.color = color;
-        });
+        // // make sure backdrop doesn't lose alpha value after transitioning out
+        // onTransitionOutComplete.AddListener(() => 
+        // {
+        //     Debug.Log("setting backdrop alpha value to 1");
+        //     backdrop.color = color;
+        // });
     }
 
     // !! the following 2 methods MUST be called at the end of their
     // respective animation clips !!
     public void CompleteTransitionIn()
     {
+        // Debug.Log("[MainMenu] completing transition in");
         onTransitionInComplete.Invoke();
     }
 
     public void CompleteTransitionOut()
     {
+        // Debug.Log("[MainMenu] completing transition out");
         onTransitionOutComplete.Invoke();
     }
     
     // listens to UIManager.onMainMenuEnter
     public void TransitionIn()
     {
-        Debug.Log("[MainMenu] transitioning in");
+        // Debug.Log("[MainMenu] transitioning in");
         animator.SetTrigger("TransitionIn");
     }
 
     // listens to newGameButton.onClick and loadGameButton.onClick
     public void TransitionOut()
     {
-        Debug.Log("[MainMenu] transitioning out");
+        // Debug.Log("[MainMenu] transitioning out");
         animator.SetTrigger("TransitionOut");
     }
 
     // listens to UIManager.onMainMenuTransitionOutComplete
     public void ShowBackdrop()
     {
-        Debug.Log($"[MainMenu] showing backdrop");
+        // Debug.Log($"[MainMenu] showing backdrop");
         animator.SetBool("ShowBackdrop", true);
     }
 
     // listens to UIManager.onLoadingScreenTransitionInComplete
     public void HideBackdrop()
     {
-        Debug.Log($"[MainMenu] hiding backdrop");
+        // Debug.Log($"[MainMenu] hiding backdrop");
         animator.SetBool("ShowBackdrop", false);
     }
 }

@@ -28,31 +28,15 @@ public class UIManager : MonoBehaviour
 
     [Header("Loading screen events")]
     public UnityEvent onLoadTransitionInStart;
-        // ~~~~~ GOES TO onLoadTransitionInStart ~~~~~
-        // loadingScreen.canvas.enabled = true;
-        // loadingScreen.TransitionIn();
-
     public UnityEvent onLoadTransitionInComplete;
-        // ~~~~~ GOES TO onLoadTransitionInComplete ~~~~~
-        // mainMenu.HideBackdrop()
-
     public UnityEvent onLoadTransitionOutStart;
-        // ~~~~~ GOES TO onLoadTransitionOutStart ~~~~~~
-        // loadingScreen.TransitionOut()
-        // this.SetCanvasWorldCameras()
-
     public UnityEvent onLoadTransitionOutComplete;
-        // ~~~~~ GOES INTO onLoadTransitionOutComplete ~~~~~
-        // loadingScreen.canvas.enabled = false;
     
     [Header("Main menu events")]
     public UnityEvent onMainMenuSceneLoaded;
     public UnityEvent onMainMenuEnter;
-            // ~~~~~ GOES INTO onMainMenuEnter ~~~~~
-            //     mainMenu.TransitionIn();
     public UnityEvent onMainMenuTransitionInComplete;
     public UnityEvent onMainMenuTransitionOutComplete;
-
 
     [Inject]
     GameManager _gameManager;
@@ -147,13 +131,17 @@ public class UIManager : MonoBehaviour
     public void SetCanvasWorldCameras()
     {
         Camera camera;
-        var canvases = GetComponentsInChildren<Canvas>(true);
+        var canvases = FindObjectsOfType<Canvas>(true);
 
         var playerController = FindObjectOfType<PlayerController>();
         if(playerController)
+        {
             camera = playerController.playerCamera;
+        }
         else
+        {
             camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        }
 
         foreach(Canvas canvas in canvases)
         {
@@ -169,9 +157,16 @@ public class UIManager : MonoBehaviour
             onMainMenuEnter.Invoke();
         }
 
+        // start the transition in animation when booted to main menu
+        if(currentState == GameManager.GameState.MainMenu &&
+            previousState == GameManager.GameState.Boot)
+        {
+            mainMenu.TransitionIn();
+        }
+
         // Hide the main menu backdrop if a non-main menu scene
         // has been loaded on boot (when a scene is loaded from within
-        // UnityEditor)
+        // UnityEditor).
         if(currentState == GameManager.GameState.Running &&
             previousState == GameManager.GameState.Boot)
         {

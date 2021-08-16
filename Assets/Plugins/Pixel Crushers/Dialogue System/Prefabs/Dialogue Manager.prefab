@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 22425850}
   - component: {fileID: 22325660}
   - component: {fileID: 11426068}
-  - component: {fileID: 2005708645490814084}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -47,7 +46,7 @@ Canvas:
   m_GameObject: {fileID: 125850}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -76,18 +75,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2005708645490814084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4979622a55055064f9994bddc5fd74ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &125852
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,10 +87,11 @@ GameObject:
   - component: {fileID: 11426072}
   - component: {fileID: 11471062}
   - component: {fileID: 11424616}
-  - component: {fileID: 2017149957084070875}
-  - component: {fileID: 8935869398320793603}
-  - component: {fileID: 2758867493028057548}
-  - component: {fileID: 2655455264742929514}
+  - component: {fileID: 3703280613214525701}
+  - component: {fileID: 946807616574778465}
+  - component: {fileID: 5799212016819307146}
+  - component: {fileID: 1555657300717008985}
+  - component: {fileID: 9141583094388786155}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -164,7 +152,7 @@ MonoBehaviour:
       cancelConversation:
         key: 27
         buttonName: 
-    dialogueUI: {fileID: 101180, guid: 5ba51781a19f8a843abeb2d304d0d26e, type: 3}
+    dialogueUI: {fileID: 177140, guid: 43ba2e04253e827408c50b26f08c74fc, type: 3}
     defaultCanvas: {fileID: 22325660}
     localizationSettings:
       language: 
@@ -177,7 +165,7 @@ MonoBehaviour:
       allowPCSubtitleReminders: 0
       skipPCSubtitleAfterResponseMenu: 1
       subtitleCharsPerSecond: 30
-      minSubtitleSeconds: 0
+      minSubtitleSeconds: 2
       continueButton: 1
       richTextEmphases: 1
       informSequenceStartAndEnd: 0
@@ -201,10 +189,10 @@ MonoBehaviour:
       - Fire1
       - Fire2
       cancel:
-        key: 27
+        key: 0
         buttonName: 
       cancelConversation:
-        key: 27
+        key: 0
         buttonName: 
     barkSettings:
       allowBarksDuringConversations: 1
@@ -229,7 +217,7 @@ MonoBehaviour:
     initializeNewVariables: 1
   allowSimultaneousConversations: 0
   interruptActiveConversations: 0
-  includeSimStatus: 1
+  includeSimStatus: 0
   instantiateDatabase: 0
   preloadResources: 1
   warmUpConversationController: 0
@@ -298,7 +286,22 @@ MonoBehaviour:
   onUseTouch:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2017149957084070875
+--- !u!114 &3703280613214525701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc03036aad05c334eab057a96938959a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_saveCurrentScene: 1
+  m_framesToWaitBeforeApplyData: 1
+  m_debug: 0
+--- !u!114 &946807616574778465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,7 +319,20 @@ MonoBehaviour:
   m_restoreStateOnStart: 0
   skipApplyDataAfterFramesIfApplyImmediate: 1
   saveRawData: 0
---- !u!114 &8935869398320793603
+--- !u!114 &5799212016819307146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbafe64f40b0694b8d4ec9c082f8bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prettyPrint: 0
+--- !u!114 &1555657300717008985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,7 +348,7 @@ MonoBehaviour:
   encrypt: 0
   encryptionPassword: My Password
   m_debug: 0
---- !u!114 &2758867493028057548
+--- !u!114 &9141583094388786155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,22 +357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 125852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fbafe64f40b0694b8d4ec9c082f8bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 28d3329b6cd68ab4a99cdab5d7d333c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prettyPrint: 0
---- !u!114 &2655455264742929514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc03036aad05c334eab057a96938959a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_saveCurrentScene: 1
-  m_framesToWaitBeforeApplyData: 1
-  m_debug: 0
+  defaultStartingSceneName: 

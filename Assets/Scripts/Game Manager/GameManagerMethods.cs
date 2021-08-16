@@ -15,8 +15,24 @@ public class GameManagerMethods : MonoBehaviour
         _gameManager.UpdateState(state);
     }
 
-    public void LoadScene(string newScene)
+    
+    public void SetLoadGameOnNextSceneLoad(bool setTo)
     {
-        _gameManager.LoadScene(newScene);
+        _gameManager.SetLoadGameOnNextSceneLoad(setTo);
+    }
+
+    public void BeginLoadTransitionTo(string newScene)
+    {
+        _gameManager.BeginLoadTransitionTo(newScene);
+    }
+
+    public void LoadNextScene()
+    {
+        _gameManager.LoadNextScene();
+    }
+
+    public void ResetGameState()
+    {
+        _gameManager.ResetGameState();
     }
 }

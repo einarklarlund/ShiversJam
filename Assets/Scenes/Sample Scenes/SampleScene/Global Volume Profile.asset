@@ -97,11 +97,11 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   geometryEnabled:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   geometry:
     m_OverrideState: 1
-    m_Value: 0.769
+    m_Value: 0.917
     min: 0
     max: 1
   geometryPushbackEnabled:
@@ -128,7 +128,7 @@ MonoBehaviour:
     min: 0
     max: 1
   affineTextureWarping:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.462
     min: 0
     max: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
   - {fileID: -8470650888254710697}
   - {fileID: 3636891891164145951}
   - {fileID: 6310079511141465207}
-  - {fileID: 5500199930628131901}
+  - {fileID: 2850415168234243555}
 --- !u!114 &1792733728342309428
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -199,10 +199,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lightingIsEnabled:
     m_OverrideState: 1
-    m_Value: 0
-  bakedLightingMultiplier:
-    m_OverrideState: 0
     m_Value: 1
+  bakedLightingMultiplier:
+    m_OverrideState: 1
+    m_Value: 0.1
     min: 0
   vertexColorLightingMultiplier:
     m_OverrideState: 0
@@ -222,6 +222,39 @@ MonoBehaviour:
     m_Value: 4
     min: 1
     max: 8
+--- !u!114 &2850415168234243555
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d61509376d05fc438d9ed9281e44e26, type: 3}
+  m_Name: CompressionVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  isEnabled:
+    m_OverrideState: 0
+    m_Value: 0
+  weight:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  accuracy:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  mode:
+    m_OverrideState: 0
+    m_Value: 0
+  colorspace:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &3636891891164145951
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -343,39 +376,6 @@ MonoBehaviour:
   heightMaxLayer1:
     m_OverrideState: 0
     m_Value: 10
---- !u!114 &5500199930628131901
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d61509376d05fc438d9ed9281e44e26, type: 3}
-  m_Name: CompressionVolume
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  isEnabled:
-    m_OverrideState: 0
-    m_Value: 1
-  weight:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-    max: 1
-  accuracy:
-    m_OverrideState: 1
-    m_Value: 0
-    min: 0
-    max: 1
-  mode:
-    m_OverrideState: 1
-    m_Value: 1
-  colorspace:
-    m_OverrideState: 1
-    m_Value: 4
 --- !u!114 &6310079511141465207
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -536,7 +536,7 @@ MonoBehaviour:
     m_Value: 1
   frameLimit:
     m_OverrideState: 1
-    m_Value: 24
+    m_Value: 30
     min: 1
   aspectMode:
     m_OverrideState: 0
