@@ -184,10 +184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25405623b3ffae47bb6d1e4d7eb4331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flickerPeriod: 10
+  flickerPeriod: 5
   randomDeviation: 5
+  lightConeMeshes:
+  - {fileID: 1326880463872662846}
+  - {fileID: 1326880463813776222}
   lights: []
-  meshes: []
 --- !u!1 &1326880463813776218
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +204,7 @@ GameObject:
   - component: {fileID: 1326880463813776222}
   - component: {fileID: 1326880463813776217}
   m_Layer: 0
-  m_Name: Bottom
+  m_Name: Cone Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,8 +871,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7607843, g: 0.7443137, b: 0.60862744, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 2
+  m_Range: 2.8980236
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -903,7 +905,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
