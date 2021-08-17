@@ -6,25 +6,27 @@ public class LightFlicker : MonoBehaviour
 {
     public float flickerPeriod;
     public float randomDeviation;
+    
+    // the light cone meshes must be set in the inspector so that the
+    // script knows which meshes to flicker on/off (it shouldn't flicker
+    // the mesh of the lightbulb/metal cage)
+    [Tooltip("The meshes of the light cone that will flicker")]
+    public MeshRenderer[] lightConeMeshes;
 
     [HideInInspector]
     public Light[] lights;
-    
-    [HideInInspector]
-    public MeshRenderer[] meshes;    
 
     // Start is called before the first frame update
     void Start()
     {
         lights = GetComponentsInChildren<Light>();
-        meshes = GetComponentsInChildren<MeshRenderer>();
 
         StartCoroutine(WaitForFlicker());
     }
 
     IEnumerator WaitForFlicker()
     {
-        yield return new WaitForSeconds(flickerPeriod + Random.value * randomDeviation);
+        yield return new WaitForSeconds(flickerPeriod + 2 * (Random.value - 0.5f) * randomDeviation);
 
         StartCoroutine(Flicker());
     }
@@ -52,7 +54,7 @@ public class LightFlicker : MonoBehaviour
             light.enabled = active;
         }
 
-        foreach(var mesh in meshes)
+        foreach(var mesh in lightConeMeshes)
         {
             mesh.enabled = active;
         }
