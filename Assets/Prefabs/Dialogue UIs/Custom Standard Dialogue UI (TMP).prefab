@@ -4313,8 +4313,8 @@ MonoBehaviour:
   silentCharacters: 
   fullPauseCharacters: 
   quarterPauseCharacters: 
-  fullPauseDuration: 0.25
-  quarterPauseDuration: 0.125
+  fullPauseDuration: 0.3
+  quarterPauseDuration: 0.2
   removeDuplicateTypewriterEffects: 1
   playOnEnable: 0
   waitOneFrameBeforeStarting: 0
