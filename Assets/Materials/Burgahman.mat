@@ -26,7 +26,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 513cd6ecb1608485fa0bcb6366710107, type: 3}
+        m_Texture: {fileID: 2800000, guid: ce2d3e3f20fcb4f49ab4fc4b590eaf40, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionCubemap:
