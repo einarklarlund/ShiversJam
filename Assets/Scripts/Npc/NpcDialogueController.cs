@@ -36,7 +36,7 @@ public class NpcDialogueController : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Minimum amount of time to wait between typewriter onCharacter events for animation.")]
-    float _typewriterAnimationInterval = 0.05f;
+    float _typewriterAnimationInterval = 0.125f;
 
     [Inject]
     UIManager _UIManager;
@@ -119,6 +119,9 @@ public class NpcDialogueController : MonoBehaviour
         // than the minimum typewriter animation interval, then don't play any animation
         if(Time.time - _lastTypewriterAnimationTime < _typewriterAnimationInterval)
             return;
+
+        // otherwise, SFX will play on this onCharacter event
+        _lastTypewriterAnimationTime = Time.time;
 
         _animator.SetTrigger("OnCharacter");
     }
