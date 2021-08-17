@@ -25644,7 +25644,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 70329ecf68eeadf4db5de615522c8805, type: 2}
   - {fileID: 2100000, guid: 42d223c5c4e25eb4fb3efa98a39701b3, type: 2}
   - {fileID: 2100000, guid: 8f83c73ca91b88e4b8d34533b457a62d, type: 2}
-  - {fileID: 0}
   meshRenderer: {fileID: 0}
 --- !u!114 &1202473842
 MonoBehaviour:
