@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Prime31.ZestKit;
 
 public class AudioSourceVolumeTweener : MonoBehaviour
 {
+    public AudioSource audioSource;
+
+    public float tweenDuration = 4;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(!audioSource)
+            audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TweenVolumeTo(float tweenTo)
     {
-        
+        ZestKit.instance.stopAllTweensWithTarget(audioSource);
+
+        audioSource.ZKvolumeTo(tweenTo, tweenDuration).start();
     }
 }
