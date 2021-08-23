@@ -77,7 +77,7 @@ public class NpcSubtitleText : MonoBehaviour
         // set typewriter audio clip to defaultTextScrollAudioClip if we couldn't find the VoiceNumber
         if(voiceNumber == 0)
         {
-            Debug.Log($"[NpcSubtitleText] Couldn't find VoiceNumber field for actor {_currentSpeaker}");
+            Debug.Log($"[NpcSubtitleText] Couldn't find VoiceNumber field for actor \"{_currentSpeaker}\". Using Default typewriter clip...");
             _currentSpeakerVoiceClips = new List<AudioClip>()  { defaultTextScrollAudioClip };
             return;
         }

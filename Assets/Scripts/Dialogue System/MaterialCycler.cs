@@ -21,16 +21,9 @@ public class MaterialCycler : MonoBehaviour
             meshRenderer = GetComponent<MeshRenderer>();
 
         _dialogueSystemEvents = DialogueManager.instance.GetComponent<DialogueSystemEvents>();
-
         _dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnd);
-        _dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStart);
 
         _clockValue = DialogueLua.GetVariable("Clock").asInt;
-    }
-
-    void OnConversationStart(Transform actor)
-    {
-        Debug.Log("OnConversationStart");
     }
 
     void OnConversationEnd(Transform actor)
