@@ -11659,7 +11659,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 9
+        value: 12
         type: 0
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -13576,8 +13576,8 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 121.818146}
-    canvasZoom: 0.5500005
+    canvasScrollPosition: {x: 0, y: 508.21896}
+    canvasZoom: 0.7300003
   - id: 16
     fields:
     - title: Title
