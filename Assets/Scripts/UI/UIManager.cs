@@ -36,7 +36,9 @@ public class UIManager : MonoBehaviour
     [Header("Main menu events")]
     public UnityEvent onMainMenuSceneLoaded;
     public UnityEvent onMainMenuEnter;
+    public UnityEvent onMainMenuTransitionInStart;
     public UnityEvent onMainMenuTransitionInComplete;
+    public UnityEvent onMainMenuTransitionOutStart;
     public UnityEvent onMainMenuTransitionOutComplete;
 
     [Inject]
@@ -93,7 +95,9 @@ public class UIManager : MonoBehaviour
         loadingScreen.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
 
         // bubble up the transition events from Main Menu
+        mainMenu.onTransitionInStart.AddListener(() => onMainMenuTransitionInStart.Invoke());
         mainMenu.onTransitionInComplete.AddListener(() => onMainMenuTransitionInComplete.Invoke());
+        mainMenu.onTransitionOutStart.AddListener(() => onMainMenuTransitionOutStart.Invoke());
         mainMenu.onTransitionOutComplete.AddListener(() => onMainMenuTransitionOutComplete.Invoke());
 
         SetCanvasWorldCameras();
