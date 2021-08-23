@@ -31,17 +31,11 @@ public class SelectiveAudioSourceGroup : MonoBehaviour
         {
             if(enabled)
             {
-                if(selectiveAudioSource.canOnlyBeHeardInGroupCollider)
-                {
-                    selectiveAudioSource.Play(fadeDuration);
-                }
+                selectiveAudioSource.Play(fadeDuration);
             }
             else
             {
-                if(selectiveAudioSource.canOnlyBeHeardInGroupCollider)
-                {
-                    selectiveAudioSource.Stop(fadeDuration);
-                }
+                selectiveAudioSource.Stop(fadeDuration);
             }
         }
     }

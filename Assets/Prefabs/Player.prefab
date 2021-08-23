@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ef4c8d871146c45b485abc98304797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeAudioSourceGroup: {fileID: 0}
 --- !u!114 &8174588826899218655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,13 +153,13 @@ MonoBehaviour:
   airStrafeMult: 0.8
   airBackwardMult: 0.6
   airSprintMult: 2
-  moveSpeed: 2
+  moveSpeed: 2.5
   slopeSlideSpeed: 10
   acceleration: 50
   deceleration: 40
   sprintToggleStyle: 0
   sprintByDefault: 0
-  sprintMult: 2
+  sprintMult: 1.5
   strafeMult: 0.8
   backwardMult: 0.5
   sensitivity: 4
@@ -219,7 +220,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.3
   m_Pitch: 0.6
   Loop: 0
   Mute: 0

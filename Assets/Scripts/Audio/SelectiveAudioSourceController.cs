@@ -7,9 +7,6 @@ using Prime31.ZestKit;
 [RequireComponent(typeof(AudioSource))]
 public class SelectiveAudioSourceController : MonoBehaviour
 {
-    [Tooltip("Set this to true if the audio source should only be heard when the player has entered the selective audio source group trigger")]
-    public bool canOnlyBeHeardInGroupCollider;
-
     [Tooltip("Set this to true if this component should control audio source looping")]
     public bool controlAudioLooping;
 
@@ -32,19 +29,15 @@ public class SelectiveAudioSourceController : MonoBehaviour
 
         _initialVolume = audioSource.volume;
 
-        // set volume to 0 so that the volume must be set by the Play() method
-        if(canOnlyBeHeardInGroupCollider)
-        {
-            audioSource.volume = fadeOutVolume;
-        }
+        // set volume to fadeout volume initially so that it can be faded in
+        audioSource.volume = fadeOutVolume;
         
         if(controlAudioLooping)
         {
             audioSource.loop = false;
 
             // replay audio coroutine needs to be started if play on awake has been set
-            // and if the audio source should be heard outside of the collider
-            if(audioSource.playOnAwake && !canOnlyBeHeardInGroupCollider)
+            if(audioSource.playOnAwake)
             {
                 StartCoroutine(ReplayAudioAfterInterval(loopInterval));
             }

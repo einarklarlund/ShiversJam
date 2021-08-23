@@ -23,12 +23,19 @@ public class MaterialCycler : MonoBehaviour
         _dialogueSystemEvents = DialogueManager.instance.GetComponent<DialogueSystemEvents>();
 
         _dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnd);
+        _dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStart);
 
         _clockValue = DialogueLua.GetVariable("Clock").asInt;
     }
 
+    void OnConversationStart(Transform actor)
+    {
+        Debug.Log("OnConversationStart");
+    }
+
     void OnConversationEnd(Transform actor)
     {
+        Debug.Log("OnConversationEnd");
         // get the clock value from Dialogue system
         var newClockValue = DialogueLua.GetVariable("Clock").asInt;
         if(newClockValue != _clockValue)
