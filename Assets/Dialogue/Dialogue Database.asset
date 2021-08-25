@@ -410,6 +410,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 12
+    fields:
+    - title: Name
+      value: HasSurfaced
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: True if the sub has surfaces and the appropriate sfx have played
+      type: 0
+      typeString: 
   conversations:
   - id: 3
     fields:
@@ -3665,13 +3679,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 600.33344
+        x: 602.1516
         y: 707.8386
         width: 160
         height: 30
@@ -3897,7 +3911,7 @@ MonoBehaviour:
         width: 229.5711
         height: 237.73431
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 285.45422, y: 123.63623}
+    canvasScrollPosition: {x: 136.36346, y: 0}
     canvasZoom: 0.55000067
   - id: 12
     fields:
@@ -6070,7 +6084,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6467,7 +6481,7 @@ MonoBehaviour:
         width: 193.5373
         height: 151.74622
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 343.1034, y: 255.62125}
+    canvasScrollPosition: {x: 227.58618, y: 52.172974}
     canvasZoom: 0.5800001
   - id: 13
     fields:
@@ -8466,7 +8480,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8975,8 +8989,8 @@ MonoBehaviour:
         width: 199.2757
         height: 209.62045
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 259.82043}
-    canvasZoom: 0.46000057
+    canvasScrollPosition: {x: 284.04242, y: 24.93341}
+    canvasZoom: 0.9400004
   - id: 14
     fields:
     - title: Title
@@ -10940,7 +10954,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11338,7 +11352,7 @@ MonoBehaviour:
         width: 197.34143
         height: 170.51216
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 327.58597, y: 18.965546}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.5800003
   - id: 15
     fields:
@@ -13180,7 +13194,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13390,7 +13404,8 @@ MonoBehaviour:
         destinationDialogueID: 34
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: (Dialog[thisID].SimStatus == "Untouched") and (Variable["Knowledge.Unexpected"]
+        == true)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -13576,8 +13591,8 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 508.21896}
-    canvasZoom: 0.7300003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6700004
   - id: 16
     fields:
     - title: Title
@@ -16913,7 +16928,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -17257,7 +17272,7 @@ MonoBehaviour:
         width: 197.72119
         height: 196.08188
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 38.60147, y: 17.698242}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.6100004
   syncInfo:
     syncActors: 0
