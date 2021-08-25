@@ -112,6 +112,14 @@ public class UIManager : MonoBehaviour
     public void BeginEndingIllustrationIn()
     {
         Debug.Log("[UIManager] BeginEndingIllustrationIn");
+        var audioSourceConrtollers = FindObjectsOfType<SelectiveAudioSourceController>();
+        foreach(var controller in audioSourceConrtollers)
+        {
+            var volumeTweener = controller.gameObject.AddComponent<AudioSourceVolumeTweener>();
+            volumeTweener.audioSource = controller.audioSource;
+            volumeTweener.tweenDuration = 1;
+            volumeTweener.TweenVolumeTo(0);
+        }
         endingScreen.IllustrationIn();
     }
 
