@@ -16,18 +16,19 @@ public class SelectiveAudioSourceController : MonoBehaviour
     [Tooltip("When the volume is faded out, it will be faded out to this value")]
     public float fadeOutVolume = 0;
 
+    [Tooltip("When the volume is faded in, it will be faded in to this value")]
+    public float fadeInVolume = 1;
+
     [HideInInspector]
     public AudioSource audioSource;
 
-    float _initialVolume;
     ITween<float> _fadeInTween;
     ITween<float> _fadeOutTween;
+    Coroutine _replayAudioCoroutine;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
-        _initialVolume = audioSource.volume;
 
         // set volume to fadeout volume initially so that it can be faded in
         audioSource.volume = fadeOutVolume;
@@ -39,7 +40,7 @@ public class SelectiveAudioSourceController : MonoBehaviour
             // replay audio coroutine needs to be started if play on awake has been set
             if(audioSource.playOnAwake)
             {
-                StartCoroutine(ReplayAudioAfterInterval(loopInterval));
+                _replayAudioCoroutine = StartCoroutine(ReplayAudioCoroutine(loopInterval));
             }
         }
     }
@@ -57,16 +58,19 @@ public class SelectiveAudioSourceController : MonoBehaviour
         if(fadeInDuration > 0)
         {
             // start the fadein tween
-            _fadeInTween = audioSource.ZKvolumeTo(_initialVolume, fadeInDuration);
-            _fadeInTween.start();
+            _fadeInTween = audioSource.ZKvolumeTo(fadeInVolume, fadeInDuration);
+            _fadeInTween.start();        
         }
         else
         {
             // immediately set the volume (since no fadein has been specified)
-            audioSource.volume = _initialVolume;
+            audioSource.volume = fadeInVolume;
         }
 
-        audioSource.Play();
+        if(!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
         
         if(controlAudioLooping)
         {
@@ -74,15 +78,16 @@ public class SelectiveAudioSourceController : MonoBehaviour
             // invoked
             audioSource.loop = false;
             
-            // replay the audio after loopInterval seconds
-            StartCoroutine(ReplayAudioAfterInterval(loopInterval));
+            // start the replay audio coroutine if the _replayAudioCoroutine hasn't been started
+            if(_replayAudioCoroutine == null)
+                _replayAudioCoroutine = StartCoroutine(ReplayAudioCoroutine(loopInterval));
         }
     }
 
     // FadeOut audio, stop the audio source, and stop the replaying coroutine
     public void Stop(float fadeOutDuration = 0)
     {
-        // stop any fadein/fadeout tweens on the audio source
+        // stop any fadein/fadeout coroutines
         ZestKit.instance.stopAllTweensWithTarget(audioSource);
 
         if(fadeOutDuration == 0)
@@ -90,8 +95,11 @@ public class SelectiveAudioSourceController : MonoBehaviour
             audioSource.volume = fadeOutVolume;
 
             // immediately stop audio source and replay coroutine
-            audioSource.Stop();
-            StopAllCoroutines();
+            if(fadeOutVolume == 0)
+            {
+                audioSource.Stop();
+                StopCoroutine(_replayAudioCoroutine);
+            }
         }
         else
         {
@@ -103,7 +111,7 @@ public class SelectiveAudioSourceController : MonoBehaviour
                         if(fadeOutVolume == 0)
                         {
                             audioSource.Stop();
-                            StopAllCoroutines();
+                            StopCoroutine(_replayAudioCoroutine);
                         }
                     })
                 .start();
@@ -111,7 +119,7 @@ public class SelectiveAudioSourceController : MonoBehaviour
     }
 
     // The replaying coroutine.
-    IEnumerator ReplayAudioAfterInterval(float interval)
+    IEnumerator ReplayAudioCoroutine(float interval)
     {
         // wait for interval, then play the audio
         yield return new WaitForSeconds(interval);
@@ -119,6 +127,6 @@ public class SelectiveAudioSourceController : MonoBehaviour
         audioSource.Play();
 
         // replay
-        StartCoroutine(ReplayAudioAfterInterval(interval));
+        StartCoroutine(ReplayAudioCoroutine(interval));
     }
 }
