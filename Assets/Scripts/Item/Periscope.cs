@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using Prime31.ZestKit;
 using PixelCrushers.DialogueSystem;
@@ -10,7 +9,7 @@ public class Periscope : MonoBehaviour
 {
     public Transform cameraPositionTo;
     public Animator animator;
-    public SceneAsset periscopeScene;
+    public string periscopeSceneName = "PeriscopeScene";
     public Transform endingNpcGroup;
 
     PlayerController _player;
@@ -49,7 +48,7 @@ public class Periscope : MonoBehaviour
         animator.SetTrigger("Enter");
 
         // asynchronously load the periscope scene
-        SceneManager.LoadSceneAsync(periscopeScene.name, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(periscopeSceneName, LoadSceneMode.Additive);
 
         // disable collider so we can enable it on periscope exit and
         // activate the ending dialogue trigger
@@ -118,7 +117,7 @@ public class Periscope : MonoBehaviour
         _player.speaking = false;
 
         // asynchronously unload the periscope scene
-        SceneManager.UnloadSceneAsync(periscopeScene.name);
+        SceneManager.UnloadSceneAsync(periscopeSceneName);
 
         // enable collider so that we can activate the ending 
         // dialogue trigger OnTriggerEnter
