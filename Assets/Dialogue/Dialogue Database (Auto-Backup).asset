@@ -410,6 +410,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 12
+    fields:
+    - title: Name
+      value: HasSurfaced
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: True if the sub has surfaces and the appropriate sfx have played
+      type: 0
+      typeString: 
   conversations:
   - id: 3
     fields:
@@ -2235,6 +2249,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: cfe3f301-7e3f-4c4a-bb5b-65ace6c0fd06
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -2299,7 +2317,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 95.01436
-        y: 576.9413
+        y: 573.30493
         width: 160
         height: 30
     - id: 10
@@ -2555,6 +2573,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: 32f60b37-3710-4bfb-a09a-21e6763ac058
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -2917,6 +2939,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 29fc915f-fc00-42dd-9d6e-26847388cc87
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -2962,7 +2988,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 606.61176
+        x: 604.7936
         y: 485.86707
         width: 160
         height: 30
@@ -3220,6 +3246,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: ba6c8f36-2fe5-48a2-8306-5bd80e51f31d
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -3462,6 +3492,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: f51c794a-2890-4cbb-9757-6b5c9b789c28
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -3587,6 +3621,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 115daf91-4bb2-4405-85b1-eb291d32abe7
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -3665,13 +3703,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 600.33344
+        x: 602.1516
         y: 707.8386
         width: 160
         height: 30
@@ -3897,7 +3935,7 @@ MonoBehaviour:
         width: 229.5711
         height: 237.73431
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 285.45422, y: 123.63623}
+    canvasScrollPosition: {x: 0, y: 43.63629}
     canvasZoom: 0.55000067
   - id: 12
     fields:
@@ -4577,6 +4615,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 4c9434cc-fbfb-4c8a-a7a2-a2bcbc4b24db
+        type: 0
+        typeString: 
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -4842,6 +4884,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: b15bf5ea-6d4b-4b5a-a542-8cac356d4d9d
+        type: 0
+        typeString: 
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -5091,6 +5137,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 5982ea35-9660-4225-8f82-772a706325c9
         type: 0
         typeString: 
       conversationID: 12
@@ -5344,6 +5394,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 5fb94992-2b22-44fa-aeb5-b55d4c570bb5
+        type: 0
+        typeString: 
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -5586,6 +5640,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: e812774c-5abb-4d07-81e9-920483d4e523
         type: 0
         typeString: 
       conversationID: 12
@@ -5992,6 +6050,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: a708f4dc-0731-4a61-b8e8-fa99efb4aac5
+        type: 0
+        typeString: 
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -6070,7 +6132,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6467,7 +6529,7 @@ MonoBehaviour:
         width: 193.5373
         height: 151.74622
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 343.1034, y: 255.62125}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.5800001
   - id: 13
     fields:
@@ -6864,6 +6926,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 6e9bdf0f-73c6-4772-bb32-830e30c31218
+        type: 0
+        typeString: 
       conversationID: 13
       isRoot: 0
       isGroup: 0
@@ -7183,6 +7249,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 0097d8a8-f0c1-4ba3-8ab7-7d23896f59c1
         type: 0
         typeString: 
       conversationID: 13
@@ -7610,6 +7680,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: a6aa10d2-9c7e-45eb-b50d-44a2a1148023
+        type: 0
+        typeString: 
       conversationID: 13
       isRoot: 0
       isGroup: 0
@@ -7856,6 +7930,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: e5f2a0d3-9936-4872-a5ae-0c7f43770ee4
         type: 0
         typeString: 
       conversationID: 13
@@ -8321,6 +8399,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: e2ed67a1-f6ef-43c8-8988-abab8db35136
+        type: 0
+        typeString: 
       conversationID: 13
       isRoot: 0
       isGroup: 0
@@ -8386,6 +8468,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: a0ceea56-f02f-45b9-a333-82f0ff06ad18
         type: 0
         typeString: 
       conversationID: 13
@@ -8466,7 +8552,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8975,8 +9061,8 @@ MonoBehaviour:
         width: 199.2757
         height: 209.62045
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 259.82043}
-    canvasZoom: 0.46000057
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6100007
   - id: 14
     fields:
     - title: Title
@@ -9490,6 +9576,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 0996922f-e1a8-4b13-b3f1-fcafcded0395
+        type: 0
+        typeString: 
       conversationID: 14
       isRoot: 0
       isGroup: 0
@@ -9761,6 +9851,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 0e50002c-cf36-479a-91f9-e6fbe215ac9e
+        type: 0
+        typeString: 
       conversationID: 14
       isRoot: 0
       isGroup: 0
@@ -9959,6 +10053,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 004c8056-9c58-4c78-a5b8-9de6a92dad62
         type: 0
         typeString: 
       conversationID: 14
@@ -10720,6 +10818,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 77478c44-2379-4b2b-b2f7-f95cd23d36a2
+        type: 0
+        typeString: 
       conversationID: 14
       isRoot: 0
       isGroup: 0
@@ -10793,6 +10895,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: c554613f-b33d-41d4-a26d-c9a68d1082e8
+        type: 0
+        typeString: 
       conversationID: 14
       isRoot: 0
       isGroup: 0
@@ -10860,6 +10966,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 161c1326-0b06-4442-9702-5c6dbf1874bf
         type: 0
         typeString: 
       conversationID: 14
@@ -10940,7 +11050,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11338,8 +11448,8 @@ MonoBehaviour:
         width: 197.34143
         height: 170.51216
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 327.58597, y: 18.965546}
-    canvasZoom: 0.5800003
+    canvasScrollPosition: {x: 30.06458, y: 41.540894}
+    canvasZoom: 0.6400002
   - id: 15
     fields:
     - title: Title
@@ -12019,6 +12129,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 3530d335-e1c3-437e-ba76-ab3cd063f739
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -12344,6 +12458,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: ccc1cb50-2814-4324-9f2a-b996ef7aef05
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -12598,6 +12716,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 7cca2cd4-3745-4f06-b140-4adfb00f572f
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -12732,6 +12854,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 724576dc-9098-4904-9e4e-70e8f5ec42db
         type: 0
         typeString: 
       conversationID: 15
@@ -12981,6 +13107,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 8d0aac6c-4940-492b-8a6c-e631b21f200c
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -13104,6 +13234,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: aca9a423-708e-475b-9300-d847f935a45f
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -13180,7 +13314,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13390,7 +13524,8 @@ MonoBehaviour:
         destinationDialogueID: 34
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: (Dialog[thisID].SimStatus == "Untouched") and (Variable["Knowledge.Unexpected"]
+        == true)
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -13576,8 +13711,8 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 508.21896}
-    canvasZoom: 0.7300003
+    canvasScrollPosition: {x: 0, y: 74.62683}
+    canvasZoom: 0.6700004
   - id: 16
     fields:
     - title: Title
@@ -15415,6 +15550,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: d992b0a8-c26d-44e5-b439-91df0ad9ede6
+        type: 0
+        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -15738,6 +15877,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 0ace81e8-8cea-4894-ba45-e9b41ade70af
+        type: 0
+        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -15789,7 +15932,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 294.7275
+        x: 296.36685
         y: 314.2727
         width: 160
         height: 30
@@ -16159,6 +16302,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 93c8025e-f9c4-48a2-95ea-9c8404aa25e8
+        type: 0
+        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -16351,6 +16498,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 0ac4d84d-c732-434f-9555-1d52a9c04442
+        type: 0
+        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -16390,7 +16541,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 795.1582
+        x: 796.79755
         y: 233.88087
         width: 160
         height: 30
@@ -16594,6 +16745,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 3893c449-487a-4438-a903-bf354a46cc87
         type: 0
         typeString: 
       conversationID: 19
@@ -16835,6 +16990,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 29a800cd-0939-44d5-a89e-e0d9dd6b7d2e
+        type: 0
+        typeString: 
       conversationID: 19
       isRoot: 0
       isGroup: 0
@@ -16913,7 +17072,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["Clock"] >= 6
-      userScript: 
+      userScript: Variable["HasSurfaced"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -17257,7 +17416,7 @@ MonoBehaviour:
         width: 197.72119
         height: 196.08188
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 38.60147, y: 17.698242}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.6100004
   syncInfo:
     syncActors: 0
