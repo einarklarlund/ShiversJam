@@ -154,7 +154,6 @@ public class SelectiveAudioSourceController : MonoBehaviour
         var fadeVolumeTo = fadeIn ? fadeInVolume : fadeOutVolume; // volume to tween to
         // change in volume per frame (total change in volume divided by total amount of frames)
         var deltaVolume = (fadeVolumeTo - audioSource.volume) / totalFrames;
-        Debug.Log($"totalFrames {totalFrames}");
 
         while(totalFrames-- > 0)
         {
@@ -185,8 +184,6 @@ public class SelectiveAudioSourceController : MonoBehaviour
         // then from fadeInVolume-to-0 using remaining total frames) 
         var deltaVolume = _baseVolume / (totalFrames / 2);
         int framesLeft = totalFrames;
-
-        Debug.Log($"{name} totalFrames {totalFrames}");
 
         // for half of the total frames, audioSource.volume goes from 0 to baseVolume
         audioSource.volume = 0;

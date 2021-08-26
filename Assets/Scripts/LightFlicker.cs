@@ -16,10 +16,22 @@ public class LightFlicker : MonoBehaviour
     [HideInInspector]
     public Light[] lights;
 
+    [HideInInspector]
+    public AudioSource[] audioSources;
+    public List<float> audioSourceVolumes;
+
     // Start is called before the first frame update
     void Start()
     {
         lights = GetComponentsInChildren<Light>();
+
+        audioSources = GetComponentsInChildren<AudioSource>();
+
+        audioSourceVolumes = new List<float>();
+        foreach(var audioSource in audioSources)
+        {
+            audioSourceVolumes.Add(audioSource.volume);
+        }
 
         StartCoroutine(WaitForFlicker());
     }
@@ -58,11 +70,13 @@ public class LightFlicker : MonoBehaviour
         {
             mesh.enabled = active;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for(int i = 0; i < audioSources.Length; i++)
+        {
+            if(active)
+                audioSources[i].volume = audioSourceVolumes[i];
+            else
+                audioSources[i].volume = 0;
+        }
     }
 }
