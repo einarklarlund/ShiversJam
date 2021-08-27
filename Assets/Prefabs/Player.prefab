@@ -54,7 +54,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1675712132886049191}
   damageable: {fileID: 5133168195704748641}
-  dialogueSystemEvents: {fileID: 5303096581024961044}
   fpsController: {fileID: 1675712131748064096}
   cameraInBedTransform: {fileID: 0}
   playGetUpFromBedTweens: 0
@@ -525,7 +524,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 449
   distanceFrom: 0
-  maxSelectionDistance: 5
+  maxSelectionDistance: 4
   runRaycasts: 1
   raycastAll: 0
   useDefaultGUI: 1

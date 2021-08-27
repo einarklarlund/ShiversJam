@@ -112,6 +112,7 @@ public class UIManager : MonoBehaviour
     public void BeginEndingIllustrationIn()
     {
         Debug.Log("[UIManager] BeginEndingIllustrationIn");
+        // find all of the audio source controllers and fade them out
         var audioSourceConrtollers = FindObjectsOfType<SelectiveAudioSourceController>();
         foreach(var controller in audioSourceConrtollers)
         {
@@ -120,6 +121,14 @@ public class UIManager : MonoBehaviour
             volumeTweener.tweenDuration = 1;
             volumeTweener.TweenVolumeTo(0);
         }
+
+        // disable music
+        var musicAudioSource = GameObject.Find("Music Audio Source").GetComponent<AudioSource>();
+        var musicVolumeTweener = musicAudioSource.gameObject.AddComponent<AudioSourceVolumeTweener>();
+        musicVolumeTweener.audioSource = musicAudioSource;
+        musicVolumeTweener.tweenDuration = 1;
+        musicVolumeTweener.TweenVolumeTo(0);
+
         endingScreen.IllustrationIn();
     }
 
