@@ -78,6 +78,10 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: VoiceNumber
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -87,7 +91,7 @@ MonoBehaviour:
     - title: Name
       value: Speaker of the Depths
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -95,11 +99,15 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: VoiceNumber
+      value: 6
+      type: 1
+      typeString: CustomFieldType_Number
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -123,7 +131,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
     - title: VoiceNumber
-      value: 1
+      value: 7
       type: 1
       typeString: CustomFieldType_Number
     portrait: {fileID: 0}
@@ -135,7 +143,7 @@ MonoBehaviour:
     - title: Name
       value: Engine Handler
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -143,11 +151,15 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: VoiceNumber
+      value: 3
+      type: 1
+      typeString: CustomFieldType_Number
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -157,7 +169,7 @@ MonoBehaviour:
     - title: Name
       value: Auxiliary Engineer
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -165,11 +177,15 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: VoiceNumber
+      value: 11
+      type: 1
+      typeString: CustomFieldType_Number
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -179,7 +195,7 @@ MonoBehaviour:
     - title: Name
       value: Weapons Officer
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -187,11 +203,15 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: VoiceNumber
+      value: 4
+      type: 1
+      typeString: CustomFieldType_Number
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -2367,7 +2387,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: "Variable[\"Knowledge.DeathAbove\"] == true and \n(Dialog[14].SimStatus
         == \"Untouched\")"
-      userScript: 
+      userScript: ShowAlert("DEATH ABOVE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2678,7 +2698,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: "Variable[\"Knowledge.Unexpected\"] == true and \n(Dialog[thisID].SimStatus
         == \"Untouched\")"
-      userScript: 
+      userScript: ShowAlert("UNEXPECTED")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3039,7 +3059,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["Knowledge.NuclearKnowledge"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
-      userScript: 
+      userScript: ShowAlert("NUCLEAR KNOWLEDGE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3339,7 +3359,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Dialog[thisID].SimStatus == "Untouched") and (Variable["Knowledge.SlowAscent"]
         == true)
-      userScript: 
+      userScript: ShowAlert("SLOW ASCENT")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3579,7 +3599,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["Knowledge.NuclearDevastation"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
-      userScript: 
+      userScript: ShowAlert("NUCLEAR DEVASTATION")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3935,8 +3955,8 @@ MonoBehaviour:
         width: 229.5711
         height: 237.73431
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 43.63629}
-    canvasZoom: 0.55000067
+    canvasScrollPosition: {x: 0, y: 49.99994}
+    canvasZoom: 0.6400006
   - id: 12
     fields:
     - title: Title
@@ -4732,13 +4752,13 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Dialog[thisID].SimStatus == "Untouched") and (Variable["Knowledge.LimitedSupplies"]
         == true)
-      userScript: 
+      userScript: ShowAlert("LIMITED SUPPLIES")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 270.7693
+        x: 269.04517
         y: 128.61534
         width: 160
         height: 30
@@ -4989,7 +5009,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["Knowledge.DeathAbove"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
-      userScript: 
+      userScript: ShowAlert("DEATH ABOVE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5240,7 +5260,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["Knowledge.NuclearKnowledge"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
-      userScript: 
+      userScript: ShowAlert("NUCLEAR KNOWLEDGE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5488,7 +5508,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["Knowledge.SlowAscent"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
-      userScript: 
+      userScript: ShowAlert("SLOW ASCENT")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5729,7 +5749,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Variable["Knowledge.NuclearDevastation"] == true) and (Dialog[thisID].SimStatus
         == "Untouched")
-      userScript: 
+      userScript: ShowAlert("NUCLEAR DEVASTATION")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7042,7 +7062,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.LimitedSupplies"]
         == true)
-      userScript: 
+      userScript: ShowAlert("LIMITED SUPPLIES")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7356,7 +7376,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.DeathAbove"]
         == true)
-      userScript: 
+      userScript: ShowAlert("DEATH ABOVE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7780,7 +7800,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.Unexpected"]
         == true)
-      userScript: 
+      userScript: ShowAlert("UNEXPECTED")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8026,7 +8046,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.SlowAscent"]
         == true)
-      userScript: 
+      userScript: ShowAlert("SLOW ASCENT")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8139,7 +8159,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.NuclearDevastation"]
         == true)
-      userScript: 
+      userScript: ShowAlert("NUCLEAR DEVASTATION")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9695,7 +9715,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.LimitedSupplies"]
         == true)
-      userScript: 
+      userScript: ShowAlert("LIMITED SUPPLIES")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9959,7 +9979,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.DeathAbove"]
         == true)
-      userScript: 
+      userScript: ShowAlert("DEATH ABOVE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10156,7 +10176,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.Unexpected"]
         == true)
-      userScript: 
+      userScript: ShowAlert("UNEXPECTED")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10438,7 +10458,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.NuclearKnowledge"]
         == true)
-      userScript: 
+      userScript: ShowAlert("NUCLEAR KNOWLEDGE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10608,7 +10628,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.NuclearDevastation"]
         == true)
-      userScript: 
+      userScript: ShowAlert("NUCLEAR DEVASTATION")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12302,7 +12322,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.LimitedSupplies"]
         == true)
-      userScript: 
+      userScript: ShowAlert("LIMITED SUPPLIES")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12563,7 +12583,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.DeathAbove"]
         == true)
-      userScript: 
+      userScript: ShowAlert("DEATH ABOVE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12950,7 +12970,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.NuclearKnowledge"]
         == true)
-      userScript: 
+      userScript: ShowAlert("NUCLEAR KNOWLEDGE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13194,7 +13214,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.SlowAscent"]
         == true)
-      userScript: 
+      userScript: ShowAlert("SLOW ASCENT")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13526,7 +13546,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: (Dialog[thisID].SimStatus == "Untouched") and (Variable["Knowledge.Unexpected"]
         == true)
-      userScript: 
+      userScript: ShowAlert("UNEXPECTED")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13711,7 +13731,7 @@ MonoBehaviour:
         width: 190.09076
         height: 91.909
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 74.62683}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 0.6700004
   - id: 16
     fields:
@@ -15668,7 +15688,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.LimitedSupplies"]
         == true)
-      userScript: 
+      userScript: ShowAlert("LIMITED SUPPLIES")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -15984,7 +16004,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.Unexpected"]
         == true)
-      userScript: 
+      userScript: ShowAlert("UNEXPECTED")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -16402,7 +16422,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.NuclearKnowledge"]
         == true)
-      userScript: 
+      userScript: ShowAlert("NUCLEAR KNOWLEDGE")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -16593,7 +16613,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.SlowAscent"]
         == true)
-      userScript: 
+      userScript: ShowAlert("SLOW ASCENT")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -16836,7 +16856,7 @@ MonoBehaviour:
         priority: 2
       conditionsString: Dialog[thisID].SimStatus == "Untouched" and (Variable["Knowledge.NuclearDevastation"]
         == true)
-      userScript: 
+      userScript: ShowAlert("NUCLEAR DEVASTATION")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -17416,8 +17436,8 @@ MonoBehaviour:
         width: 197.72119
         height: 196.08188
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6100004
+    canvasScrollPosition: {x: 89.041016, y: 13.698639}
+    canvasZoom: 0.73000026
   syncInfo:
     syncActors: 0
     syncItems: 0
