@@ -1439,10 +1439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: 32
+  trigger: 16
   condition:
-    luaConditions:
-    - Variable["Clock"] >= 6
+    luaConditions: []
     questConditions: []
     acceptedTags: []
     acceptedGameObjects: []
@@ -1488,7 +1487,8 @@ MonoBehaviour:
   pauseGameDuringConversation: 0
   setActiveActions:
   - condition:
-      luaConditions: []
+      luaConditions:
+      - Variable["Clock"] >= 6
       questConditions: []
       acceptedTags: []
       acceptedGameObjects: []
@@ -1690,7 +1690,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh815336
+  m_Name: pb_Mesh1502164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14232,6 +14232,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7628814a146c9b94ab154002fdf1c119, type: 3}
       propertyPath: m_Name
       value: burning_city_cyl
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7628814a146c9b94ab154002fdf1c119, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7628814a146c9b94ab154002fdf1c119, type: 3}

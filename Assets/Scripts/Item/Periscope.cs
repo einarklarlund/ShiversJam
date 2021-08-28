@@ -11,6 +11,7 @@ public class Periscope : MonoBehaviour
     public Animator animator;
     public string periscopeSceneName = "PeriscopeScene";
     public Transform endingNpcGroup;
+    public Transform endingPlayerPosition;
 
     PlayerController _player;
     Camera _playerCamera;
@@ -54,6 +55,16 @@ public class Periscope : MonoBehaviour
         // activate the ending dialogue trigger
         var dialogueSystemTriggerTransform = transform.Find("Dialogue system trigger");
         dialogueSystemTriggerTransform.gameObject.SetActive(false);
+
+        if(DialogueLua.GetVariable("Clock").asInt >= 6)
+        {
+            // disable music when the clock hits 6
+            var musicAudioSource = GameObject.Find("Music Audio Source").GetComponent<AudioSource>();
+            var musicVolumeTweener = musicAudioSource.gameObject.AddComponent<AudioSourceVolumeTweener>();
+            musicVolumeTweener.audioSource = musicAudioSource;
+            musicVolumeTweener.tweenDuration = 1;
+            musicVolumeTweener.TweenVolumeTo(0);
+        }
     }
 
     // !!!!! the Periscope_Exit animation MUST call this method after it finishes !!!!!
@@ -77,6 +88,10 @@ public class Periscope : MonoBehaviour
         // after the clock hits 6
         if(DialogueLua.GetVariable("Clock").asInt >= 6)
         {
+            // place the player in the ending position
+            var playerController = FindObjectOfType<PlayerController>();
+            playerController.transform.position = endingPlayerPosition.transform.position;
+
             DialogueLua.SetVariable("ReadyForEnding", true);
             endingNpcGroup.gameObject.SetActive(true);
         }
