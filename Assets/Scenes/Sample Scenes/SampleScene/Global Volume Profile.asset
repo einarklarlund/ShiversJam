@@ -271,7 +271,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   fogFalloffMode:
     m_OverrideState: 0
     m_Value: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
     min: 0
   distanceMax:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 34.07
     min: 0.00001
   fogFalloffCurve:
     m_OverrideState: 1
@@ -347,7 +347,7 @@ MonoBehaviour:
     m_Value: 0
   colorLayer1:
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 0.6039216}
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 0.1764706}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1

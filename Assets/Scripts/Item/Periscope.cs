@@ -80,6 +80,10 @@ public class Periscope : MonoBehaviour
             DialogueLua.SetVariable("ReadyForEnding", true);
             endingNpcGroup.gameObject.SetActive(true);
         }
+
+        // enable the fog
+        var fogEnabler = FindObjectOfType<FogVolumeEnabler>();
+        fogEnabler.SetFogEnabled(true);
     }
 
     IEnumerator WaitForInput()
@@ -106,6 +110,10 @@ public class Periscope : MonoBehaviour
         // enable periscope mouse look
         var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
         periscopeMouseLook.mouseLookEnabled = true;
+
+        // disable the fog
+        var fogEnabler = FindObjectOfType<FogVolumeEnabler>();
+        fogEnabler.SetFogEnabled(false);
         
         StartCoroutine(WaitForInput());
     }
