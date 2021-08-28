@@ -20,6 +20,12 @@ public class AudioSourceVolumeTweener : MonoBehaviour
     {
         ZestKit.instance.stopAllTweensWithTarget(audioSource);
 
+        SelectiveAudioSourceController controller =  GetComponent<SelectiveAudioSourceController>();
+        if(controller)
+        {
+            controller.StopAllCoroutines();
+        }
+
         audioSource.ZKvolumeTo(tweenTo, tweenDuration).start();
     }
 }

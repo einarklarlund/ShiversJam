@@ -14247,6 +14247,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 587a1843-094c-4428-b9ff-7359352745e9
+        type: 0
+        typeString: 
       conversationID: 17
       isRoot: 0
       isGroup: 0

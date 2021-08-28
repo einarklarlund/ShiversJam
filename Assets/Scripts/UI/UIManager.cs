@@ -127,13 +127,6 @@ public class UIManager : MonoBehaviour
             volumeTweener.TweenVolumeTo(0);
         }
 
-        // disable music
-        var musicAudioSource = GameObject.Find("Music Audio Source").GetComponent<AudioSource>();
-        var musicVolumeTweener = musicAudioSource.gameObject.AddComponent<AudioSourceVolumeTweener>();
-        musicVolumeTweener.audioSource = musicAudioSource;
-        musicVolumeTweener.tweenDuration = 1;
-        musicVolumeTweener.TweenVolumeTo(0);
-
         endingScreen.IllustrationIn();
     }
 
