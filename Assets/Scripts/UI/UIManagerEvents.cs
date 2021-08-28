@@ -14,6 +14,7 @@ public class UIManagerEvents : MonoBehaviour
     public UnityEvent onLoadTransitionInComplete;
     public UnityEvent onLoadTransitionOutStart;
     public UnityEvent onLoadTransitionOutComplete;
+    public UnityEvent onQuitTransitionComplete;
     
     [Header("Main menu events")]
     public UnityEvent onMainMenuSceneLoaded;
@@ -37,6 +38,9 @@ public class UIManagerEvents : MonoBehaviour
             
         _UIManager.onLoadTransitionOutComplete.AddListener(() =>
             onLoadTransitionOutComplete.Invoke());
+
+        _UIManager.onQuitTransitionComplete.AddListener(() =>
+            onQuitTransitionComplete.Invoke());
 
             
         _UIManager.onMainMenuSceneLoaded.AddListener(() =>

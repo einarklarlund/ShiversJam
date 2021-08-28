@@ -54,12 +54,21 @@ public class GameManager : MonoBehaviour
         _nextScene = SceneManager.GetActiveScene().name;
 
         _UIManager.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
+        _UIManager.onLoadTransitionOutStart.AddListener(OnLoadTransitionOutStart);
 
+        // enable the fog if the game scene is being entered
+        var fogEnabler = FindObjectOfType<FogVolumeEnabler>();
+        fogEnabler.SetFogEnabled(loadGameOnNextSceneLoad || _nextScene != "Main Menu");
+        
         // check if we should be in main menu or running state
         if(_nextScene == "Main Menu")
+        {
             UpdateState(GameState.MainMenu);
+        }
         else
+        {
             UpdateState(GameState.Running);
+        }
     }
     
     //change game state to paused/running
@@ -127,7 +136,21 @@ public class GameManager : MonoBehaviour
         SaveSystem.ResetGameState();
     }
 
-    // set state and camera once the load transtion is complete
+    public void QuitToDesktop()
+    {
+        Debug.Log("[GameManager] Quitting to desktop...");
+        Application.Quit();
+    }
+
+    // set fog fx once load transition has started 
+    void OnLoadTransitionOutStart()
+    {
+        // enable the fog if the game scene is being entered
+        var fogEnabler = FindObjectOfType<FogVolumeEnabler>();
+        fogEnabler.SetFogEnabled(loadGameOnNextSceneLoad || _nextScene != "Main Menu");
+    }
+
+    // set state once the load transtion is complete
     void OnLoadTransitionOutComplete()
     {
         if(_nextScene == "Main Menu")

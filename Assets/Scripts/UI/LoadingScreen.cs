@@ -15,6 +15,7 @@ public class LoadingScreen : MonoBehaviour
 
     public UnityEvent onLoadTransitionInComplete;
     public UnityEvent onLoadTransitionOutComplete;
+    public UnityEvent onQuitTransitionComplete;
 
     void Awake()
     {
@@ -55,6 +56,12 @@ public class LoadingScreen : MonoBehaviour
         animator.SetTrigger("TransitionOut");
     }
 
+    public void BeginQuitTransition()
+    {
+        canvas.enabled = true;
+        animator.SetTrigger("Quit");
+    }
+
     // !! the load transition end animation MUST call this method using
     // an animation event at the end of the transition !!
     public void CompleteLoadTransitionIn()
@@ -69,5 +76,12 @@ public class LoadingScreen : MonoBehaviour
     {
         // Debug.Log("[LoadingScreen] completing transition out");
         onLoadTransitionOutComplete.Invoke();
+    }
+
+    // !! the quit transition animation MUST call this method using
+    // an animation event at the end of the transition !!
+    public void CompleteQuitTransition()
+    {
+        onQuitTransitionComplete.Invoke();
     }
 }

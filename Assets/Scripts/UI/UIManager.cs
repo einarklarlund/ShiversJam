@@ -32,7 +32,8 @@ public class UIManager : MonoBehaviour
     public UnityEvent onLoadTransitionInComplete;
     public UnityEvent onLoadTransitionOutStart;
     public UnityEvent onLoadTransitionOutComplete;
-    
+    public UnityEvent onQuitTransitionComplete;
+
     [Header("Main menu events")]
     public UnityEvent onMainMenuSceneLoaded;
     public UnityEvent onMainMenuEnter;
@@ -60,6 +61,9 @@ public class UIManager : MonoBehaviour
 
         if(onLoadTransitionOutComplete == null)
             onLoadTransitionOutComplete = new UnityEvent();
+        // quit transtion
+        if(onQuitTransitionComplete == null)
+            onQuitTransitionComplete = new UnityEvent();
 
         // main menu
         if(onMainMenuSceneLoaded == null)
@@ -93,6 +97,7 @@ public class UIManager : MonoBehaviour
         // bubble up the load transition events from the loading screen
         loadingScreen.onLoadTransitionInComplete.AddListener(OnLoadTransitionInComplete);
         loadingScreen.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
+        loadingScreen.onQuitTransitionComplete.AddListener(OnQuitTransitionComplete);
 
         // bubble up the transition events from Main Menu
         mainMenu.onTransitionInStart.AddListener(() => onMainMenuTransitionInStart.Invoke());
@@ -138,11 +143,29 @@ public class UIManager : MonoBehaviour
         endingScreen.EndImageIn();
     }
 
+    public void BeginQuitTransition()
+    {
+        Time.timeScale = 1;
+        loadingScreen.BeginQuitTransition();
+    }
+
     // bubble up this event from the loading screen so that GameManager
     // can listen
     public void OnLoadTransitionInComplete()
     {
         onLoadTransitionInComplete.Invoke();
+    }
+
+    // bubble up this event from the loadings creen so that the GameManager
+    // can listen
+    public void OnLoadTransitionOutComplete()
+    {
+        onLoadTransitionOutComplete.Invoke();
+    }
+
+    public void OnQuitTransitionComplete()
+    {
+        onQuitTransitionComplete.Invoke();
     }
 
     // transition in from the loading screen after the save system has
@@ -153,13 +176,6 @@ public class UIManager : MonoBehaviour
             onMainMenuSceneLoaded.Invoke();
 
         onLoadTransitionOutStart.Invoke();
-    }
-
-    // bubble up this event from the loadings creen so that the GameManager
-    // can listen
-    public void OnLoadTransitionOutComplete()
-    {
-        onLoadTransitionOutComplete.Invoke();
     }
     
     public void SetCanvasWorldCameras()
