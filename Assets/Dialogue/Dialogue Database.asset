@@ -14888,7 +14888,20 @@ MonoBehaviour:
           //
           hide the dialogue panel as the ending image transition ins
 
-          SetDialoguePanel(false)@5;'
+          SetDialoguePanel(false)@5;
+
+
+          //
+          transition to the main menu after some time
+
+          SendMessage(BeginLoadTransitionTo,
+          Main Menu, Game Manager(Clone))@40;
+
+
+          // hide the ending screen
+
+          SendMessage(HideEndingScreen,
+          , UIManager(clone))@41;'
         type: 0
         typeString: 
       conversationID: 17
