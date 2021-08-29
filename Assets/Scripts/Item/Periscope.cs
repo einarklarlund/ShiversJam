@@ -9,9 +9,12 @@ public class Periscope : MonoBehaviour
 {
     public Transform cameraPositionTo;
     public Animator animator;
+    public Usable usable;
     public string periscopeSceneName = "PeriscopeScene";
+    public Transform periscopeLoweredPosition;
     public Transform endingNpcGroup;
     public Transform endingPlayerPosition;
+    public GameObject modelGameObject;
 
     PlayerController _player;
     Camera _playerCamera;
@@ -19,6 +22,17 @@ public class Periscope : MonoBehaviour
     ITween<Vector3> _cameraPositionTween;
     ITween<Quaternion> _cameraRotationTween;
     Vector3 _initialCameraPosition;
+
+    void Start()
+    {
+        if(!usable)
+            usable = this.FindComponent<Usable>();
+
+        usable.enabled = false;
+
+        var events = DialogueManager.instance.GetComponent<DialogueSystemEvents>();
+        events.conversationEvents.onConversationEnd.AddListener(OnConversationEnded);
+        }
 
     public void EnterPeriscopeView()
     {
@@ -151,5 +165,16 @@ public class Periscope : MonoBehaviour
         var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
         periscopeMouseLook.transform.eulerAngles = Vector3.zero;
         periscopeMouseLook.mouseLookEnabled = false;
+    }
+
+    void OnConversationEnded(Transform actor)
+    {
+        if(DialogueLua.GetVariable("Clock").asInt >= 6)
+        {
+            modelGameObject.transform.ZKpositionTo(periscopeLoweredPosition.position, 2f)
+                .setEaseType(EaseType.Linear)
+                .start();
+            usable.enabled = true;
+        }
     }
 }
