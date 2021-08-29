@@ -136,6 +136,12 @@ public class UIManager : MonoBehaviour
         endingScreen.EndImageIn();
     }
 
+    public void HideEndingScreen()
+    {
+        Debug.Log("[UIManager] Hiding ending screen");
+        endingScreen.Hide();
+    }
+
     public void BeginQuitTransition()
     {
         Time.timeScale = 1;
