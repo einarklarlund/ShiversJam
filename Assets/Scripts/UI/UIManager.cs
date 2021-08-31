@@ -116,8 +116,6 @@ public class UIManager : MonoBehaviour
 
     public void BeginEndingIllustrationIn()
     {
-        Debug.Log("[UIManager] BeginEndingIllustrationIn");
-        
         // disable selector
         var UISelector = FindObjectOfType<StandardUISelectorElements>();
         UISelector.gameObject.SetActive(false);
@@ -150,7 +148,6 @@ public class UIManager : MonoBehaviour
 
     public void BeginEndingImageIn()
     {
-        Debug.Log("[UIManager] BeginEndingImageIn()");
         endingScreen.EndImageIn();
         StartCoroutine(WaitForInput());
     }
@@ -177,7 +174,6 @@ public class UIManager : MonoBehaviour
 
     public void HideEndingScreen()
     {
-        Debug.Log("[UIManager] Hiding ending screen");
         endingScreen.Hide();
     }
 

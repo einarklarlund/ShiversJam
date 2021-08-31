@@ -16,7 +16,6 @@ public class FogVolumeEnabler : MonoBehaviour
         profile.TryGet<FogVolume>(out fogVolume);
 
         fogVolume.isEnabled.overrideState = true;
-        Debug.Log($"setting fog enabled to {enabled}");
         fogVolume.isEnabled.value = enabled;
     }
 }
