@@ -117,6 +117,13 @@ public class UIManager : MonoBehaviour
     public void BeginEndingIllustrationIn()
     {
         Debug.Log("[UIManager] BeginEndingIllustrationIn");
+        
+        // disable selector
+        var UISelector = FindObjectOfType<StandardUISelectorElements>();
+        UISelector.gameObject.SetActive(false);
+        // UISelector.outOfRangeColor = new Color(0, 0, 0, 0);
+        // UISelector.inRangeColor = new Color(0, 0, 0, 0);
+
         // find all of the audio source controllers and fade them out
         var audioSourceConrtollers = FindObjectsOfType<SelectiveAudioSourceController>();
         foreach(var controller in audioSourceConrtollers)
@@ -127,6 +134,17 @@ public class UIManager : MonoBehaviour
             volumeTweener.TweenVolumeTo(0);
         }
 
+        // change music to ending music and raise its volume 
+        var musicAudioSource = GameObject.Find("End Music Audio Source").GetComponent<AudioSource>();
+        var musicVolumeTweener = musicAudioSource.GetComponent<AudioSourceVolumeTweener>();
+        musicVolumeTweener.audioSource = musicAudioSource;
+        musicVolumeTweener.tweenDuration = 1;
+        
+        musicAudioSource.Play();
+        musicVolumeTweener.TweenVolumeTo(0.4f);
+
+        // bring in the ending illustration
+        endingScreen.canvas.enabled = true;
         endingScreen.IllustrationIn();
     }
 
@@ -134,6 +152,27 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("[UIManager] BeginEndingImageIn()");
         endingScreen.EndImageIn();
+        StartCoroutine(WaitForInput());
+    }
+
+    IEnumerator WaitForInput() 
+    {
+        while(!Input.GetButton("Fire1"))
+            yield return null;
+
+        _gameManager.BeginLoadTransitionTo("Main Menu");
+
+        // silence the end music
+        var musicAudioSource = GameObject.Find("End Music Audio Source").GetComponent<AudioSource>();
+        var musicVolumeTweener = musicAudioSource.GetComponent<AudioSourceVolumeTweener>();
+        musicVolumeTweener.audioSource = musicAudioSource;
+        musicVolumeTweener.tweenDuration = 1;
+        musicVolumeTweener.TweenVolumeTo(0);
+
+        yield return new WaitForSeconds(1);
+
+        endingScreen.Hide();
+        endingScreen.canvas.enabled = false;
     }
 
     public void HideEndingScreen()

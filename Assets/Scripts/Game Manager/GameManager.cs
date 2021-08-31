@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using PixelCrushers;
 using Zenject;
+using Prime31.ZestKit;
 
 [RequireComponent(typeof(SaveSystemMethods))]
 public class GameManager : MonoBehaviour
@@ -119,6 +120,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()
     {
+        ZestKit.instance.stopAllTweens(true);
+
         if(loadGameOnNextSceneLoad)
         {
             Debug.Log($"[GameManager] loading game from save slot 1.");

@@ -74,7 +74,7 @@ public class Periscope : MonoBehaviour
         {
             // disable music when the clock hits 6
             var musicAudioSource = GameObject.Find("Music Audio Source").GetComponent<AudioSource>();
-            var musicVolumeTweener = musicAudioSource.gameObject.AddComponent<AudioSourceVolumeTweener>();
+            var musicVolumeTweener = musicAudioSource.GetComponent<AudioSourceVolumeTweener>();
             musicVolumeTweener.audioSource = musicAudioSource;
             musicVolumeTweener.tweenDuration = 1;
             musicVolumeTweener.TweenVolumeTo(0);

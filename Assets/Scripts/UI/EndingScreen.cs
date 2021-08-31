@@ -5,6 +5,7 @@ using UnityEngine;
 public class EndingScreen : MonoBehaviour
 {
     public Animator animator;
+    public Canvas canvas;
 
     public void IllustrationIn()
     {
