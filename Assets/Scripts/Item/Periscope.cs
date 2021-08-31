@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using Prime31.ZestKit;
 using PixelCrushers.DialogueSystem;
@@ -10,8 +9,12 @@ public class Periscope : MonoBehaviour
 {
     public Transform cameraPositionTo;
     public Animator animator;
-    public SceneAsset periscopeScene;
+    public Usable usable;
+    public string periscopeSceneName = "PeriscopeScene";
+    public Transform periscopeLoweredPosition;
     public Transform endingNpcGroup;
+    public Transform endingPlayerPosition;
+    public GameObject modelGameObject;
 
     PlayerController _player;
     Camera _playerCamera;
@@ -19,6 +22,17 @@ public class Periscope : MonoBehaviour
     ITween<Vector3> _cameraPositionTween;
     ITween<Quaternion> _cameraRotationTween;
     Vector3 _initialCameraPosition;
+
+    void Start()
+    {
+        if(!usable)
+            usable = this.FindComponent<Usable>();
+
+        usable.enabled = false;
+
+        var events = DialogueManager.instance.GetComponent<DialogueSystemEvents>();
+        events.conversationEvents.onConversationEnd.AddListener(OnConversationEnded);
+        }
 
     public void EnterPeriscopeView()
     {
@@ -49,12 +63,22 @@ public class Periscope : MonoBehaviour
         animator.SetTrigger("Enter");
 
         // asynchronously load the periscope scene
-        SceneManager.LoadSceneAsync(periscopeScene.name, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(periscopeSceneName, LoadSceneMode.Additive);
 
         // disable collider so we can enable it on periscope exit and
         // activate the ending dialogue trigger
         var dialogueSystemTriggerTransform = transform.Find("Dialogue system trigger");
         dialogueSystemTriggerTransform.gameObject.SetActive(false);
+
+        if(DialogueLua.GetVariable("Clock").asInt >= 6)
+        {
+            // disable music when the clock hits 6
+            var musicAudioSource = GameObject.Find("Music Audio Source").GetComponent<AudioSource>();
+            var musicVolumeTweener = musicAudioSource.gameObject.AddComponent<AudioSourceVolumeTweener>();
+            musicVolumeTweener.audioSource = musicAudioSource;
+            musicVolumeTweener.tweenDuration = 1;
+            musicVolumeTweener.TweenVolumeTo(0);
+        }
     }
 
     // !!!!! the Periscope_Exit animation MUST call this method after it finishes !!!!!
@@ -78,9 +102,17 @@ public class Periscope : MonoBehaviour
         // after the clock hits 6
         if(DialogueLua.GetVariable("Clock").asInt >= 6)
         {
+            // place the player in the ending position
+            var playerController = FindObjectOfType<PlayerController>();
+            playerController.transform.position = endingPlayerPosition.transform.position;
+
             DialogueLua.SetVariable("ReadyForEnding", true);
             endingNpcGroup.gameObject.SetActive(true);
         }
+
+        // enable the fog
+        var fogEnabler = FindObjectOfType<FogVolumeEnabler>();
+        fogEnabler.SetFogEnabled(true);
     }
 
     IEnumerator WaitForInput()
@@ -107,6 +139,10 @@ public class Periscope : MonoBehaviour
         // enable periscope mouse look
         var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
         periscopeMouseLook.mouseLookEnabled = true;
+
+        // disable the fog
+        var fogEnabler = FindObjectOfType<FogVolumeEnabler>();
+        fogEnabler.SetFogEnabled(false);
         
         StartCoroutine(WaitForInput());
     }
@@ -118,7 +154,7 @@ public class Periscope : MonoBehaviour
         _player.speaking = false;
 
         // asynchronously unload the periscope scene
-        SceneManager.UnloadSceneAsync(periscopeScene.name);
+        SceneManager.UnloadSceneAsync(periscopeSceneName);
 
         // enable collider so that we can activate the ending 
         // dialogue trigger OnTriggerEnter
@@ -129,5 +165,16 @@ public class Periscope : MonoBehaviour
         var periscopeMouseLook = FindObjectOfType<PeriscopeMouseLook>();
         periscopeMouseLook.transform.eulerAngles = Vector3.zero;
         periscopeMouseLook.mouseLookEnabled = false;
+    }
+
+    void OnConversationEnded(Transform actor)
+    {
+        if(DialogueLua.GetVariable("Clock").asInt >= 6)
+        {
+            modelGameObject.transform.ZKpositionTo(periscopeLoweredPosition.position, 2f)
+                .setEaseType(EaseType.Linear)
+                .start();
+            usable.enabled = true;
+        }
     }
 }

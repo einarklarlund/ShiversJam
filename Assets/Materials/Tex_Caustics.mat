@@ -47,7 +47,7 @@ Material:
     - _ColorMask: 15
     - _Cull: 2
     - _DoubleSidedNormalMode: 0
-    - _DrawDistanceOverrideMode: 0
+    - _DrawDistanceOverrideMode: 1
     - _DstBlend: 10
     - _EmissionBakedMultiplier: 1
     - _FogWeight: 1
@@ -55,7 +55,7 @@ Material:
     - _LightingDynamic: 1
     - _LightingMode: 0
     - _PrecisionColorOverrideMode: 0
-    - _PrecisionGeometryOverrideMode: 2
+    - _PrecisionGeometryOverrideMode: 1
     - _PrecisionGeometryWeight: 1
     - _Reflection: 0
     - _ReflectionBlendMode: 2

@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 0
   skyboxTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: e794795176816674bb26b7a56095b8ea, type: 2}
+    m_Value: {fileID: 8900000, guid: 4c681b9019078454d91f3d97b851c4cd, type: 3}
   tiledLayersSkyHeightScale:
     m_OverrideState: 0
     m_Value: 0.24
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   fogFalloffMode:
     m_OverrideState: 0
     m_Value: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
     min: 0
   distanceMax:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 34.07
     min: 0.00001
   fogFalloffCurve:
     m_OverrideState: 1
@@ -347,7 +347,7 @@ MonoBehaviour:
     m_Value: 0
   colorLayer1:
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 0.6039216}
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 0.1764706}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1

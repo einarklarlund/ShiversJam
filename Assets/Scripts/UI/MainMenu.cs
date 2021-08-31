@@ -12,7 +12,9 @@ public class MainMenu : MonoBehaviour
     public Button loadGameButton;
     public Animator animator;
 
+    public UnityEvent onTransitionInStart;
     public UnityEvent onTransitionInComplete;
+    public UnityEvent onTransitionOutStart;
     public UnityEvent onTransitionOutComplete;
     public bool loadGamePressed;
 
@@ -65,6 +67,7 @@ public class MainMenu : MonoBehaviour
     {
         // Debug.Log("[MainMenu] transitioning in");
         animator.SetTrigger("TransitionIn");
+        onTransitionInStart.Invoke();
     }
 
     // listens to newGameButton.onClick and loadGameButton.onClick
@@ -72,6 +75,7 @@ public class MainMenu : MonoBehaviour
     {
         // Debug.Log("[MainMenu] transitioning out");
         animator.SetTrigger("TransitionOut");
+        onTransitionOutStart.Invoke();
     }
 
     // listens to UIManager.onMainMenuTransitionOutComplete

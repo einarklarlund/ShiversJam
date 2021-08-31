@@ -6,25 +6,39 @@ public class LightFlicker : MonoBehaviour
 {
     public float flickerPeriod;
     public float randomDeviation;
+    
+    // the light cone meshes must be set in the inspector so that the
+    // script knows which meshes to flicker on/off (it shouldn't flicker
+    // the mesh of the lightbulb/metal cage)
+    [Tooltip("The meshes of the light cone that will flicker")]
+    public MeshRenderer[] lightConeMeshes;
 
     [HideInInspector]
     public Light[] lights;
-    
+
     [HideInInspector]
-    public MeshRenderer[] meshes;    
+    public AudioSource[] audioSources;
+    public List<float> audioSourceVolumes;
 
     // Start is called before the first frame update
     void Start()
     {
         lights = GetComponentsInChildren<Light>();
-        meshes = GetComponentsInChildren<MeshRenderer>();
+
+        audioSources = GetComponentsInChildren<AudioSource>();
+
+        audioSourceVolumes = new List<float>();
+        foreach(var audioSource in audioSources)
+        {
+            audioSourceVolumes.Add(audioSource.volume);
+        }
 
         StartCoroutine(WaitForFlicker());
     }
 
     IEnumerator WaitForFlicker()
     {
-        yield return new WaitForSeconds(flickerPeriod + Random.value * randomDeviation);
+        yield return new WaitForSeconds(flickerPeriod + 2 * (Random.value - 0.5f) * randomDeviation);
 
         StartCoroutine(Flicker());
     }
@@ -52,15 +66,17 @@ public class LightFlicker : MonoBehaviour
             light.enabled = active;
         }
 
-        foreach(var mesh in meshes)
+        foreach(var mesh in lightConeMeshes)
         {
             mesh.enabled = active;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for(int i = 0; i < audioSources.Length; i++)
+        {
+            if(active)
+                audioSources[i].volume = audioSourceVolumes[i];
+            else
+                audioSources[i].volume = 0;
+        }
     }
 }

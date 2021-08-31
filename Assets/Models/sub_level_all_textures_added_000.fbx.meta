@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: 8c78996071d2773449455ff426c125e1
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed.platform
+    second: {fileID: 2100000, guid: c40355cc546aa6d4ba1887aeaff258f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed.storage
+    second: {fileID: 2100000, guid: c755689091e3e1a40801738cdd2260ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bed.textured
+    second: {fileID: 2100000, guid: ea02fb257eb0d2547adb8238b532a07d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bomb.body.mapped
+    second: {fileID: 2100000, guid: bb08dc44d9b556742a3f6c210a2b0f80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bomb.fins.mapped
+    second: {fileID: 2100000, guid: 5aed4d19c7a184f479fc93919e71de91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bomb.straps
+    second: {fileID: 2100000, guid: a79e1aa61014a6345a0e272e120dc87f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cables.mapped
+    second: {fileID: 2100000, guid: b03b689f4602260469114c539788f4b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ctrl.panel.000.bake
+    second: {fileID: 2100000, guid: 84caa7c7fa6cb7b46bfb56943bece729, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ctrl.panel.001.bake
+    second: {fileID: 2100000, guid: beaa6554b4a3b1f458f2bff54a765181, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor.tiles
+    second: {fileID: 2100000, guid: bf727fe061d2b504fbc84794b90a6c86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.hall.end
+    second: {fileID: 2100000, guid: a519a69943785324189939a3273ee192, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.hall.wall.000
+    second: {fileID: 2100000, guid: 8f534ce089b5ea541a7db17e38864140, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.hall.wall.001
+    second: {fileID: 2100000, guid: b14f3ad153ad09a4488b0d4f845119bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.hall.wall.002
+    second: {fileID: 2100000, guid: 5e7cad583bd04b94cb57b0f1fd062ebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.hall.wall.003
+    second: {fileID: 2100000, guid: 2b0b63a09dddaef40965b8d59ef93dc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.railing.000
+    second: {fileID: 2100000, guid: 2ef1dcd964ee880468bcc77570af01d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.roof.000
+    second: {fileID: 2100000, guid: 428086bf2e7202b48a4712514539503b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.valve.wheel
+    second: {fileID: 2100000, guid: 914f7a366f4291a4cb7a662d705f8d24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: periscope.main
+    second: {fileID: 2100000, guid: 3b87b2041bfe1514984b6a79f0c0bba8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipes.end.bake
+    second: {fileID: 2100000, guid: a60671431bfed0d42a8609199834a330, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipes.mounts.straight.bake
+    second: {fileID: 2100000, guid: d0c1a7577facd6b459c417c760b65ed3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipes.straight.bake
+    second: {fileID: 2100000, guid: 8d33183804120234a93e4dc1fd93074d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipes.thresh.bake
+    second: {fileID: 2100000, guid: f95dc77aa8fa67a43a043546eef3eb3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shelf
+    second: {fileID: 2100000, guid: 435254befd294b142815c6c0a69d117c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stool.main
+    second: {fileID: 2100000, guid: fd8a9238e8b6b1d46a097270c8c2907b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: supplies.uv.001
+    second: {fileID: 2100000, guid: 8fad662397dc292459ac80652004a873, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: supplies.uv.002
+    second: {fileID: 2100000, guid: e5b1e727d645cda4d8aa0a7bafdfbb96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vents.dark.metal
+    second: {fileID: 2100000, guid: bf8697eed9792e94d9a313707286955e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall.hole.mapped
+    second: {fileID: 2100000, guid: e48c0826157b04c44a4c35d156ebb846, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water.puddle.mapped
+    second: {fileID: 2100000, guid: 0798e5f6e657b0041aef6403a15846f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water.spout.mapped
+    second: {fileID: 2100000, guid: e66d4282afd0c9c4d9872d8069e29002, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -18,7 +18,6 @@ public class PlayerController : Interactor
     public IMessageHub<Message> hub;
     public Camera playerCamera;
     public Damageable damageable;
-    public DialogueSystemEvents dialogueSystemEvents;
     public FPSController fpsController;
 
     [Header("Get Up From Bed Cutscene")]
@@ -29,6 +28,7 @@ public class PlayerController : Interactor
     public bool speaking = false;
 
     PlayerInventory _playerInventory;
+    DialogueSystemEvents _dialogueSystemEvents;
 
     // the position that the camera will tween to after getting up from bed
     Vector3 _uprightCameraPosition;
@@ -53,9 +53,9 @@ public class PlayerController : Interactor
         damageable.hub.Connect<int>(Interactable.Message.Damaged, OnDamaged);
         damageable.hub.Connect(Interactable.Message.Killed, OnKilled);
 
-        dialogueSystemEvents = this.FindComponent<DialogueSystemEvents>();
-        dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStart);
-        dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnd);
+        _dialogueSystemEvents = this.FindComponent<DialogueSystemEvents>();
+        _dialogueSystemEvents.conversationEvents.onConversationStart.AddListener(OnConversationStart);
+        _dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnd);
 
         fpsController = GetComponent<FPSController>();
 

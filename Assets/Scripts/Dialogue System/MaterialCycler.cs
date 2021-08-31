@@ -21,7 +21,6 @@ public class MaterialCycler : MonoBehaviour
             meshRenderer = GetComponent<MeshRenderer>();
 
         _dialogueSystemEvents = DialogueManager.instance.GetComponent<DialogueSystemEvents>();
-
         _dialogueSystemEvents.conversationEvents.onConversationEnd.AddListener(OnConversationEnd);
 
         _clockValue = DialogueLua.GetVariable("Clock").asInt;
@@ -29,6 +28,7 @@ public class MaterialCycler : MonoBehaviour
 
     void OnConversationEnd(Transform actor)
     {
+        Debug.Log("OnConversationEnd");
         // get the clock value from Dialogue system
         var newClockValue = DialogueLua.GetVariable("Clock").asInt;
         if(newClockValue != _clockValue)

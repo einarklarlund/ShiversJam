@@ -32,11 +32,14 @@ public class UIManager : MonoBehaviour
     public UnityEvent onLoadTransitionInComplete;
     public UnityEvent onLoadTransitionOutStart;
     public UnityEvent onLoadTransitionOutComplete;
-    
+    public UnityEvent onQuitTransitionComplete;
+
     [Header("Main menu events")]
     public UnityEvent onMainMenuSceneLoaded;
     public UnityEvent onMainMenuEnter;
+    public UnityEvent onMainMenuTransitionInStart;
     public UnityEvent onMainMenuTransitionInComplete;
+    public UnityEvent onMainMenuTransitionOutStart;
     public UnityEvent onMainMenuTransitionOutComplete;
 
     [Inject]
@@ -58,6 +61,9 @@ public class UIManager : MonoBehaviour
 
         if(onLoadTransitionOutComplete == null)
             onLoadTransitionOutComplete = new UnityEvent();
+        // quit transtion
+        if(onQuitTransitionComplete == null)
+            onQuitTransitionComplete = new UnityEvent();
 
         // main menu
         if(onMainMenuSceneLoaded == null)
@@ -91,9 +97,12 @@ public class UIManager : MonoBehaviour
         // bubble up the load transition events from the loading screen
         loadingScreen.onLoadTransitionInComplete.AddListener(OnLoadTransitionInComplete);
         loadingScreen.onLoadTransitionOutComplete.AddListener(OnLoadTransitionOutComplete);
+        loadingScreen.onQuitTransitionComplete.AddListener(OnQuitTransitionComplete);
 
         // bubble up the transition events from Main Menu
+        mainMenu.onTransitionInStart.AddListener(() => onMainMenuTransitionInStart.Invoke());
         mainMenu.onTransitionInComplete.AddListener(() => onMainMenuTransitionInComplete.Invoke());
+        mainMenu.onTransitionOutStart.AddListener(() => onMainMenuTransitionOutStart.Invoke());
         mainMenu.onTransitionOutComplete.AddListener(() => onMainMenuTransitionOutComplete.Invoke());
 
         SetCanvasWorldCameras();
@@ -108,6 +117,16 @@ public class UIManager : MonoBehaviour
     public void BeginEndingIllustrationIn()
     {
         Debug.Log("[UIManager] BeginEndingIllustrationIn");
+        // find all of the audio source controllers and fade them out
+        var audioSourceConrtollers = FindObjectsOfType<SelectiveAudioSourceController>();
+        foreach(var controller in audioSourceConrtollers)
+        {
+            var volumeTweener = controller.gameObject.AddComponent<AudioSourceVolumeTweener>();
+            volumeTweener.audioSource = controller.audioSource;
+            volumeTweener.tweenDuration = 1;
+            volumeTweener.TweenVolumeTo(0);
+        }
+
         endingScreen.IllustrationIn();
     }
 
@@ -117,11 +136,35 @@ public class UIManager : MonoBehaviour
         endingScreen.EndImageIn();
     }
 
+    public void HideEndingScreen()
+    {
+        Debug.Log("[UIManager] Hiding ending screen");
+        endingScreen.Hide();
+    }
+
+    public void BeginQuitTransition()
+    {
+        Time.timeScale = 1;
+        loadingScreen.BeginQuitTransition();
+    }
+
     // bubble up this event from the loading screen so that GameManager
     // can listen
     public void OnLoadTransitionInComplete()
     {
         onLoadTransitionInComplete.Invoke();
+    }
+
+    // bubble up this event from the loadings creen so that the GameManager
+    // can listen
+    public void OnLoadTransitionOutComplete()
+    {
+        onLoadTransitionOutComplete.Invoke();
+    }
+
+    public void OnQuitTransitionComplete()
+    {
+        onQuitTransitionComplete.Invoke();
     }
 
     // transition in from the loading screen after the save system has
@@ -132,13 +175,6 @@ public class UIManager : MonoBehaviour
             onMainMenuSceneLoaded.Invoke();
 
         onLoadTransitionOutStart.Invoke();
-    }
-
-    // bubble up this event from the loadings creen so that the GameManager
-    // can listen
-    public void OnLoadTransitionOutComplete()
-    {
-        onLoadTransitionOutComplete.Invoke();
     }
     
     public void SetCanvasWorldCameras()

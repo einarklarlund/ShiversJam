@@ -35,4 +35,9 @@ public class GameManagerMethods : MonoBehaviour
     {
         _gameManager.ResetGameState();
     }
+
+    public void QuitToDesktop()
+    {
+        _gameManager.QuitToDesktop();
+    }
 }

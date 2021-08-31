@@ -2413,7 +2413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -546, y: -128}
+  m_AnchoredPosition: {x: -546, y: -124}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &22296148
@@ -4171,7 +4171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 20, y: -8}
   m_SizeDelta: {x: 996, y: 48.009995}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3129178034457023596
@@ -4313,8 +4313,8 @@ MonoBehaviour:
   silentCharacters: 
   fullPauseCharacters: 
   quarterPauseCharacters: 
-  fullPauseDuration: 0.25
-  quarterPauseDuration: 0.125
+  fullPauseDuration: 0.3
+  quarterPauseDuration: 0.2
   removeDuplicateTypewriterEffects: 1
   playOnEnable: 0
   waitOneFrameBeforeStarting: 0

@@ -15,4 +15,9 @@ public class EndingScreen : MonoBehaviour
     {
         animator.SetTrigger("EndImageIn");
     }
+
+    public void Hide()
+    {
+        animator.SetTrigger("Hide");
+    }
 }
